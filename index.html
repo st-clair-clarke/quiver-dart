@@ -37,11 +37,17 @@
 <p>Quiver is a set of utility libraries for Dart that makes using many Dart
 libraries easier and more convenient, or adds additional functionality.</p>
 
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>API Docs can be found here: <a href="http://google.github.io/quiver-dart/docs/">http://google.github.io/quiver-dart/docs/</a></p>
+
 <h1>
 <a name="main-libraries" class="anchor" href="#main-libraries"><span class="octicon octicon-link"></span></a>Main Libraries</h1>
 
 <h2>
-<a name="asyncdart" class="anchor" href="#asyncdart"><span class="octicon octicon-link"></span></a>async.dart</h2>
+<a name="quiverasync" class="anchor" href="#quiverasync"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.async.html">quiver.async</a>
+</h2>
 
 <p>Utilities for working with Futures, Streams and async computations.</p>
 
@@ -65,7 +71,8 @@ passing Timer factories to classes and functions, increasing the testability of
 code that depends on Timer.</p>
 
 <h2>
-<a name="cachedart" class="anchor" href="#cachedart"><span class="octicon octicon-link"></span></a>cache.dart</h2>
+<a name="quivercache" class="anchor" href="#quivercache"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.cache.html">quiver.cache</a>
+</h2>
 
 <p><code>Cache</code> is a semi-persistent, asynchronously accessed, mapping of keys to
 values. Caches are similar to Maps, except that the cache implementation might
@@ -75,20 +82,23 @@ might have eviction policies.</p>
 <p><code>MapCache</code> is a Cache implementation backed by a Map.</p>
 
 <h2>
-<a name="collectiondart" class="anchor" href="#collectiondart"><span class="octicon octicon-link"></span></a>collection.dart</h2>
+<a name="quivercollection" class="anchor" href="#quivercollection"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.collection.html">quiver.collection</a>
+</h2>
 
 <p><code>Multimap</code> is an associative collection that maps keys to collections of
 values. <code>BiMap</code> is a bi-directional map and provides an inverse view, allowing
 lookup of key by value.</p>
 
 <h2>
-<a name="iodart" class="anchor" href="#iodart"><span class="octicon octicon-link"></span></a>io.dart</h2>
+<a name="quiverio" class="anchor" href="#quiverio"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.io.html">quiver.io</a>
+</h2>
 
 <p><code>visitDirectory</code> is a recursive directory lister that conditionally recurses
 into sub-directories based on the result of a handler function.</p>
 
 <h2>
-<a name="iterablesdart" class="anchor" href="#iterablesdart"><span class="octicon octicon-link"></span></a>iterables.dart</h2>
+<a name="quiveriterables" class="anchor" href="#quiveriterables"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.iterables.html">quiver.iterables</a>
+</h2>
 
 <p><code>count</code>, <code>cycle</code>, <code>enumerate</code>, <code>merge</code>, <code>range</code>, and  <code>zip</code> create, transform,
 or combine Iterables in different ways, similar to Python's itertools.</p>
@@ -97,7 +107,8 @@ or combine Iterables in different ways, similar to Python's itertools.</p>
 iterable.</p>
 
 <h2>
-<a name="mirrorsdart" class="anchor" href="#mirrorsdart"><span class="octicon octicon-link"></span></a>mirrors.dart</h2>
+<a name="quivermirrors" class="anchor" href="#quivermirrors"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.mirrors.html">quiver.mirrors</a>
+</h2>
 
 <p><code>getTypeName</code> returns the name of a Type instance.</p>
 
@@ -113,7 +124,8 @@ contain members from interfaces or superclasses.</p>
 a method on the instance. It in effect closurizes a method reflectively.</p>
 
 <h2>
-<a name="patterndart" class="anchor" href="#patterndart"><span class="octicon octicon-link"></span></a>pattern.dart</h2>
+<a name="quiverpattern" class="anchor" href="#quiverpattern"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.pattern.html">quiver.pattern</a>
+</h2>
 
 <p>pattern.dart container utilities for work with <code>Pattern</code>s and <code>RegExp</code>s.</p>
 
@@ -127,7 +139,8 @@ a method on the instance. It in effect closurizes a method reflectively.</p>
 used as a literal match inside of a RegExp.</p>
 
 <h2>
-<a name="stringsdart" class="anchor" href="#stringsdart"><span class="octicon octicon-link"></span></a>strings.dart</h2>
+<a name="quiverstrings" class="anchor" href="#quiverstrings"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.strings.html">quiver.strings</a>
+</h2>
 
 <p><code>isBlank</code> checks if a string is <code>null</code>, empty or made of whitespace characters.</p>
 
@@ -173,7 +186,8 @@ supporting a number of use-cases, including:</p>
 <p><code>loop('top', 3, 0) =&gt; 'pot'</code></p>
 
 <h2>
-<a name="timedart" class="anchor" href="#timedart"><span class="octicon octicon-link"></span></a>time.dart</h2>
+<a name="quivertime" class="anchor" href="#quivertime"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.time.html">quiver.time</a>
+</h2>
 
 <p><code>Clock</code> provides points in time relative to the current point in time, for
 example: now, 2 days ago, 4 weeks from now, etc. For tesability, use Clock
@@ -187,12 +201,14 @@ since Clock deals in DateTime which only have millisecond accuracy.</p>
 <a name="testing-libraries" class="anchor" href="#testing-libraries"><span class="octicon octicon-link"></span></a>Testing Libraries</h1>
 
 <h2>
-<a name="asynctestingdart" class="anchor" href="#asynctestingdart"><span class="octicon octicon-link"></span></a>async/testing.dart</h2>
+<a name="quiverasynctesting" class="anchor" href="#quiverasynctesting"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.async.testing.html">quiver.async.testing</a>
+</h2>
 
 <p><code>FakeTimer</code> is a Timer that captures its duration and callback for use in tests.</p>
 
 <h2>
-<a name="timetestingdart" class="anchor" href="#timetestingdart"><span class="octicon octicon-link"></span></a>time/testing.dart</h2>
+<a name="quivertimetesting" class="anchor" href="#quivertimetesting"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.time.testing.html">quiver.time.testing</a>
+</h2>
 
 <p><code>FakeStopwatch</code> is a Stopwatch that uses a provided <code>now()</code> function to get the
 current time.</p>
