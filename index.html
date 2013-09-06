@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Quiver by google</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Quiver</h1>
+          <h2>A set of utility libraries for Dart</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/google/quiver-dart/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/google/quiver-dart/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/google/quiver-dart" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="quiver" class="anchor" href="#quiver"><span class="octicon octicon-link"></span></a>Quiver</h1>
+
+<p>Quiver is a set of utility libraries for Dart that makes using many Dart
+libraries easier and more convenient, or adds additional functionality.</p>
+
+<h1>
+<a name="main-libraries" class="anchor" href="#main-libraries"><span class="octicon octicon-link"></span></a>Main Libraries</h1>
+
+<h2>
+<a name="asyncdart" class="anchor" href="#asyncdart"><span class="octicon octicon-link"></span></a>async.dart</h2>
+
+<p>Utilities for working with Futures, Streams and async computations.</p>
+
+<p><code>FutureGroup</code> is collection of Futures that signals when all its child futures
+have completed. Allows adding new Futures as long as it hasn't completed yet.
+Useful when async tasks can spwn new async tasks and you need to wait for all of
+them to complete.</p>
+
+<p><code>StreamRouter</code> splits a Stream into mulltiple streams based on a set of
+predicates.</p>
+
+<p><code>CountdownTimer</code> is a simple countdown timer that fires events in regular
+increments.</p>
+
+<p><code>doWhileAsync</code> and <code>reduceAsync</code> perform async computations on the elements of
+on Iterables, waiting for the computation to complete before processing the
+next element.</p>
+
+<p><code>CreateTimer</code> and <code>CreateTimerPeriodic</code> are typedefs that are useful for
+passing Timer factories to classes and functions, increasing the testability of
+code that depends on Timer.</p>
+
+<h2>
+<a name="cachedart" class="anchor" href="#cachedart"><span class="octicon octicon-link"></span></a>cache.dart</h2>
+
+<p><code>Cache</code> is a semi-persistent, asynchronously accessed, mapping of keys to
+values. Caches are similar to Maps, except that the cache implementation might
+store values in a remote system, so all operations are asynchronous, and caches
+might have eviction policies.</p>
+
+<p><code>MapCache</code> is a Cache implementation backed by a Map.</p>
+
+<h2>
+<a name="collectiondart" class="anchor" href="#collectiondart"><span class="octicon octicon-link"></span></a>collection.dart</h2>
+
+<p><code>Multimap</code> is an associative collection that maps keys to collections of
+values. <code>BiMap</code> is a bi-directional map and provides an inverse view, allowing
+lookup of key by value.</p>
+
+<h2>
+<a name="iodart" class="anchor" href="#iodart"><span class="octicon octicon-link"></span></a>io.dart</h2>
+
+<p><code>visitDirectory</code> is a recursive directory lister that conditionally recurses
+into sub-directories based on the result of a handler function.</p>
+
+<h2>
+<a name="iterablesdart" class="anchor" href="#iterablesdart"><span class="octicon octicon-link"></span></a>iterables.dart</h2>
+
+<p><code>count</code>, <code>cycle</code>, <code>enumerate</code>, <code>merge</code>, <code>range</code>, and  <code>zip</code> create, transform,
+or combine Iterables in different ways, similar to Python's itertools.</p>
+
+<p><code>min</code>, <code>max</code>, and <code>extent</code> retreive the minimum and maximum elements from an
+iterable.</p>
+
+<h2>
+<a name="mirrorsdart" class="anchor" href="#mirrorsdart"><span class="octicon octicon-link"></span></a>mirrors.dart</h2>
+
+<p><code>getTypeName</code> returns the name of a Type instance.</p>
+
+<p><code>implements</code> and <code>classImplements</code> determine if an instance or ClassMirror,
+respectively, implement the interface represented by a Type instance. They
+implement the behavior of <code>is</code> for mirrors, except for generics.</p>
+
+<p><code>getMemberMirror</code> searches though a ClassMirror and its class hierarchy for
+a member. This makes up for the fact that <code>ClassMirror.members</code> doesn't
+contain members from interfaces or superclasses.</p>
+
+<p><code>Method</code> wraps an InstanceMirror and Symbol to create a callable that invokes
+a method on the instance. It in effect closurizes a method reflectively.</p>
+
+<h2>
+<a name="patterndart" class="anchor" href="#patterndart"><span class="octicon octicon-link"></span></a>pattern.dart</h2>
+
+<p>pattern.dart container utilities for work with <code>Pattern</code>s and <code>RegExp</code>s.</p>
+
+<p><code>Glob</code> implements glob patterns that are commonly used with filesystem paths.</p>
+
+<p><code>matchesAny</code> combines multiple Patterns into one, and allows for exclusions.</p>
+
+<p><code>matchesFull</code> returns true if a Pattern matches an entire String.</p>
+
+<p><code>escapeRegex</code> escapes special regex characters in a String so that it can be
+used as a literal match inside of a RegExp.</p>
+
+<h2>
+<a name="stringsdart" class="anchor" href="#stringsdart"><span class="octicon octicon-link"></span></a>strings.dart</h2>
+
+<p><code>isBlank</code> checks if a string is <code>null</code>, empty or made of whitespace characters.</p>
+
+<p><code>flip</code> flips the order of characters in a string.</p>
+
+<p><code>nullToEmpty</code> turns <code>null</code> to empty string, and returns non-empty strings
+unchanged.</p>
+
+<p><code>emptyToNull</code> turns empty string to <code>null</code>, and returns non-empty strings
+unchanged.</p>
+
+<p><code>repeat</code> concatenates a string to itself a given number of times, for example:</p>
+
+<p><code>repeat('la ', 3) =&gt; 'la la la '</code></p>
+
+<p>It can also repeat in reverse, for example:</p>
+
+<p><code>repeat(' og', -3) =&gt; 'go go go '</code></p>
+
+<p><code>loop</code> allows you to loop through characters in a string starting and ending at
+arbitrary indices. Out of bounds indices allow you to wrap around the string,
+supporting a number of use-cases, including:</p>
+
+<h6>
+<a name="rotating" class="anchor" href="#rotating"><span class="octicon octicon-link"></span></a>Rotating</h6>
+
+<p><code>loop('lohel', -3, 2) =&gt; 'hello'</code></p>
+
+<h6>
+<a name="repeating" class="anchor" href="#repeating"><span class="octicon octicon-link"></span></a>Repeating</h6>
+
+<p>Like <code>repeat</code>, but with better character-level control, e.g.:
+<code>loop('la ', 0, 8) =&gt; 'la la la'  // no tailing space</code></p>
+
+<h6>
+<a name="tailing" class="anchor" href="#tailing"><span class="octicon octicon-link"></span></a>Tailing</h6>
+
+<p><code>loop('/path/to/some/file.txt', -3) =&gt; 'txt'</code></p>
+
+<h6>
+<a name="reversing" class="anchor" href="#reversing"><span class="octicon octicon-link"></span></a>Reversing</h6>
+
+<p><code>loop('top', 3, 0) =&gt; 'pot'</code></p>
+
+<h2>
+<a name="timedart" class="anchor" href="#timedart"><span class="octicon octicon-link"></span></a>time.dart</h2>
+
+<p><code>Clock</code> provides points in time relative to the current point in time, for
+example: now, 2 days ago, 4 weeks from now, etc. For tesability, use Clock
+rather than other ways of accessing time, like <code>new DateTime()</code>, so that you
+can use a fake time function in your tests to control time.</p>
+
+<p><code>Now</code> is a typedef for functions that return the current time in microseconds,
+since Clock deals in DateTime which only have millisecond accuracy.</p>
+
+<h1>
+<a name="testing-libraries" class="anchor" href="#testing-libraries"><span class="octicon octicon-link"></span></a>Testing Libraries</h1>
+
+<h2>
+<a name="asynctestingdart" class="anchor" href="#asynctestingdart"><span class="octicon octicon-link"></span></a>async/testing.dart</h2>
+
+<p><code>FakeTimer</code> is a Timer that captures its duration and callback for use in tests.</p>
+
+<h2>
+<a name="timetestingdart" class="anchor" href="#timetestingdart"><span class="octicon octicon-link"></span></a>time/testing.dart</h2>
+
+<p><code>FakeStopwatch</code> is a Stopwatch that uses a provided <code>now()</code> function to get the
+current time.</p>
+        </section>
+
+        <footer>
+          Quiver is maintained by <a href="https://github.com/google">google</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
