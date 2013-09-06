@@ -1,0 +1,143 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Method class / quiver.mirrors Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="quiver.mirrors" data-type="Method">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../quiver.mirrors.html">quiver.mirrors</a> &rsaquo; <a href="../quiver.mirrors/Method.html">Method</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Method</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Closurzes a method reflectively.</p>
+<pre class="source">
+class Method { // implements Function
+ final InstanceMirror mirror;
+ final Symbol symbol;
+
+ Method(this.mirror, this.symbol);
+
+ dynamic noSuchMethod(Invocation i) {
+   if (i.isMethod &amp;&amp; i.memberName == const Symbol('call')) {
+     if (i.namedArguments != null &amp;&amp; i.namedArguments.isNotEmpty) {
+       // this will fail until named argument support is implemented
+       return mirror.invoke(symbol, i.positionalArguments, i.namedArguments)
+           .reflectee;
+     }
+     return mirror.invoke(symbol, i.positionalArguments).reflectee;
+   }
+   return super.noSuchMethod(i);
+ }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>Method</strong>(<a href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html">InstanceMirror</a> mirror, <a href="http://api.dartlang.org/dart_core/Symbol.html">Symbol</a> symbol) <a class="anchor-link" href="#"
+              title="Permalink to Method.Method">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Creates a new <a class="crossref" href="../dart_core/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
+only.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+Method(this.mirror, this.symbol);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="mirror">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html">InstanceMirror</a>         <strong>mirror</strong> <a class="anchor-link"
+            href="#mirror"
+            title="Permalink to Method.mirror">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final InstanceMirror mirror
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="symbol">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/Symbol.html">Symbol</a>         <strong>symbol</strong> <a class="anchor-link"
+            href="#symbol"
+            title="Permalink to Method.symbol">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final Symbol symbol
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="noSuchMethod">
+<button class="show-code">Code</button>
+dynamic <strong>noSuchMethod</strong>(<a href="http://api.dartlang.org/dart_core/Invocation.html">Invocation</a> i) <a class="anchor-link" href="#noSuchMethod"
+              title="Permalink to Method.noSuchMethod">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p><a class="crossref" href="../quiver.mirrors/Method.html#noSuchMethod">noSuchMethod</a> is invoked when users invoke a non-existant method
+on an object. The name of the method and the arguments of the
+invocation are passed to <a class="crossref" href="../quiver.mirrors/Method.html#noSuchMethod">noSuchMethod</a> in an <a class="crossref" href="../dart_core/Invocation.html">Invocation</a>.
+If <a class="crossref" href="../quiver.mirrors/Method.html#noSuchMethod">noSuchMethod</a> returns a value, that value becomes the result of
+the original invocation.</p>
+<p>The default behavior of <a class="crossref" href="../quiver.mirrors/Method.html#noSuchMethod">noSuchMethod</a> is to throw a
+<code>noSuchMethodError</code>.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+dynamic noSuchMethod(Invocation i) {
+ if (i.isMethod &amp;&amp; i.memberName == const Symbol('call')) {
+   if (i.namedArguments != null &amp;&amp; i.namedArguments.isNotEmpty) {
+     // this will fail until named argument support is implemented
+     return mirror.invoke(symbol, i.positionalArguments, i.namedArguments)
+         .reflectee;
+   }
+   return mirror.invoke(symbol, i.positionalArguments).reflectee;
+ }
+ return super.noSuchMethod(i);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:37.992</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

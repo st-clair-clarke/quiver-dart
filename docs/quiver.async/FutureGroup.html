@@ -1,0 +1,184 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>FutureGroup&lt;E&gt; class / quiver.async Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="quiver.async" data-type="FutureGroup&amp;lt;E&amp;gt;">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../quiver.async.html">quiver.async</a> &rsaquo; <a href="../quiver.async/FutureGroup.html">FutureGroup&lt;E&gt;</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>FutureGroup&lt;E&gt;</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>A collection of <a class="crossref" href="../dart_async/Future.html">Future</a>s that signals when all added Futures complete. New
+Futures can be added to the group as long as it hasn't completed.</p>
+<p>FutureGroup is useful for managing a set of async tasks that may spawn new
+async tasks as they execute.</p>
+<pre class="source">
+class FutureGroup&lt;E&gt; {
+ static const _FINISHED = -1;
+
+ int _pending = 0;
+ Future _failedTask;
+ final Completer&lt;List&gt; _completer = new Completer&lt;List&gt;();
+ final List results = [];
+
+ /** Gets the task that failed, if any. */
+ Future get failedTask =&gt; _failedTask;
+
+ /**
+  * Wait for [task] to complete.
+  *
+  * If this group has already been marked as completed, a [StateError] will be
+  * thrown.
+  *
+  * If this group has a [failedTask], new tasks will be ignored, because the
+  * error has already been signaled.
+  */
+ void add(Future task) {
+   if (_failedTask != null) return;
+   if (_pending == _FINISHED) throw new StateError("Future already completed");
+
+   _pending++;
+   var i = results.length;
+   results.add(null);
+   task.then((res) {
+     results[i] = res;
+     if (_failedTask != null) return;
+     _pending--;
+     if (_pending == 0) {
+       _pending = _FINISHED;
+       _completer.complete(results);
+     }
+   }, onError: (e) {
+     if (_failedTask != null) return;
+     _failedTask = task;
+     _completer.completeError(e, getAttachedStackTrace(e));
+   });
+ }
+
+ /**
+  * A Future that complets with a List of the values from all the added
+  * tasks, when they have all completed.
+  *
+  * If any task fails, this Future will receive the error. Only the first
+  * error will be sent to the Future.
+  */
+ Future&lt;List&lt;E&gt;&gt; get future =&gt; _completer.future;
+}
+</pre>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="failedTask">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>         <strong>failedTask</strong> <a class="anchor-link"
+            href="#failedTask"
+            title="Permalink to FutureGroup&lt;E&gt;.failedTask">#</a>
+        </h4>
+        <div class="doc">
+<p>Gets the task that failed, if any. </p>
+<pre class="source">
+Future get failedTask =&gt; _failedTask;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="future">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.async/FutureGroup.html">E</a>&gt;&gt;         <strong>future</strong> <a class="anchor-link"
+            href="#future"
+            title="Permalink to FutureGroup&lt;E&gt;.future">#</a>
+        </h4>
+        <div class="doc">
+<p>A Future that complets with a List of the values from all the added
+tasks, when they have all completed.</p>
+<p>If any task fails, this Future will receive the error. Only the first
+error will be sent to the Future.</p>
+<pre class="source">
+Future&lt;List&lt;E&gt;&gt; get future =&gt; _completer.future;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="results">
+<button class="show-code">Code</button>
+final <a href="http://api.dartlang.org/dart_core/List.html">List</a>         <strong>results</strong> <a class="anchor-link"
+            href="#results"
+            title="Permalink to FutureGroup&lt;E&gt;.results">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+final List results = []
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="add">
+<button class="show-code">Code</button>
+void <strong>add</strong>(<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> task) <a class="anchor-link" href="#add"
+              title="Permalink to FutureGroup&lt;E&gt;.add">#</a></h4>
+<div class="doc">
+<p>Wait for 
+<span class="param">task</span> to complete.</p>
+<p>If this group has already been marked as completed, a <a class="crossref" href="../dart_core/StateError.html">StateError</a> will be
+thrown.</p>
+<p>If this group has a <a class="crossref" href="../quiver.async/FutureGroup.html#failedTask">failedTask</a>, new tasks will be ignored, because the
+error has already been signaled.</p>
+<pre class="source">
+void add(Future task) {
+ if (_failedTask != null) return;
+ if (_pending == _FINISHED) throw new StateError("Future already completed");
+
+ _pending++;
+ var i = results.length;
+ results.add(null);
+ task.then((res) {
+   results[i] = res;
+   if (_failedTask != null) return;
+   _pending--;
+   if (_pending == 0) {
+     _pending = _FINISHED;
+     _completer.complete(results);
+   }
+ }, onError: (e) {
+   if (_failedTask != null) return;
+   _failedTask = task;
+   _completer.completeError(e, getAttachedStackTrace(e));
+ });
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:37.415</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

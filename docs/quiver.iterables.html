@@ -1,0 +1,246 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>quiver.iterables Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        </head>
+        <body data-library="quiver.iterables">
+        <div class="page">
+        <div class="header">
+          <a href="index.html"><div class="logo"></div></a>
+          <a href="index.html">Dart Documentation</a>
+         &rsaquo; <a href="quiver.iterables.html">quiver.iterables</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+<h2><strong>quiver.iterables</strong> library</h2>
+<div>
+<h3>Functions</h3>
+<div class="method"><h4 id="zip">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&gt; <strong>zip</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&gt; iterables) <a class="anchor-link" href="#zip"
+              title="Permalink to zip">#</a></h4>
+<div class="doc">
+<p>Returns an <a class="crossref" href="dart_core/Iterable.html">Iterable</a> of <a class="crossref" href="dart_core/List.html">List</a>s where the nth element in the returned
+iterable contains the nth element from every Iterable in 
+<span class="param">iterables</span>. The
+returned Iterable is as long as the shortest Iterable in the argument. If
+
+<span class="param">iterables</span> is empty, it returns an empty list.</p>
+<pre class="source">
+Iterable&lt;List&gt; zip(Iterable&lt;Iterable&gt; iterables) =&gt;
+   (iterables.isEmpty) ? const [] : new _Zip(iterables);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="range">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/num.html">num</a>&gt; <strong>range</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> start_or_stop, [<a href="http://api.dartlang.org/dart_core/num.html">num</a> stop, <a href="http://api.dartlang.org/dart_core/num.html">num</a> step]) <a class="anchor-link" href="#range"
+              title="Permalink to range">#</a></h4>
+<div class="doc">
+<p>Returns an <a class="crossref" href="dart_core/Iterable.html">Iterable</a> sequence of <a class="crossref" href="dart_core/num.html">num</a>s.</p>
+<p>If only one argument is provided, [start_or_stop] is the upper bound for the
+sequence. If two or more arguments are provided, 
+<span class="param">stop</span> is the upper bound.</p>
+<p>The sequence starts at 0 if one argument is provided, or [start_or_stop] if
+two or more arguments are provided. The sequence increments by 1, or 
+<span class="param">step</span>
+if provided. 
+<span class="param">step</span> can be negative, in which case the sequence counts down
+from the starting point and 
+<span class="param">stop</span> must be less than the starting point so
+that it becomes the lower bound.</p>
+<pre class="source">
+Iterable&lt;num&gt; range(num start_or_stop, [num stop, num step]) =&gt;
+   new _Range(start_or_stop, stop, step);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="extent">
+<button class="show-code">Code</button>
+<a href="quiver.iterables/Extent.html">Extent</a> <strong>extent</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> i, [<a href="http://api.dartlang.org/dart_core/Comparator.html">Comparator</a> compare = Comparable.compare]) <a class="anchor-link" href="#extent"
+              title="Permalink to extent">#</a></h4>
+<div class="doc">
+<p>Returns the minimum and maximum values in 
+<span class="param">i</span>, according to the order
+specified by the 
+<span class="param">compare</span> function, in an <a class="crossref" href="quiver.iterables/Extent.html">Extent</a> instance.</p>
+<p>The compare function must act as a <a class="crossref" href="dart_core/Comparator.html">Comparator</a>. If 
+<span class="param">compare</span> is omitted,
+<a class="crossref" href="dart_core/Comparable.html#compare">Comparable.compare</a> is used. If 
+<span class="param">i</span> contains null elements, an exception
+will be thrown.</p>
+<p>If 
+<span class="param">i</span> is empty, an <a class="crossref" href="quiver.iterables/Extent.html">Extent</a> is returned with <code>null</code> values for <code>min</code> and
+<code>max</code>, since there are no valid values for them.</p>
+<pre class="source">
+Extent extent(Iterable i, [Comparator compare = Comparable.compare]) {
+ var iterator = i.iterator;
+ var hasNext = iterator.moveNext();
+ if (!hasNext) return new Extent(null, null);
+ var max = iterator.current;
+ var min = iterator.current;
+ while (iterator.moveNext()) {
+   if (compare(max, iterator.current) &gt; 0) max = iterator.current;
+   if (compare(min, iterator.current) &lt; 0) min= iterator.current;
+ }
+ return new Extent(min, max);
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="min">
+<button class="show-code">Code</button>
+dynamic <strong>min</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> i, [<a href="http://api.dartlang.org/dart_core/Comparator.html">Comparator</a> compare = Comparable.compare]) <a class="anchor-link" href="#min"
+              title="Permalink to min">#</a></h4>
+<div class="doc">
+<p>Returns the minimum value in 
+<span class="param">i</span>, according to the order specified by the
+
+<span class="param">compare</span> function.</p>
+<p>The compare function must act as a <a class="crossref" href="dart_core/Comparator.html">Comparator</a>. If 
+<span class="param">compare</span> is omitted,
+<a class="crossref" href="dart_core/Comparable.html#compare">Comparable.compare</a> is used. If 
+<span class="param">i</span> contains null elements, an exception
+will be thrown.</p>
+<pre class="source">
+dynamic min(Iterable i, [Comparator compare = Comparable.compare]) =&gt;
+   i.reduce((a, b) =&gt; compare(a, b) &lt; 0 ? a : b);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="max">
+<button class="show-code">Code</button>
+dynamic <strong>max</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> i, [<a href="http://api.dartlang.org/dart_core/Comparator.html">Comparator</a> compare = Comparable.compare]) <a class="anchor-link" href="#max"
+              title="Permalink to max">#</a></h4>
+<div class="doc">
+<p>Returns the maximum value in 
+<span class="param">i</span>, according to the order specified by the
+
+<span class="param">compare</span> function.</p>
+<p>The compare function must act as a <a class="crossref" href="dart_core/Comparator.html">Comparator</a>. If 
+<span class="param">compare</span> is omitted,
+<a class="crossref" href="dart_core/Comparable.html#compare">Comparable.compare</a> is used. If 
+<span class="param">i</span> contains null elements, an exception
+will be thrown.</p>
+<pre class="source">
+dynamic max(Iterable i, [Comparator compare = Comparable.compare]) =&gt;
+   i.reduce((a, b) =&gt; compare(a, b) &gt; 0 ? a : b);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="merge">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>merge</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&gt; iterables, [<a href="http://api.dartlang.org/dart_core/Comparator.html">Comparator</a> compare = Comparable.compare]) <a class="anchor-link" href="#merge"
+              title="Permalink to merge">#</a></h4>
+<div class="doc">
+<p>Returns the result of merging an <a class="crossref" href="dart_core/Iterable.html">Iterable</a> of <a class="crossref" href="dart_core/Iterable.html">Iterable</a>s, according to
+the order specified by the 
+<span class="param">compare</span> function. This function assumes the
+provided iterables are already sorted according to the provided 
+<span class="param">compare</span>
+function. It will not check for this condition or sort the iterables.</p>
+<p>The compare function must act as a <a class="crossref" href="dart_core/Comparator.html">Comparator</a>. If 
+<span class="param">compare</span> is omitted,
+<a class="crossref" href="dart_core/Comparable.html#compare">Comparable.compare</a> is used.</p>
+<p>If any of the 
+<span class="param">iterables</span> contain null elements, an exception will be
+thrown.</p>
+<pre class="source">
+Iterable merge(Iterable&lt;Iterable&gt; iterables,
+              [Comparator compare = Comparable.compare]) =&gt;
+   (iterables.isEmpty) ? const [] : new _Merge(iterables, compare);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="enumerate">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="quiver.iterables/IndexedValue.html">IndexedValue</a>&gt; <strong>enumerate</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> iterable) <a class="anchor-link" href="#enumerate"
+              title="Permalink to enumerate">#</a></h4>
+<div class="doc">
+<p>Returns an <a class="crossref" href="dart_core/Iterable.html">Iterable</a> of <a class="crossref" href="quiver.iterables/IndexedValue.html">IndexedValue</a>s where the nth value holds the nth
+element of 
+<span class="param">iterable</span> and its index.</p>
+<pre class="source">
+Iterable&lt;IndexedValue&gt; enumerate(Iterable iterable) {
+ int i = 0;
+ return iterable.map((e) =&gt; new IndexedValue(i++, e));
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="cycle">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>cycle</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> iterable) <a class="anchor-link" href="#cycle"
+              title="Permalink to cycle">#</a></h4>
+<div class="doc">
+<p>Returns an <a class="crossref" href="dart_core/Iterable.html">Iterable</a> that infinitely cycles through the elements of
+
+<span class="param">iterable</span>. If 
+<span class="param">iterable</span> is empty, the returned Iterable will also be empty.</p>
+<pre class="source">
+Iterable cycle(Iterable iterable) =&gt; new _Cycle(iterable);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="count">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/num.html">num</a>&gt; <strong>count</strong>([<a href="http://api.dartlang.org/dart_core/num.html">num</a> start = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> step = 1]) <a class="anchor-link" href="#count"
+              title="Permalink to count">#</a></h4>
+<div class="doc">
+<p>Returns an infinite <a class="crossref" href="dart_core/Iterable.html">Iterable</a> of <a class="crossref" href="dart_core/num.html">num</a>s, starting from 
+<span class="param">start</span> and
+increasing by 
+<span class="param">step</span>.</p>
+<pre class="source">
+Iterable&lt;num&gt; count([num start = 0, num step = 1]) =&gt; new _Count(start, step);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Abstract Classes</h3>
+          <div class="type">
+          <h4>
+            <a href="quiver.iterables/InfiniteIterable.html"><strong>InfiniteIterable&lt;T&gt;</strong></a>
+          </h4>
+          </div>
+          
+</div>
+<div>
+<h3>Classes</h3>
+          <div class="type">
+          <h4>
+            <a href="quiver.iterables/Extent.html"><strong>Extent</strong></a>
+          </h4>
+          </div>
+          
+          <div class="type">
+          <h4>
+            <a href="quiver.iterables/IndexedValue.html"><strong>IndexedValue&lt;V&gt;</strong></a>
+          </h4>
+          </div>
+          
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:37.945</div>
+        </div>
+        <script async src="client-live-nav.js"></script>
+        </body></html>
+        

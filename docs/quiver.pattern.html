@@ -1,0 +1,102 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>quiver.pattern Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        </head>
+        <body data-library="quiver.pattern">
+        <div class="page">
+        <div class="header">
+          <a href="index.html"><div class="logo"></div></a>
+          <a href="index.html">Dart Documentation</a>
+         &rsaquo; <a href="quiver.pattern.html">quiver.pattern</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+<h2><strong>quiver.pattern</strong> library</h2>
+<div class="doc"><p>This library contains utilities for working with <a class="crossref" href="dart_core/RegExp.html">RegExp</a>s and other
+<a class="crossref" href="dart_core/Pattern.html">Pattern</a>s.</p></div>
+<div>
+<h3>Functions</h3>
+<div class="method"><h4 id="matchesFull">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>matchesFull</strong>(<a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a> pattern, <a href="http://api.dartlang.org/dart_core/String.html">String</a> str) <a class="anchor-link" href="#matchesFull"
+              title="Permalink to matchesFull">#</a></h4>
+<div class="doc">
+<p>Returns true if 
+<span class="param">pattern</span> has a single match in 
+<span class="param">str</span> that matches the whole
+string, not a substring.</p>
+<pre class="source">
+bool matchesFull(Pattern pattern, String str) {
+ var match = pattern.matchAsPrefix(str);
+ return match != null &amp;&amp; match.end == str.length;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="matchAny">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a> <strong>matchAny</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a>&gt; include, {<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a>&gt; exclude}) <a class="anchor-link" href="#matchAny"
+              title="Permalink to matchAny">#</a></h4>
+<div class="doc">
+<p>Returns a <a class="crossref" href="dart_core/Pattern.html">Pattern</a> that matches against every pattern in 
+<span class="param">include</span> and
+returns all the matches. If the input string matches against any pattern in
+
+<span class="param">exclude</span> no matches are returned.</p>
+<pre class="source">
+Pattern matchAny(Iterable&lt;Pattern&gt; include, {Iterable&lt;Pattern&gt; exclude}) =&gt;
+   new _MultiPattern(include, exclude: exclude);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="escapeRegex">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>escapeRegex</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> str) <a class="anchor-link" href="#escapeRegex"
+              title="Permalink to escapeRegex">#</a></h4>
+<div class="doc">
+<p>Escapes special regex characters in 
+<span class="param">str</span> so that it can be used as a
+literal match inside of a <a class="crossref" href="dart_core/RegExp.html">RegExp</a>.</p>
+<p>The special characters are: \ ^ $ . | + <code> </code> ( ) { }
+as defined here: http://ecma-international.org/ecma-262/5.1/#sec-15.10</p>
+<pre class="source">
+String escapeRegex(String str) =&gt; str.splitMapJoin(_specialChars,
+   onMatch: (Match m) =&gt; '\\${m.group(0)}',
+   onNonMatch: (s) =&gt; s);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Classes</h3>
+          <div class="type">
+          <h4>
+            <a href="quiver.pattern/Glob.html"><strong>Glob</strong></a>
+          </h4>
+          </div>
+          
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:37.995</div>
+        </div>
+        <script async src="client-live-nav.js"></script>
+        </body></html>
+        

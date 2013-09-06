@@ -1,0 +1,101 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Cache&lt;K, V&gt; abstract class / quiver.cache Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="quiver.cache" data-type="Cache&amp;lt;K, V&amp;gt;">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../quiver.cache.html">quiver.cache</a> &rsaquo; <a href="../quiver.cache/Cache.html">Cache&lt;K, V&gt;</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>Cache&lt;K, V&gt;</strong>
+          abstract class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>A semi-persistent mapping of keys to values.</p>
+<p>All access to a Cache is asynchronous because many implementations will store
+their entries in remote systems, isolates, or otherwise have to do async IO
+to read and write.</p>
+<pre class="source">
+abstract class Cache&lt;K, V&gt; {
+
+ /**
+  * Returns the value associated with [key].
+  */
+ Future&lt;V&gt; get(K key, {Loader&lt;K&gt; ifAbsent});
+
+ /**
+  * Sets the value associated with [key]. The Future completes with null when
+  * the operation is complete.
+  */
+ Future set(K key, V value);
+
+ /**
+  * Removes the value associated with [key]. The Future completes with null
+  * when the operation is complete.
+  */
+ Future invalidate(K key);
+}
+</pre>
+</div>
+<h3>Subclasses</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../quiver.cache/MapCache.html">MapCache&lt;K, V&gt;</a></span></p>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="get">
+abstract <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.cache/Cache.html">V</a>&gt; <strong>get</strong>(<a href="../quiver.cache/Cache.html">K</a> key, {<a href="../quiver.cache/Loader.html">Loader</a> ifAbsent}) <a class="anchor-link" href="#get"
+              title="Permalink to Cache&lt;K, V&gt;.get">#</a></h4>
+<div class="doc">
+<p>Returns the value associated with 
+<span class="param">key</span>.</p>
+</div>
+</div>
+<div class="method"><h4 id="invalidate">
+abstract <a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>invalidate</strong>(<a href="../quiver.cache/Cache.html">K</a> key) <a class="anchor-link" href="#invalidate"
+              title="Permalink to Cache&lt;K, V&gt;.invalidate">#</a></h4>
+<div class="doc">
+<p>Removes the value associated with 
+<span class="param">key</span>. The Future completes with null
+when the operation is complete.</p>
+</div>
+</div>
+<div class="method"><h4 id="set">
+abstract <a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>set</strong>(<a href="../quiver.cache/Cache.html">K</a> key, <a href="../quiver.cache/Cache.html">V</a> value) <a class="anchor-link" href="#set"
+              title="Permalink to Cache&lt;K, V&gt;.set">#</a></h4>
+<div class="doc">
+<p>Sets the value associated with 
+<span class="param">key</span>. The Future completes with null when
+the operation is complete.</p>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:37.546</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

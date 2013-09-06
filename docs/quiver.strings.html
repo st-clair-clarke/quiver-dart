@@ -1,0 +1,187 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>quiver.strings Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+        
+        </head>
+        <body data-library="quiver.strings">
+        <div class="page">
+        <div class="header">
+          <a href="index.html"><div class="logo"></div></a>
+          <a href="index.html">Dart Documentation</a>
+         &rsaquo; <a href="quiver.strings.html">quiver.strings</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+<h2><strong>quiver.strings</strong> library</h2>
+<div>
+<h3>Functions</h3>
+<div class="method"><h4 id="loop">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>loop</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s, <a href="http://api.dartlang.org/dart_core/int.html">int</a> from, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> to]) <a class="anchor-link" href="#loop"
+              title="Permalink to loop">#</a></h4>
+<div class="doc">
+<p>Loops over 
+<span class="param">s</span> and returns traversed characters. Takes arbitrary 
+<span class="param">from</span> and
+
+<span class="param">to</span> indices. Works as a substitute for <a class="crossref" href="dart_core/String.html#substring">String.substring</a>, except it never
+throws <a class="crossref" href="dart_core/RangeError.html">RangeError</a>. Supports negative indices. Think of an index as a
+coordinate in an infinite in both directions vector filled with repeating
+string 
+<span class="param">s</span>, whose 0-th coordinate coincides with the 0-th character in 
+<span class="param">s</span>.
+Then <a class="crossref" href="quiver.strings.html#loop">loop</a> returns the sub-vector defined by the interval (
+<span class="param">from</span>, 
+<span class="param">to</span>).
+
+<span class="param">from</span> is inclusive. 
+<span class="param">to</span> is exclusive.</p>
+<p>This method throws exceptions on <code>null</code> and empty strings.</p>
+<p>If 
+<span class="param">to</span> is omitted or is <code>null</code> the traversing ends at the end of the loop.</p>
+<p>If 
+<span class="param">to</span> &lt; 
+<span class="param">from</span>, traverses 
+<span class="param">s</span> in the opposite direction.</p>
+<p>For example:</p>
+<p>loop('Hello, World!', 7) == 'World!'
+loop('ab', 6) == 'ababab'
+loop('test.txt', -3) == 'txt'
+loop('ldwor', -3, 2) == 'world'</p>
+<pre class="source">
+String loop(String s, int from, [int to]) {
+ if (s == null || s == '') {
+   throw new ArgumentError('Input string cannot be null or empty');
+ }
+ if (to != null &amp;&amp; to &lt; from) {
+   return loop(flip(s), -from, -to);
+ }
+ int len = s.length;
+ int leftFrag = from &gt;= 0 ? from ~/ len : ((from - len) ~/ len);
+ if (to == null) {
+   to = (leftFrag + 1) * len;
+ }
+ int rightFrag = to - 1 &gt;= 0 ? to ~/ len : ((to - len) ~/ len);
+ int fragOffset = rightFrag - leftFrag - 1;
+ if (fragOffset == -1) {
+   return s.substring(from - leftFrag * len, to - rightFrag * len);
+ }
+ StringBuffer sink = new StringBuffer(s.substring(from - leftFrag * len));
+ _repeat(sink, s, fragOffset);
+ sink.write(s.substring(0, to - rightFrag * len));
+ return sink.toString();
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="repeat">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>repeat</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s, <a href="http://api.dartlang.org/dart_core/int.html">int</a> times) <a class="anchor-link" href="#repeat"
+              title="Permalink to repeat">#</a></h4>
+<div class="doc">
+<p>Concatenates 
+<span class="param">s</span> to itself a given number of 
+<span class="param">times</span>. Empty and null
+strings will always result in empty and null strings respectively no matter
+how many 
+<span class="param">times</span> they are <a class="crossref" href="quiver.strings.html#repeat">repeat</a>ed.</p>
+<p>If 
+<span class="param">times</span> is negative, returns the <a class="crossref" href="quiver.strings.html#flip">flip</a>ped string repeated given number
+of 
+<span class="param">times</span>.</p>
+<pre class="source">
+String repeat(String s, int times) {
+ if (s == null || s == '') return s;
+ if (times &lt; 0) {
+   return repeat(flip(s), -times);
+ }
+ StringBuffer sink = new StringBuffer();
+ _repeat(sink, s, times);
+ return sink.toString();
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="emptyToNull">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>emptyToNull</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s) <a class="anchor-link" href="#emptyToNull"
+              title="Permalink to emptyToNull">#</a></h4>
+<div class="doc">
+<p>If 
+<span class="param">s</span> is an empty string returns <code>null</code>, otherwise returns 
+<span class="param">s</span> as is.</p>
+<pre class="source">
+String emptyToNull(String s) =&gt; s == '' ? null : s;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="nullToEmpty">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>nullToEmpty</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s) <a class="anchor-link" href="#nullToEmpty"
+              title="Permalink to nullToEmpty">#</a></h4>
+<div class="doc">
+<p>If 
+<span class="param">s</span> is <code>null</code> returns empty string, otherwise returns 
+<span class="param">s</span> as is.</p>
+<pre class="source">
+String nullToEmpty(String s) =&gt; s == null ? '' : s;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="flip">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>flip</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s) <a class="anchor-link" href="#flip"
+              title="Permalink to flip">#</a></h4>
+<div class="doc">
+<p>Returns a string with characters from the given 
+<span class="param">s</span> in reverse order.</p>
+<pre class="source">
+String flip(String s) {
+ if (s == null || s == '') return s;
+ StringBuffer sb = new StringBuffer();
+ var runes = s.runes;
+ for (int i = runes.length - 1; i &gt;= 0; i--) {
+   sb.writeCharCode(runes.elementAt(i));
+ }
+ return sb.toString();
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isBlank">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>isBlank</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> s) <a class="anchor-link" href="#isBlank"
+              title="Permalink to isBlank">#</a></h4>
+<div class="doc">
+<p>Returns <code>true</code> if 
+<span class="param">s</span> is either null, empty or is solely made of whitespace
+characters (as defined by <a class="crossref" href="dart_core/String.html#trim">String.trim</a>.</p>
+<pre class="source">
+bool isBlank(String s) =&gt; s == null || s.trim().isEmpty;
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-09-05 18:15:38.014</div>
+        </div>
+        <script async src="client-live-nav.js"></script>
+        </body></html>
+        
