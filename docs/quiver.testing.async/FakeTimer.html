@@ -2,19 +2,19 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>FakeTimer class / quiver.async.testing Library / Dart Documentation</title>
+        <title>FakeTimer class / quiver.testing.async Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="../favicon.ico">
         
         </head>
-        <body data-library="quiver.async.testing" data-type="FakeTimer">
+        <body data-library="quiver.testing.async" data-type="FakeTimer">
         <div class="page">
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../quiver.async.testing.html">quiver.async.testing</a> &rsaquo; <a href="../quiver.async.testing/FakeTimer.html">FakeTimer</a>        <div id="search-box">
+         &rsaquo; <a href="../quiver.testing.async.html">quiver.testing.async</a> &rsaquo; <a href="../quiver.testing.async/FakeTimer.html">FakeTimer</a>        <div id="search-box">
           <input type="search" name="q" id="q" autocomplete="off"
               class="search-input" placeholder="Search API">
         </div>
@@ -83,7 +83,7 @@ var callback
 </div>
 <div class="field"><h4 id="duration">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a>         <strong>duration</strong> <a class="anchor-link"
+Duration         <strong>duration</strong> <a class="anchor-link"
             href="#duration"
             title="Permalink to FakeTimer.duration">#</a>
         </h4>
@@ -95,7 +95,7 @@ Duration duration
 </div>
 <div class="field"><h4 id="isActive">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isActive</strong> <a class="anchor-link"
+bool         <strong>isActive</strong> <a class="anchor-link"
             href="#isActive"
             title="Permalink to FakeTimer.isActive">#</a>
         </h4>
@@ -105,7 +105,7 @@ Duration duration
 <p>A non-periodic timer is active if the callback has not been executed,
 and the timer has not been canceled.</p>
 <p>A periodic timer is active if it has not been canceled.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_async/Timer.html">Timer</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Timer </div></div>
 <pre class="source">
 bool isActive = true
 </pre>
@@ -133,7 +133,7 @@ void <strong>cancel</strong>() <a class="anchor-link" href="#cancel"
 <div class="doc">
 <div class="inherited">
 <p>Cancels the timer.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_async/Timer.html">Timer</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Timer </div></div>
 <pre class="source">
 void cancel() {
  if (onCancel != null) onCancel();
@@ -143,7 +143,7 @@ void cancel() {
 </div>
 <div class="method"><h4 id="create">
 <button class="show-code">Code</button>
-<a href="../quiver.async.testing/FakeTimer.html">FakeTimer</a> <strong>create</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration, callback) <a class="anchor-link" href="#create"
+<a href="../quiver.testing.async/FakeTimer.html">FakeTimer</a> <strong>create</strong>(Duration duration, callback) <a class="anchor-link" href="#create"
               title="Permalink to FakeTimer.create">#</a></h4>
 <div class="doc">
 <p>Sets this timers 
@@ -151,7 +151,7 @@ void cancel() {
 <span class="param">callback</span> and returns <code>this</code>.</p>
 <p>This method is usable as a <code>CreateTimer</code> or <code>CreateTimerPeriodic</code>
 function. In tests, construct a FakeTimer so that you have a refernece to
-it, then pass <a class="crossref" href="../quiver.async.testing/FakeTimer.html#create">create</a> to the function or class under test.</p>
+it, then pass <a class="crossref" href="../quiver.testing.async/FakeTimer.html#create">create</a> to the function or class under test.</p>
 <pre class="source">
 FakeTimer create(Duration duration, callback) {
  if (this.duration != null) {
@@ -169,7 +169,7 @@ FakeTimer create(Duration duration, callback) {
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:37.526</div>
+          <div>This page was generated at 2013-10-14 14:26:54.691</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

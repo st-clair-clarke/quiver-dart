@@ -93,7 +93,7 @@ class StreamRouter&lt;T&gt; {
 <h3>Constructors</h3>
 <div class="method"><h4 id="">
 <button class="show-code">Code</button>
-new <strong>StreamRouter</strong>(<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt; incoming) <a class="anchor-link" href="#"
+new <strong>StreamRouter</strong>(Stream&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt; incoming) <a class="anchor-link" href="#"
               title="Permalink to StreamRouter&lt;T&gt;.StreamRouter">#</a></h4>
 <div class="doc">
 <p>Create a new StreamRouter that listens to the 
@@ -110,7 +110,7 @@ StreamRouter(Stream&lt;T&gt; incoming) : _incoming = incoming {
 <h3>Properties</h3>
 <div class="field"><h4 id="defaultStream">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt;         <strong>defaultStream</strong> <a class="anchor-link"
+final Stream&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt;         <strong>defaultStream</strong> <a class="anchor-link"
             href="#defaultStream"
             title="Permalink to StreamRouter&lt;T&gt;.defaultStream">#</a>
         </h4>
@@ -125,7 +125,7 @@ Stream&lt;T&gt; get defaultStream =&gt; _defaultController.stream;
 <h3>Methods</h3>
 <div class="method"><h4 id="close">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>close</strong>() <a class="anchor-link" href="#close"
+Future <strong>close</strong>() <a class="anchor-link" href="#close"
               title="Permalink to StreamRouter&lt;T&gt;.close">#</a></h4>
 <div class="doc">
 <pre class="source">
@@ -139,7 +139,7 @@ Future close() {
 </div>
 <div class="method"><h4 id="route">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt; <strong>route</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> predicate(<a href="../quiver.async/StreamRouter.html">T</a> event)) <a class="anchor-link" href="#route"
+Stream&lt;<a href="../quiver.async/StreamRouter.html">T</a>&gt; <strong>route</strong>(bool predicate(<a href="../quiver.async/StreamRouter.html">T</a> event)) <a class="anchor-link" href="#route"
               title="Permalink to StreamRouter&lt;T&gt;.route">#</a></h4>
 <div class="doc">
 <p>Events that match 
@@ -159,7 +159,7 @@ Stream&lt;T&gt; route(bool predicate(T event)) {
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:37.398</div>
+          <div>This page was generated at 2013-10-14 14:26:54.153</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

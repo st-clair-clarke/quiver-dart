@@ -1,0 +1,134 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>EnumerateIterator&lt;V&gt; class / quiver.iterables Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="quiver.iterables" data-type="EnumerateIterator&amp;lt;V&amp;gt;">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../quiver.iterables.html">quiver.iterables</a> &rsaquo; <a href="../quiver.iterables/EnumerateIterator.html">EnumerateIterator&lt;V&gt;</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>EnumerateIterator&lt;V&gt;</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>The <a class="crossref" href="../dart_core/Iterator.html">Iterator</a> returned by <a class="crossref" href="../quiver.iterables/EnumerateIterable.html#iterator">EnumerateIterable.iterator</a>. </p>
+<pre class="source">
+class EnumerateIterator&lt;V&gt; extends Iterator&lt;IndexedValue&lt;V&gt;&gt; {
+ final Iterator&lt;V&gt; _iterator;
+ int _index = 0;
+ IndexedValue&lt;V&gt; _current;
+
+ EnumerateIterator(this._iterator);
+
+ IndexedValue&lt;V&gt; get current =&gt; _current;
+
+ bool moveNext() {
+   if (_iterator.moveNext()) {
+     _current = new IndexedValue(_index++, _iterator.current);
+     return true;
+   }
+   _current = null;
+   return false;
+ }
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../dart_core/Iterator.html">Iterator&lt;IndexedValue&lt;V&gt;&gt;</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>EnumerateIterator&lt;V&gt;</strong></span></p>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>EnumerateIterator</strong>(Iterator&lt;<a href="../quiver.iterables/EnumerateIterator.html">V</a>&gt; _iterator) <a class="anchor-link" href="#"
+              title="Permalink to EnumerateIterator&lt;V&gt;.EnumerateIterator">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Creates a new <a class="crossref" href="../dart_core/Object.html">Object</a> instance.</p>
+<p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
+through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
+only.</p>
+<div class="docs-inherited-from">docs inherited from Object </div></div>
+<pre class="source">
+EnumerateIterator(this._iterator);
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Properties</h3>
+<div class="field"><h4 id="current">
+<button class="show-code">Code</button>
+final <a href="../quiver.iterables/IndexedValue.html">IndexedValue</a>&lt;<a href="../quiver.iterables/EnumerateIterator.html">V</a>&gt;         <strong>current</strong> <a class="anchor-link"
+            href="#current"
+            title="Permalink to EnumerateIterator&lt;V&gt;.current">#</a>
+        </h4>
+        <div class="doc">
+<div class="inherited">
+<p>Returns the current element.</p>
+<p>Return <code>null</code> if the iterator has not yet been moved to the first
+element, or if the iterator has been moved after the last element of the
+<a class="crossref" href="../dart_core/Iterable.html">Iterable</a>.</p>
+<div class="docs-inherited-from">docs inherited from Iterator&lt;<a href="../quiver.iterables/IndexedValue.html">IndexedValue</a>&lt;<a href="../quiver.iterables/EnumerateIterator.html">V</a>&gt;&gt; </div></div>
+<pre class="source">
+IndexedValue&lt;V&gt; get current =&gt; _current;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="moveNext">
+<button class="show-code">Code</button>
+bool <strong>moveNext</strong>() <a class="anchor-link" href="#moveNext"
+              title="Permalink to EnumerateIterator&lt;V&gt;.moveNext">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Moves to the next element. Returns true if <a class="crossref" href="../quiver.iterables/EnumerateIterator.html#current">current</a> contains the next
+element. Returns false, if no element was left.</p>
+<p>It is safe to invoke <a class="crossref" href="../quiver.iterables/EnumerateIterator.html#moveNext">moveNext</a> even when the iterator is already
+positioned after the last element. In this case <a class="crossref" href="../quiver.iterables/EnumerateIterator.html#moveNext">moveNext</a> has no effect.</p>
+<div class="docs-inherited-from">docs inherited from Iterator&lt;<a href="../quiver.iterables/IndexedValue.html">IndexedValue</a>&lt;<a href="../quiver.iterables/EnumerateIterator.html">V</a>&gt;&gt; </div></div>
+<pre class="source">
+bool moveNext() {
+ if (_iterator.moveNext()) {
+   _current = new IndexedValue(_index++, _iterator.current);
+   return true;
+ }
+ _current = null;
+ return false;
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-10-14 14:26:54.631</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -2,19 +2,19 @@
         <html>
         <head>
                 <meta charset="utf-8">
-        <title>FakeStopwatch class / quiver.time.testing Library / Dart Documentation</title>
+        <title>FakeStopwatch class / quiver.testing.time Library / Dart Documentation</title>
         <link rel="stylesheet" type="text/css"
             href="../styles.css">
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" href="../favicon.ico">
         
         </head>
-        <body data-library="quiver.time.testing" data-type="FakeStopwatch">
+        <body data-library="quiver.testing.time" data-type="FakeStopwatch">
         <div class="page">
         <div class="header">
           <a href="../index.html"><div class="logo"></div></a>
           <a href="../index.html">Dart Documentation</a>
-         &rsaquo; <a href="../quiver.time.testing.html">quiver.time.testing</a> &rsaquo; <a href="../quiver.time.testing/FakeStopwatch.html">FakeStopwatch</a>        <div id="search-box">
+         &rsaquo; <a href="../quiver.testing.time.html">quiver.testing.time</a> &rsaquo; <a href="../quiver.testing.time/FakeStopwatch.html">FakeStopwatch</a>        <div id="search-box">
           <input type="search" name="q" id="q" autocomplete="off"
               class="search-input" placeholder="Search API">
         </div>
@@ -93,7 +93,7 @@ class FakeStopwatch implements Stopwatch {
 <h3>Constructors</h3>
 <div class="method"><h4 id="">
 <button class="show-code">Code</button>
-new <strong>FakeStopwatch</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> now(), <a href="http://api.dartlang.org/dart_core/int.html">int</a> frequency) <a class="anchor-link" href="#"
+new <strong>FakeStopwatch</strong>(int now(), int frequency) <a class="anchor-link" href="#"
               title="Permalink to FakeStopwatch.FakeStopwatch">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -102,7 +102,7 @@ new <strong>FakeStopwatch</strong>(<a href="http://api.dartlang.org/dart_core/in
 immediately after allocation.</p>
 <pre><code>Stopwatch stopwatch = new Stopwatch()..start();
 </code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 FakeStopwatch(int now(), int this.frequency)
    : _now = now,
@@ -116,14 +116,14 @@ FakeStopwatch(int now(), int this.frequency)
 <h3>Properties</h3>
 <div class="field"><h4 id="elapsed">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a>         <strong>elapsed</strong> <a class="anchor-link"
+final Duration         <strong>elapsed</strong> <a class="anchor-link"
             href="#elapsed"
             title="Permalink to FakeStopwatch.elapsed">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns the <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to a <a class="crossref" href="../dart_core/Duration.html">Duration</a>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<p>Returns the <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to a <a class="crossref" href="../dart_core/Duration.html">Duration</a>.</p>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 Duration get elapsed =&gt; new Duration(microseconds: elapsedMicroseconds);
 </pre>
@@ -131,14 +131,14 @@ Duration get elapsed =&gt; new Duration(microseconds: elapsedMicroseconds);
 </div>
 <div class="field"><h4 id="elapsedMicroseconds">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>elapsedMicroseconds</strong> <a class="anchor-link"
+final int         <strong>elapsedMicroseconds</strong> <a class="anchor-link"
             href="#elapsedMicroseconds"
             title="Permalink to FakeStopwatch.elapsedMicroseconds">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns the <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to microseconds.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<p>Returns the <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to microseconds.</p>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 int get elapsedMicroseconds =&gt; (elapsedTicks * 1000000) ~/ frequency;
 </pre>
@@ -146,14 +146,14 @@ int get elapsedMicroseconds =&gt; (elapsedTicks * 1000000) ~/ frequency;
 </div>
 <div class="field"><h4 id="elapsedMilliseconds">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>elapsedMilliseconds</strong> <a class="anchor-link"
+final int         <strong>elapsedMilliseconds</strong> <a class="anchor-link"
             href="#elapsedMilliseconds"
             title="Permalink to FakeStopwatch.elapsedMilliseconds">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns the <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to milliseconds.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<p>Returns the <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> counter converted to milliseconds.</p>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 int get elapsedMilliseconds =&gt; (elapsedTicks * 1000) ~/ frequency;
 </pre>
@@ -161,19 +161,19 @@ int get elapsedMilliseconds =&gt; (elapsedTicks * 1000) ~/ frequency;
 </div>
 <div class="field"><h4 id="elapsedTicks">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>elapsedTicks</strong> <a class="anchor-link"
+final int         <strong>elapsedTicks</strong> <a class="anchor-link"
             href="#elapsedTicks"
             title="Permalink to FakeStopwatch.elapsedTicks">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns the elapsed number of clock ticks since calling <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#start">start</a> while the
+<p>Returns the elapsed number of clock ticks since calling <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#start">start</a> while the
 <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> is running.</p>
-<p>Returns the elapsed number of clock ticks between calling <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#start">start</a> and
-calling <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#stop">stop</a>.</p>
+<p>Returns the elapsed number of clock ticks between calling <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#start">start</a> and
+calling <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#stop">stop</a>.</p>
 <p>Returns 0 if the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> has never been started.</p>
-<p>The elapsed number of clock ticks increases by <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#frequency">frequency</a> every second.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<p>The elapsed number of clock ticks increases by <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#frequency">frequency</a> every second.</p>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 int get elapsedTicks {
  if (_start == null) {
@@ -186,14 +186,14 @@ int get elapsedTicks {
 </div>
 <div class="field"><h4 id="frequency">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>frequency</strong> <a class="anchor-link"
+int         <strong>frequency</strong> <a class="anchor-link"
             href="#frequency"
             title="Permalink to FakeStopwatch.frequency">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
 <p>Returns the frequency of the elapsed counter in Hz.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 int frequency
 </pre>
@@ -201,14 +201,14 @@ int frequency
 </div>
 <div class="field"><h4 id="isRunning">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isRunning</strong> <a class="anchor-link"
+final bool         <strong>isRunning</strong> <a class="anchor-link"
             href="#isRunning"
             title="Permalink to FakeStopwatch.isRunning">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
 <p>Returns wether the <code>StopWatch</code> is currently running.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 bool get isRunning =&gt; _start != null &amp;&amp; _stop == null;
 </pre>
@@ -223,9 +223,9 @@ void <strong>reset</strong>() <a class="anchor-link" href="#reset"
               title="Permalink to FakeStopwatch.reset">#</a></h4>
 <div class="doc">
 <div class="inherited">
-<p>Resets the <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsed">elapsed</a> count to zero.</p>
+<p>Resets the <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsed">elapsed</a> count to zero.</p>
 <p>This method does not stop or start the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 void reset() {
  if (_start == null) return;
@@ -244,11 +244,11 @@ void <strong>start</strong>() <a class="anchor-link" href="#start"
 <div class="doc">
 <div class="inherited">
 <p>Starts the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a>.</p>
-<p>The <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsed">elapsed</a> count is increasing monotonically. If the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> has
+<p>The <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsed">elapsed</a> count is increasing monotonically. If the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> has
 been stopped, then calling start again restarts it without resetting the
-<a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsed">elapsed</a> count.</p>
+<a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsed">elapsed</a> count.</p>
 <p>If the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> is currently running, then calling start does nothing.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 void start() {
  if (isRunning) return;
@@ -269,10 +269,10 @@ void <strong>stop</strong>() <a class="anchor-link" href="#stop"
 <div class="doc">
 <div class="inherited">
 <p>Stops the <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a>.</p>
-<p>The <a class="crossref" href="../quiver.time.testing/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> count stops increasing after this call. If the
+<p>The <a class="crossref" href="../quiver.testing.time/FakeStopwatch.html#elapsedTicks">elapsedTicks</a> count stops increasing after this call. If the
 <a class="crossref" href="../dart_core/Stopwatch.html">Stopwatch</a> is currently not running, then calling this method has no
 effect.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Stopwatch </div></div>
 <pre class="source">
 void stop() {
  if (!isRunning) return;
@@ -286,7 +286,7 @@ void stop() {
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:38.042</div>
+          <div>This page was generated at 2013-10-14 14:26:54.710</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

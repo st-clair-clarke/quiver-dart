@@ -36,33 +36,44 @@
 with each key.</p>
 <pre class="source">
 class SetMultimap&lt;K, V&gt; extends _BaseMultimap&lt;K, V&gt; {
- final Function _create = () =&gt; new Set();
- Set&lt;V&gt; operator [](Object key) =&gt; _map[key];
-
- void add(K key, V value) {
-   _map.putIfAbsent(key, _create);
-   (_map[key] as Set).add(value);
- }
-
- void addValues(K key, Iterable&lt;V&gt; values) {
-   _map.putIfAbsent(key, _create);
-   (_map[key] as Set).addAll(values);
- }
-
- Set&lt;V&gt; removeAll(Object key) =&gt; _map.remove(key);
-
- Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; new uc.UnmodifiableMapView(_map);
+ SetMultimap() : super();
+ Set&lt;V&gt; _create() =&gt; new Set&lt;V&gt;();
+ void _add(Set&lt;V&gt; iterable, V value) =&gt; iterable.add(value);
+ void _addAll(Set&lt;V&gt; iterable, Iterable&lt;V&gt; value) =&gt; iterable.addAll(value);
+ void _clear(Set&lt;V&gt; iterable) =&gt; iterable.clear();
+ bool _remove(Set&lt;V&gt; iterable, V value) =&gt; iterable.remove(value);
+ Set&lt;V&gt; _wrap(Object key, Set&lt;V&gt; iterable) =&gt;
+     new _WrappedSet(_map, key, iterable);
+ Set&lt;V&gt; operator [](Object key) =&gt; super[key];
+ Set&lt;V&gt; removeAll(Object key) =&gt; super.removeAll(key);
+ Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; super.toMap();
 }
 </pre>
 </div>
 <h3>Extends</h3>
 <p>
 <span class="type-box"><span class="icon-class"></span><a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap&lt;K, V&gt;</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>SetMultimap&lt;K, V&gt;</strong></span></p>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="">
+<button class="show-code">Code</button>
+new <strong>SetMultimap</strong>() <a class="anchor-link" href="#"
+              title="Permalink to SetMultimap&lt;K, V&gt;.SetMultimap">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Constructs a new list-backed multimap.</p>
+<div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
+<pre class="source">
+SetMultimap() : super();
+</pre>
+</div>
+</div>
+</div>
 <div class="inherited">
 <h3>Properties</h3>
 <div class="field inherited"><h4 id="isEmpty">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isEmpty</strong> <a class="anchor-link"
+final bool         <strong>isEmpty</strong> <a class="anchor-link"
             href="#isEmpty"
             title="Permalink to SetMultimap&lt;K, V&gt;.isEmpty">#</a>
         </h4>
@@ -77,7 +88,7 @@ bool get isEmpty =&gt; _map.isEmpty;
 </div>
 <div class="field inherited"><h4 id="isNotEmpty">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isNotEmpty</strong> <a class="anchor-link"
+final bool         <strong>isNotEmpty</strong> <a class="anchor-link"
             href="#isNotEmpty"
             title="Permalink to SetMultimap&lt;K, V&gt;.isNotEmpty">#</a>
         </h4>
@@ -92,7 +103,7 @@ bool get isNotEmpty =&gt; _map.isNotEmpty;
 </div>
 <div class="field inherited"><h4 id="keys">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>&gt;         <strong>keys</strong> <a class="anchor-link"
+final Iterable&lt;<a href="../quiver.collection/SetMultimap.html">K</a>&gt;         <strong>keys</strong> <a class="anchor-link"
             href="#keys"
             title="Permalink to SetMultimap&lt;K, V&gt;.keys">#</a>
         </h4>
@@ -107,7 +118,7 @@ Iterable&lt;K&gt; get keys =&gt; _map.keys;
 </div>
 <div class="field inherited"><h4 id="length">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>length</strong> <a class="anchor-link"
+final int         <strong>length</strong> <a class="anchor-link"
             href="#length"
             title="Permalink to SetMultimap&lt;K, V&gt;.length">#</a>
         </h4>
@@ -122,7 +133,7 @@ int get length =&gt; _map.length;
 </div>
 <div class="field inherited"><h4 id="values">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt;         <strong>values</strong> <a class="anchor-link"
+final Iterable&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt;         <strong>values</strong> <a class="anchor-link"
             href="#values"
             title="Permalink to SetMultimap&lt;K, V&gt;.values">#</a>
         </h4>
@@ -140,7 +151,7 @@ Iterable&lt;V&gt; get values =&gt; _map.values.expand((x) =&gt; x);
 <h3>Operators</h3>
 <div class="method"><h4 id="[]">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Set.html">Set</a>&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>operator []</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> key) <a class="anchor-link" href="#[]"
+Set&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>operator []</strong>(Object key) <a class="anchor-link" href="#[]"
               title="Permalink to SetMultimap&lt;K, V&gt;.operator []">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -150,25 +161,25 @@ Iterable&lt;V&gt; get values =&gt; _map.values.expand((x) =&gt; x);
 in the multimap.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
-Set&lt;V&gt; operator [](Object key) =&gt; _map[key];
+Set&lt;V&gt; operator [](Object key) =&gt; super[key];
 </pre>
 </div>
 </div>
 </div>
 <div>
 <h3>Methods</h3>
-<div class="method"><h4 id="add">
+<div class="method inherited"><h4 id="add">
 <button class="show-code">Code</button>
 void <strong>add</strong>(<a href="../quiver.collection/SetMultimap.html">K</a> key, <a href="../quiver.collection/SetMultimap.html">V</a> value) <a class="anchor-link" href="#add"
               title="Permalink to SetMultimap&lt;K, V&gt;.add">#</a></h4>
-<div class="doc">
+<div class="inherited-from">inherited from <a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap</a> </div><div class="doc">
 <div class="inherited">
 <p>Adds an association from the given key to the given value.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
 void add(K key, V value) {
  _map.putIfAbsent(key, _create);
- (_map[key] as Set).add(value);
+ _add(_map[key], value);
 }
 </pre>
 </div>
@@ -191,18 +202,18 @@ void addAll(Multimap&lt;K, V&gt; other) =&gt; other.forEach((k, v) =&gt; add(k, 
 </pre>
 </div>
 </div>
-<div class="method"><h4 id="addValues">
+<div class="method inherited"><h4 id="addValues">
 <button class="show-code">Code</button>
-void <strong>addValues</strong>(<a href="../quiver.collection/SetMultimap.html">K</a> key, <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; values) <a class="anchor-link" href="#addValues"
+void <strong>addValues</strong>(<a href="../quiver.collection/SetMultimap.html">K</a> key, Iterable&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; values) <a class="anchor-link" href="#addValues"
               title="Permalink to SetMultimap&lt;K, V&gt;.addValues">#</a></h4>
-<div class="doc">
+<div class="inherited-from">inherited from <a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap</a> </div><div class="doc">
 <div class="inherited">
 <p>Adds an association from the given key to each of the given values.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
 void addValues(K key, Iterable&lt;V&gt; values) {
  _map.putIfAbsent(key, _create);
- (_map[key] as Set).addAll(values);
+ _addAll(_map[key], values);
 }
 </pre>
 </div>
@@ -216,13 +227,16 @@ void <strong>clear</strong>() <a class="anchor-link" href="#clear"
 <p>Removes all data from the multimap.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
-void clear() =&gt; _map.clear();
+void clear() {
+ _map.forEach((K key, V value) =&gt; _clear(value));
+ _map.clear();
+}
 </pre>
 </div>
 </div>
 <div class="method inherited"><h4 id="containsKey">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>containsKey</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> key) <a class="anchor-link" href="#containsKey"
+bool <strong>containsKey</strong>(Object key) <a class="anchor-link" href="#containsKey"
               title="Permalink to SetMultimap&lt;K, V&gt;.containsKey">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap</a> </div><div class="doc">
 <div class="inherited">
@@ -236,7 +250,7 @@ bool containsKey(Object key) =&gt; _map.keys.contains(key);
 </div>
 <div class="method inherited"><h4 id="containsValue">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>containsValue</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> value) <a class="anchor-link" href="#containsValue"
+bool <strong>containsValue</strong>(Object value) <a class="anchor-link" href="#containsValue"
               title="Permalink to SetMultimap&lt;K, V&gt;.containsValue">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap</a> </div><div class="doc">
 <div class="inherited">
@@ -284,7 +298,7 @@ void forEachKey(void f(key, value)) =&gt; _map.forEach(f);
 </div>
 <div class="method inherited"><h4 id="remove">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>remove</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> key, <a href="../quiver.collection/SetMultimap.html">V</a> value) <a class="anchor-link" href="#remove"
+bool <strong>remove</strong>(Object key, <a href="../quiver.collection/SetMultimap.html">V</a> value) <a class="anchor-link" href="#remove"
               title="Permalink to SetMultimap&lt;K, V&gt;.remove">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/_BaseMultimap.html">_BaseMultimap</a> </div><div class="doc">
 <div class="inherited">
@@ -296,14 +310,16 @@ void forEachKey(void f(key, value)) =&gt; _map.forEach(f);
 <pre class="source">
 bool remove(Object key, V value) {
  if (!_map.containsKey(key)) return false;
- return (_map[key] as dynamic).remove(value);
+ bool removed = _remove(_map[key], value);
+ if (removed &amp;&amp; _map[key].isEmpty) _map.remove(key);
+ return removed;
 }
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="removeAll">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Set.html">Set</a>&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>removeAll</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> key) <a class="anchor-link" href="#removeAll"
+Set&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>removeAll</strong>(Object key) <a class="anchor-link" href="#removeAll"
               title="Permalink to SetMultimap&lt;K, V&gt;.removeAll">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -314,20 +330,20 @@ bool remove(Object key, V value) {
 <span class="param">key</span> is not in the multimap.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
-Set&lt;V&gt; removeAll(Object key) =&gt; _map.remove(key);
+Set&lt;V&gt; removeAll(Object key) =&gt; super.removeAll(key);
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="toMap">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="http://api.dartlang.org/dart_core/Set.html">Set</a>&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt;&gt; <strong>toMap</strong>() <a class="anchor-link" href="#toMap"
+Map&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, Set&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt;&gt; <strong>toMap</strong>() <a class="anchor-link" href="#toMap"
               title="Permalink to SetMultimap&lt;K, V&gt;.toMap">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Returns a copy of this multimap as a map.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
-Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; new uc.UnmodifiableMapView(_map);
+Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; super.toMap();
 </pre>
 </div>
 </div>
@@ -336,7 +352,7 @@ Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; new uc.UnmodifiableMapView(_map);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:37.797</div>
+          <div>This page was generated at 2013-10-14 14:26:54.524</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

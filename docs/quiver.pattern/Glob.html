@@ -59,7 +59,7 @@ class Glob implements Pattern {
 
  String toString() =&gt; pattern;
 
- int get hashcode =&gt; pattern.hashCode;
+ int get hashCode =&gt; pattern.hashCode;
 
  bool operator==(other) =&gt; other is Glob &amp;&amp; pattern == other.pattern;
 }
@@ -72,7 +72,7 @@ class Glob implements Pattern {
 <h3>Constructors</h3>
 <div class="method"><h4 id="">
 <button class="show-code">Code</button>
-new <strong>Glob</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> pattern) <a class="anchor-link" href="#"
+new <strong>Glob</strong>(String pattern) <a class="anchor-link" href="#"
               title="Permalink to Glob.Glob">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -80,7 +80,7 @@ new <strong>Glob</strong>(<a href="http://api.dartlang.org/dart_core/String.html
 <p><a class="crossref" href="../dart_core/Object.html">Object</a> instances have no meaningful state, and are only useful
 through their identity. An <a class="crossref" href="../dart_core/Object.html">Object</a> instance is equal to itself
 only.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Object </div></div>
 <pre class="source">
 Glob(String pattern)
    : pattern = pattern,
@@ -91,21 +91,31 @@ Glob(String pattern)
 </div>
 <div>
 <h3>Properties</h3>
-<div class="field"><h4 id="hashcode">
+<div class="field"><h4 id="hashCode">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>hashcode</strong> <a class="anchor-link"
-            href="#hashcode"
-            title="Permalink to Glob.hashcode">#</a>
+final int         <strong>hashCode</strong> <a class="anchor-link"
+            href="#hashCode"
+            title="Permalink to Glob.hashCode">#</a>
         </h4>
         <div class="doc">
+<div class="inherited">
+<p>Get a hash code for this object.</p>
+<p>All objects have hash codes. Hash codes are guaranteed to be the
+same for objects that are equal when compared using the equality
+operator <code>==</code>. Other than that there are no guarantees about
+the hash codes. They will not be consistent between runs and
+there are no distribution guarantees.</p>
+<p>If a subclass overrides <a class="crossref" href="../quiver.pattern/Glob.html#hashCode">hashCode</a> it should override the
+equality operator as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from Object </div></div>
 <pre class="source">
-int get hashcode =&gt; pattern.hashCode;
+int get hashCode =&gt; pattern.hashCode;
 </pre>
 </div>
 </div>
 <div class="field"><h4 id="pattern">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>pattern</strong> <a class="anchor-link"
+final String         <strong>pattern</strong> <a class="anchor-link"
             href="#pattern"
             title="Permalink to Glob.pattern">#</a>
         </h4>
@@ -117,7 +127,7 @@ final String pattern
 </div>
 <div class="field"><h4 id="regex">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/RegExp.html">RegExp</a>         <strong>regex</strong> <a class="anchor-link"
+final RegExp         <strong>regex</strong> <a class="anchor-link"
             href="#regex"
             title="Permalink to Glob.regex">#</a>
         </h4>
@@ -132,7 +142,7 @@ final RegExp regex
 <h3>Operators</h3>
 <div class="method"><h4 id="==">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
+bool <strong>operator ==</strong>(other) <a class="anchor-link" href="#=="
               title="Permalink to Glob.operator ==">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -154,8 +164,8 @@ That is, it must be:</p><ul><li>
 should not change over time, or at least only change if one of the objects
 was modified.</p>
 <p>If a subclass overrides the equality operator it should override
-the <a class="crossref" href="../dart_core/Object.html#hashCode">hashCode</a> method as well to maintain consistency.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+the <a class="crossref" href="../quiver.pattern/Glob.html#hashCode">hashCode</a> method as well to maintain consistency.</p>
+<div class="docs-inherited-from">docs inherited from Object </div></div>
 <pre class="source">
 bool operator==(other) =&gt; other is Glob &amp;&amp; pattern == other.pattern;
 </pre>
@@ -166,7 +176,7 @@ bool operator==(other) =&gt; other is Glob &amp;&amp; pattern == other.pattern;
 <h3>Methods</h3>
 <div class="method"><h4 id="allMatches">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="http://api.dartlang.org/dart_core/Match.html">Match</a>&gt; <strong>allMatches</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> str) <a class="anchor-link" href="#allMatches"
+Iterable&lt;Match&gt; <strong>allMatches</strong>(String str) <a class="anchor-link" href="#allMatches"
               title="Permalink to Glob.allMatches">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -178,7 +188,7 @@ of the pattern on the string, starting from the end of the previous
 match, and initially starting from index zero.</p>
 <p>If the pattern matches the empty string at some point, the next
 match is found by starting at the previous match's end plus one.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Pattern </div></div>
 <pre class="source">
 Iterable&lt;Match&gt; allMatches(String str) =&gt; regex.allMatches(str);
 </pre>
@@ -186,7 +196,7 @@ Iterable&lt;Match&gt; allMatches(String str) =&gt; regex.allMatches(str);
 </div>
 <div class="method"><h4 id="hasMatch">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>hasMatch</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> str) <a class="anchor-link" href="#hasMatch"
+bool <strong>hasMatch</strong>(String str) <a class="anchor-link" href="#hasMatch"
               title="Permalink to Glob.hasMatch">#</a></h4>
 <div class="doc">
 <pre class="source">
@@ -196,7 +206,7 @@ bool hasMatch(String str) =&gt; regex.hasMatch(str);
 </div>
 <div class="method"><h4 id="matchAsPrefix">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Match.html">Match</a> <strong>matchAsPrefix</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> string, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> start = 0]) <a class="anchor-link" href="#matchAsPrefix"
+Match <strong>matchAsPrefix</strong>(String string, [int start = 0]) <a class="anchor-link" href="#matchAsPrefix"
               title="Permalink to Glob.matchAsPrefix">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -208,7 +218,7 @@ string at the
 <span class="param">start</span> position. That is, a match is returned if the
 pattern can match a part of the string starting from position 
 <span class="param">start</span>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Pattern.html">Pattern</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Pattern </div></div>
 <pre class="source">
 Match matchAsPrefix(String string, [int start = 0]) {
  throw new UnimplementedError();
@@ -218,12 +228,12 @@ Match matchAsPrefix(String string, [int start = 0]) {
 </div>
 <div class="method"><h4 id="toString">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+String <strong>toString</strong>() <a class="anchor-link" href="#toString"
               title="Permalink to Glob.toString">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Returns a string representation of this object.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<div class="docs-inherited-from">docs inherited from Object </div></div>
 <pre class="source">
 String toString() =&gt; pattern;
 </pre>
@@ -234,7 +244,7 @@ String toString() =&gt; pattern;
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:38.007</div>
+          <div>This page was generated at 2013-10-14 14:26:54.677</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

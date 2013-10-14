@@ -102,6 +102,8 @@ abstract class DelegatingList&lt;E&gt; extends DelegatingIterable&lt;E&gt; imple
  void setRange(int start, int end, Iterable&lt;E&gt; iterable, [int skipCount = 0])
      =&gt; delegate.setRange(start, end, iterable, skipCount);
 
+ void shuffle() =&gt; delegate.shuffle();
+
  void sort([int compare(E a, E b)]) =&gt; delegate.sort(compare);
 
  List&lt;E&gt; sublist(int start, [int end]) =&gt; delegate.sublist(start, end);
@@ -118,7 +120,7 @@ abstract class DelegatingList&lt;E&gt; extends DelegatingIterable&lt;E&gt; imple
 <h3>Properties</h3>
 <div class="field"><h4 id="delegate">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt;         <strong>delegate</strong> <a class="anchor-link"
+final List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt;         <strong>delegate</strong> <a class="anchor-link"
             href="#delegate"
             title="Permalink to DelegatingList&lt;E&gt;.delegate">#</a>
         </h4>
@@ -139,7 +141,7 @@ final         <strong>first</strong> <a class="anchor-link"
 <p>Returns the first element.</p>
 <p>If <code>this</code> is empty throws a <a class="crossref" href="../dart_core/StateError.html">StateError</a>. Otherwise this method is
 equivalent to <code>this.elementAt(0)</code></p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 get first =&gt; delegate.first;
 </pre>
@@ -147,14 +149,14 @@ get first =&gt; delegate.first;
 </div>
 <div class="field inherited"><h4 id="isEmpty">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isEmpty</strong> <a class="anchor-link"
+final bool         <strong>isEmpty</strong> <a class="anchor-link"
             href="#isEmpty"
             title="Permalink to DelegatingList&lt;E&gt;.isEmpty">#</a>
         </h4>
         <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns true if there is no element in this collection.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool get isEmpty =&gt; delegate.isEmpty;
 </pre>
@@ -162,14 +164,14 @@ bool get isEmpty =&gt; delegate.isEmpty;
 </div>
 <div class="field inherited"><h4 id="isNotEmpty">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isNotEmpty</strong> <a class="anchor-link"
+final bool         <strong>isNotEmpty</strong> <a class="anchor-link"
             href="#isNotEmpty"
             title="Permalink to DelegatingList&lt;E&gt;.isNotEmpty">#</a>
         </h4>
         <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns true if there is at least one element in this collection.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool get isNotEmpty =&gt; delegate.isNotEmpty;
 </pre>
@@ -177,14 +179,14 @@ bool get isNotEmpty =&gt; delegate.isNotEmpty;
 </div>
 <div class="field inherited"><h4 id="iterator">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/Iterator.html">Iterator</a>         <strong>iterator</strong> <a class="anchor-link"
+final Iterator         <strong>iterator</strong> <a class="anchor-link"
             href="#iterator"
             title="Permalink to DelegatingList&lt;E&gt;.iterator">#</a>
         </h4>
         <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns an Iterator that iterates over this Iterable object.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterator get iterator =&gt; delegate.iterator;
 </pre>
@@ -200,7 +202,7 @@ final         <strong>last</strong> <a class="anchor-link"
 <div class="inherited">
 <p>Returns the last element.</p>
 <p>If <code>this</code> is empty throws a <a class="crossref" href="../dart_core/StateError.html">StateError</a>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 get last =&gt; delegate.last;
 </pre>
@@ -208,14 +210,14 @@ get last =&gt; delegate.last;
 </div>
 <div class="method inherited"><h4 id="length">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get length</strong> <a class="anchor-link" href="#length"
+int <strong>get length</strong> <a class="anchor-link" href="#length"
               title="Permalink to DelegatingList&lt;E&gt;.get length">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns the number of elements in <code>this</code>.</p>
 <p>Counting all elements may be involve running through all elements and can
 therefore be slow.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 int get length =&gt; delegate.length;
 </pre>
@@ -223,16 +225,16 @@ int get length =&gt; delegate.length;
 </div>
 <div class="method"><h4 id="length=">
 <button class="show-code">Code</button>
-void <strong>set length</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> newLength) <a class="anchor-link" href="#length="
+void <strong>set length</strong>(int newLength) <a class="anchor-link" href="#length="
               title="Permalink to DelegatingList&lt;E&gt;.set length">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Changes the length of this list.</p>
 <p>If 
 <span class="param">newLength</span> is greater than
-the current <a class="crossref" href="../quiver.collection/DelegatingList.html#length=">length</a>, entries are initialized to <code>null</code>.</p>
+the current length, entries are initialized to <code>null</code>.</p>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if the list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void set length(int newLength) {
  delegate.length = newLength;
@@ -242,14 +244,14 @@ void set length(int newLength) {
 </div>
 <div class="field"><h4 id="reversed">
 <button class="show-code">Code</button>
-final <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt;         <strong>reversed</strong> <a class="anchor-link"
+final Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt;         <strong>reversed</strong> <a class="anchor-link"
             href="#reversed"
             title="Permalink to DelegatingList&lt;E&gt;.reversed">#</a>
         </h4>
         <div class="doc">
 <div class="inherited">
 <p>Returns an <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> of the objects in this list in reverse order.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;E&gt; get reversed =&gt; delegate.reversed;
 </pre>
@@ -265,7 +267,7 @@ final         <strong>single</strong> <a class="anchor-link"
 <div class="inherited">
 <p>Returns the single element in <code>this</code>.</p>
 <p>If <code>this</code> is empty or has more than one element throws a <a class="crossref" href="../dart_core/StateError.html">StateError</a>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 get single =&gt; delegate.single;
 </pre>
@@ -276,7 +278,7 @@ get single =&gt; delegate.single;
 <h3>Operators</h3>
 <div class="method"><h4 id="[]">
 <button class="show-code">Code</button>
-<a href="../quiver.collection/DelegatingList.html">E</a> <strong>operator []</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index) <a class="anchor-link" href="#[]"
+<a href="../quiver.collection/DelegatingList.html">E</a> <strong>operator []</strong>(int index) <a class="anchor-link" href="#[]"
               title="Permalink to DelegatingList&lt;E&gt;.operator []">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -284,7 +286,7 @@ get single =&gt; delegate.single;
 <span class="param">index</span> in the list
 or throws a <a class="crossref" href="../dart_core/RangeError.html">RangeError</a> if 
 <span class="param">index</span> is out of bounds.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 E operator [](int index) =&gt; delegate[index];
 </pre>
@@ -292,7 +294,7 @@ E operator [](int index) =&gt; delegate[index];
 </div>
 <div class="method"><h4 id="[]=">
 <button class="show-code">Code</button>
-void <strong>operator []=</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index, <a href="../quiver.collection/DelegatingList.html">E</a> value) <a class="anchor-link" href="#[]="
+void <strong>operator []=</strong>(int index, <a href="../quiver.collection/DelegatingList.html">E</a> value) <a class="anchor-link" href="#[]="
               title="Permalink to DelegatingList&lt;E&gt;.operator []=">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -301,7 +303,7 @@ void <strong>operator []=</strong>(<a href="http://api.dartlang.org/dart_core/in
 <span class="param">value</span>
 or throws a <a class="crossref" href="../dart_core/RangeError.html">RangeError</a> if 
 <span class="param">index</span> is out of bounds.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void operator []=(int index, E value) {
  delegate[index] = value;
@@ -322,7 +324,7 @@ void <strong>add</strong>(<a href="../quiver.collection/DelegatingList.html">E</
 <span class="param">value</span> to the end of this list,
 extending the length by one.</p>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if the list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void add(E value) =&gt; delegate.add(value);
 </pre>
@@ -330,7 +332,7 @@ void add(E value) =&gt; delegate.add(value);
 </div>
 <div class="method"><h4 id="addAll">
 <button class="show-code">Code</button>
-void <strong>addAll</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#addAll"
+void <strong>addAll</strong>(Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#addAll"
               title="Permalink to DelegatingList&lt;E&gt;.addAll">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -339,7 +341,7 @@ void <strong>addAll</strong>(<a href="http://api.dartlang.org/dart_core/Iterable
 <p>Extends the length of the list by the number of objects in 
 <span class="param">iterable</span>.
 Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if this list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void addAll(Iterable&lt;E&gt; iterable) =&gt; delegate.addAll(iterable);
 </pre>
@@ -347,14 +349,14 @@ void addAll(Iterable&lt;E&gt; iterable) =&gt; delegate.addAll(iterable);
 </div>
 <div class="method inherited"><h4 id="any">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>any</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element)) <a class="anchor-link" href="#any"
+bool <strong>any</strong>(bool test(element)) <a class="anchor-link" href="#any"
               title="Permalink to DelegatingList&lt;E&gt;.any">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns true if one element of this collection satisfies the
 predicate 
 <span class="param">test</span>. Returns false otherwise.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool any(bool test(element)) =&gt; delegate.any(test);
 </pre>
@@ -362,7 +364,7 @@ bool any(bool test(element)) =&gt; delegate.any(test);
 </div>
 <div class="method"><h4 id="asMap">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/int.html">int</a>, <a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>asMap</strong>() <a class="anchor-link" href="#asMap"
+Map&lt;int, <a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>asMap</strong>() <a class="anchor-link" href="#asMap"
               title="Permalink to DelegatingList&lt;E&gt;.asMap">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -370,7 +372,12 @@ bool any(bool test(element)) =&gt; delegate.any(test);
 <p>The map uses the indices of this list as keys and the corresponding objects
 as values. The <code>Map.keys</code> <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> iterates the indices of this list
 in numerical order.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<pre><code>List&lt;String&gt; words = ['fee', 'fi', 'fo', 'fum'];
+Map&lt;int, String&gt; map = words.asMap();
+map[0] + map[1];   // 'feefi';
+map.keys.toList(); // [0, 1, 2, 3]
+</code></pre>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Map&lt;int, E&gt; asMap() =&gt; delegate.asMap();
 </pre>
@@ -384,9 +391,9 @@ void <strong>clear</strong>() <a class="anchor-link" href="#clear"
 <div class="inherited">
 <p>Removes all objects from this list;
 the length of the list becomes zero.</p>
-<p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a>, and retains all objects, if this 
+<p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a>, and retains all objects, if this
 is a fixed-length list.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void clear() =&gt; delegate.clear();
 </pre>
@@ -394,13 +401,13 @@ void clear() =&gt; delegate.clear();
 </div>
 <div class="method inherited"><h4 id="contains">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>contains</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> element) <a class="anchor-link" href="#contains"
+bool <strong>contains</strong>(Object element) <a class="anchor-link" href="#contains"
               title="Permalink to DelegatingList&lt;E&gt;.contains">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns true if the collection contains an element equal to 
 <span class="param">element</span>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool contains(Object element) =&gt; delegate.contains(element);
 </pre>
@@ -408,7 +415,7 @@ bool contains(Object element) =&gt; delegate.contains(element);
 </div>
 <div class="method inherited"><h4 id="elementAt">
 <button class="show-code">Code</button>
-dynamic <strong>elementAt</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index) <a class="anchor-link" href="#elementAt"
+dynamic <strong>elementAt</strong>(int index) <a class="anchor-link" href="#elementAt"
               title="Permalink to DelegatingList&lt;E&gt;.elementAt">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -420,7 +427,7 @@ dynamic <strong>elementAt</strong>(<a href="http://api.dartlang.org/dart_core/in
 function may simply return any element without any iteration if there are
 at least 
 <span class="param">index</span> elements in <code>this</code>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 elementAt(int index) =&gt; delegate.elementAt(index);
 </pre>
@@ -428,14 +435,14 @@ elementAt(int index) =&gt; delegate.elementAt(index);
 </div>
 <div class="method inherited"><h4 id="every">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>every</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element)) <a class="anchor-link" href="#every"
+bool <strong>every</strong>(bool test(element)) <a class="anchor-link" href="#every"
               title="Permalink to DelegatingList&lt;E&gt;.every">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns true if every elements of this collection satisify the
 predicate 
 <span class="param">test</span>. Returns <code>false</code> otherwise.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool every(bool test(element)) =&gt; delegate.every(test);
 </pre>
@@ -443,7 +450,7 @@ bool every(bool test(element)) =&gt; delegate.every(test);
 </div>
 <div class="method inherited"><h4 id="expand">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>expand</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> f(element)) <a class="anchor-link" href="#expand"
+Iterable <strong>expand</strong>(Iterable f(element)) <a class="anchor-link" href="#expand"
               title="Permalink to DelegatingList&lt;E&gt;.expand">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -454,7 +461,7 @@ by
 <p>The returned <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> is lazy, and calls 
 <span class="param">f</span> for each element
 of this every time it's iterated.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable expand(Iterable f(element)) =&gt; delegate.expand(f);
 </pre>
@@ -462,7 +469,7 @@ Iterable expand(Iterable f(element)) =&gt; delegate.expand(f);
 </div>
 <div class="method"><h4 id="fillRange">
 <button class="show-code">Code</button>
-void <strong>fillRange</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="http://api.dartlang.org/dart_core/int.html">int</a> end, [<a href="../quiver.collection/DelegatingList.html">E</a> fillValue]) <a class="anchor-link" href="#fillRange"
+void <strong>fillRange</strong>(int start, int end, [<a href="../quiver.collection/DelegatingList.html">E</a> fillValue]) <a class="anchor-link" href="#fillRange"
               title="Permalink to DelegatingList&lt;E&gt;.fillRange">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -474,7 +481,7 @@ to the given
 <p>An error occurs if 
 <span class="param">start</span>..
 <span class="param">end</span> is not a valid range for <code>this</code>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void fillRange(int start, int end, [E fillValue]) =&gt;
    delegate.fillRange(start, end, fillValue);
@@ -483,7 +490,7 @@ void fillRange(int start, int end, [E fillValue]) =&gt;
 </div>
 <div class="method inherited"><h4 id="firstWhere">
 <button class="show-code">Code</button>
-dynamic <strong>firstWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element), {orElse()}) <a class="anchor-link" href="#firstWhere"
+dynamic <strong>firstWhere</strong>(bool test(element), {orElse()}) <a class="anchor-link" href="#firstWhere"
               title="Permalink to DelegatingList&lt;E&gt;.firstWhere">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -494,7 +501,7 @@ dynamic <strong>firstWhere</strong>(<a href="http://api.dartlang.org/dart_core/b
 returned. By default, when 
 <span class="param">orElse</span> is <code>null</code>, a <a class="crossref" href="../dart_core/StateError.html">StateError</a> is
 thrown.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 firstWhere(bool test(element), {orElse()}) =&gt;
    delegate.firstWhere(test, orElse: orElse);
@@ -517,7 +524,7 @@ create a new value from the previous one and an element.</p>
 <p>Example of calculating the sum of an iterable:</p>
 <pre><code>iterable.fold(0, (prev, element) =&gt; prev + element);
 </code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 fold(initialValue, combine(previousValue, element)) =&gt;
    delegate.fold(initialValue, combine);
@@ -532,7 +539,7 @@ void <strong>forEach</strong>(void f(element)) <a class="anchor-link" href="#for
 <div class="inherited">
 <p>Applies the function 
 <span class="param">f</span> to each element of this collection.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void forEach(void f(element)) =&gt; delegate.forEach(f);
 </pre>
@@ -540,7 +547,7 @@ void forEach(void f(element)) =&gt; delegate.forEach(f);
 </div>
 <div class="method"><h4 id="getRange">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>getRange</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="http://api.dartlang.org/dart_core/int.html">int</a> end) <a class="anchor-link" href="#getRange"
+Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>getRange</strong>(int start, int end) <a class="anchor-link" href="#getRange"
               title="Permalink to DelegatingList&lt;E&gt;.getRange">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -557,14 +564,13 @@ void forEach(void f(element)) =&gt; delegate.forEach(f);
 of the call to this method. The returned <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> behaves like
 <code>skip(start).take(end - start)</code>. That is, it does not throw exceptions
 if <code>this</code> changes size.</p>
-<p>Example:</p>
-<pre><code>var list = [1, 2, 3, 4, 5];
-var range = list.getRange(1, 4);
-print(range.join(', '));  // =&gt; 2, 3, 4
-list.length = 3;
-print(range.join(', '));  // =&gt; 2, 3
+<pre><code>List&lt;String&gt; colors = ['red', 'green', 'blue', 'orange', 'pink'];
+Iterable&lt;String&gt; range = colors.getRange(1, 4);
+range.join(', ');  // 'green, blue, orange'
+colors.length = 3;
+range.join(', ');  // 'green, blue'
 </code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;E&gt; getRange(int start, int end) =&gt; delegate.getRange(start, end);
 </pre>
@@ -572,19 +578,25 @@ Iterable&lt;E&gt; getRange(int start, int end) =&gt; delegate.getRange(start, en
 </div>
 <div class="method"><h4 id="indexOf">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>indexOf</strong>(<a href="../quiver.collection/DelegatingList.html">E</a> element, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> start = 0]) <a class="anchor-link" href="#indexOf"
+int <strong>indexOf</strong>(<a href="../quiver.collection/DelegatingList.html">E</a> element, [int start = 0]) <a class="anchor-link" href="#indexOf"
               title="Permalink to DelegatingList&lt;E&gt;.indexOf">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Returns the first index of 
 <span class="param">element</span> in this list.</p>
 <p>Searches the list from index 
-<span class="param">start</span> to the length of the list.
+<span class="param">start</span> to the end of the list.
 The first time an object <code>o</code> is encountered so that <code>o == element</code>,
-the index of <code>o</code> is returned.
-Returns -1 if 
+the index of <code>o</code> is returned.</p>
+<pre><code>List&lt;String&gt; notes = ['do', 're', 'mi', 're'];
+notes.indexOf('re');    // 1
+notes.indexOf('re', 2); // 3
+</code></pre>
+<p>Returns -1 if 
 <span class="param">element</span> is not found.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<pre><code>notes.indexOf('fa');    // -1
+</code></pre>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 int indexOf(E element, [int start = 0]) =&gt; delegate.indexOf(element, start);
 </pre>
@@ -592,7 +604,7 @@ int indexOf(E element, [int start = 0]) =&gt; delegate.indexOf(element, start);
 </div>
 <div class="method"><h4 id="insert">
 <button class="show-code">Code</button>
-void <strong>insert</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index, <a href="../quiver.collection/DelegatingList.html">E</a> element) <a class="anchor-link" href="#insert"
+void <strong>insert</strong>(int index, <a href="../quiver.collection/DelegatingList.html">E</a> element) <a class="anchor-link" href="#insert"
               title="Permalink to DelegatingList&lt;E&gt;.insert">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -603,7 +615,7 @@ at or after the index towards the end of the list.</p>
 <p>An error occurs if the 
 <span class="param">index</span> is less than 0 or greater than length.
 An <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> occurs if the list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void insert(int index, E element) =&gt; delegate.insert(index, element);
 </pre>
@@ -611,7 +623,7 @@ void insert(int index, E element) =&gt; delegate.insert(index, element);
 </div>
 <div class="method"><h4 id="insertAll">
 <button class="show-code">Code</button>
-void <strong>insertAll</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index, <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#insertAll"
+void <strong>insertAll</strong>(int index, Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#insertAll"
               title="Permalink to DelegatingList&lt;E&gt;.insertAll">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -624,7 +636,7 @@ shifts all later objects towards the end of the list.</p>
 <p>An error occurs if the 
 <span class="param">index</span> is less than 0 or greater than length.
 An <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> occurs if the list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void insertAll(int index, Iterable&lt;E&gt; iterable) =&gt;
    delegate.insertAll(index, iterable);
@@ -633,7 +645,7 @@ void insertAll(int index, Iterable&lt;E&gt; iterable) =&gt;
 </div>
 <div class="method inherited"><h4 id="join">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>join</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> separator = ""]) <a class="anchor-link" href="#join"
+String <strong>join</strong>([String separator = ""]) <a class="anchor-link" href="#join"
               title="Permalink to DelegatingList&lt;E&gt;.join">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -642,7 +654,7 @@ void insertAll(int index, Iterable&lt;E&gt; iterable) =&gt;
 Then concatenates the strings, optionally separated by the 
 <span class="param">separator</span>
 string.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 String join([String separator = ""]) =&gt; delegate.join(separator);
 </pre>
@@ -650,7 +662,7 @@ String join([String separator = ""]) =&gt; delegate.join(separator);
 </div>
 <div class="method"><h4 id="lastIndexOf">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>lastIndexOf</strong>(<a href="../quiver.collection/DelegatingList.html">E</a> element, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> start]) <a class="anchor-link" href="#lastIndexOf"
+int <strong>lastIndexOf</strong>(<a href="../quiver.collection/DelegatingList.html">E</a> element, [int start]) <a class="anchor-link" href="#lastIndexOf"
               title="Permalink to DelegatingList&lt;E&gt;.lastIndexOf">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -660,11 +672,19 @@ String join([String separator = ""]) =&gt; delegate.join(separator);
 <span class="param">start</span> to 0.</p>
 <p>The first time an object <code>o</code> is encountered so that <code>o == element</code>,
 the index of <code>o</code> is returned.</p>
+<pre><code>List&lt;String&gt; notes = ['do', 're', 'mi', 're'];
+notes.lastIndexOf('re', 2); // 1
+</code></pre>
 <p>If 
-<span class="param">start</span> is not provided, it defaults to <code>this.length - 1</code>.</p>
+<span class="param">start</span> is not provided, this method searches from the end of the
+list./Returns</p>
+<pre><code>notes.lastIndexOf('re');  // 3
+</code></pre>
 <p>Returns -1 if 
 <span class="param">element</span> is not found.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<pre><code>notes.lastIndexOf('fa');  // -1
+</code></pre>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 int lastIndexOf(E element, [int start]) =&gt;
    delegate.lastIndexOf(element, start);
@@ -673,7 +693,7 @@ int lastIndexOf(E element, [int start]) =&gt;
 </div>
 <div class="method inherited"><h4 id="lastWhere">
 <button class="show-code">Code</button>
-dynamic <strong>lastWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element), {orElse()}) <a class="anchor-link" href="#lastWhere"
+dynamic <strong>lastWhere</strong>(bool test(element), {orElse()}) <a class="anchor-link" href="#lastWhere"
               title="Permalink to DelegatingList&lt;E&gt;.lastWhere">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -684,7 +704,7 @@ dynamic <strong>lastWhere</strong>(<a href="http://api.dartlang.org/dart_core/bo
 returned. By default, when 
 <span class="param">orElse</span> is <code>null</code>, a <a class="crossref" href="../dart_core/StateError.html">StateError</a> is
 thrown.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 lastWhere(bool test(element), {orElse()}) =&gt;
    delegate.lastWhere(test, orElse: orElse);
@@ -693,7 +713,7 @@ lastWhere(bool test(element), {orElse()}) =&gt;
 </div>
 <div class="method inherited"><h4 id="map">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>map</strong>(f(element)) <a class="anchor-link" href="#map"
+Iterable <strong>map</strong>(f(element)) <a class="anchor-link" href="#map"
               title="Permalink to DelegatingList&lt;E&gt;.map">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -706,7 +726,7 @@ not be invoked. The transformed elements will not be cached. Iterating
 multiple times over the the returned <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> will invoke the supplied
 function 
 <span class="param">f</span> multiple times on the same element.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable map(f(element)) =&gt; delegate.map(f);
 </pre>
@@ -723,7 +743,7 @@ of the collection using the provided function.</p>
 <p>Example of calculating the sum of an iterable:</p>
 <pre><code>iterable.reduce((value, element) =&gt; value + element);
 </code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 reduce(combine(value, element)) =&gt; delegate.reduce(combine);
 </pre>
@@ -731,19 +751,26 @@ reduce(combine(value, element)) =&gt; delegate.reduce(combine);
 </div>
 <div class="method"><h4 id="remove">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>remove</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> value) <a class="anchor-link" href="#remove"
+bool <strong>remove</strong>(Object value) <a class="anchor-link" href="#remove"
               title="Permalink to DelegatingList&lt;E&gt;.remove">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Removes the first occurence of 
 <span class="param">value</span> from this list.</p>
 <p>Returns true if 
-<span class="param">value</span> was in the list.
-Returns false otherwise.</p>
+<span class="param">value</span> was in the list, false otherwise.</p>
+<pre><code>List&lt;String&gt; parts = ['head', 'shoulders', 'knees', 'toes'];
+parts.remove('head'); // true
+parts.join(', ');     // 'shoulders, knees, toes'
+</code></pre>
 <p>The method has no effect if 
 <span class="param">value</span> was not in the list.</p>
+<pre><code>// Note: 'head' has already been removed.
+parts.remove('head'); // false
+parts.join(', ');     // 'shoulders, knees, toes'
+</code></pre>
 <p>An <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> occurs if the list is fixed-length.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 bool remove(Object value) =&gt; delegate.remove(value);
 </pre>
@@ -751,7 +778,7 @@ bool remove(Object value) =&gt; delegate.remove(value);
 </div>
 <div class="method"><h4 id="removeAt">
 <button class="show-code">Code</button>
-<a href="../quiver.collection/DelegatingList.html">E</a> <strong>removeAt</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index) <a class="anchor-link" href="#removeAt"
+<a href="../quiver.collection/DelegatingList.html">E</a> <strong>removeAt</strong>(int index) <a class="anchor-link" href="#removeAt"
               title="Permalink to DelegatingList&lt;E&gt;.removeAt">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -764,7 +791,7 @@ down by one position.</p>
 <span class="param">index</span> is out of range for this list.</li><li>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a>, and doesn't remove the object,
 if this is a fixed-length list.</p></li></ul>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 E removeAt(int index) =&gt; delegate.removeAt(index);
 </pre>
@@ -778,7 +805,7 @@ E removeAt(int index) =&gt; delegate.removeAt(index);
 <div class="inherited">
 <p>Pops and returns the last object in this list.</p>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if this is a fixed-length list.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 E removeLast() =&gt; delegate.removeLast();
 </pre>
@@ -786,7 +813,7 @@ E removeLast() =&gt; delegate.removeLast();
 </div>
 <div class="method"><h4 id="removeRange">
 <button class="show-code">Code</button>
-void <strong>removeRange</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="http://api.dartlang.org/dart_core/int.html">int</a> end) <a class="anchor-link" href="#removeRange"
+void <strong>removeRange</strong>(int start, int end) <a class="anchor-link" href="#removeRange"
               title="Permalink to DelegatingList&lt;E&gt;.removeRange">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -797,7 +824,7 @@ void <strong>removeRange</strong>(<a href="http://api.dartlang.org/dart_core/int
 <span class="param">start</span>..
 <span class="param">end</span> is not a valid range for <code>this</code>.
 Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if this is a fixed-length list.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void removeRange(int start, int end) =&gt; delegate.removeRange(start, end);
 </pre>
@@ -805,7 +832,7 @@ void removeRange(int start, int end) =&gt; delegate.removeRange(start, end);
 </div>
 <div class="method"><h4 id="removeWhere">
 <button class="show-code">Code</button>
-void <strong>removeWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.collection/DelegatingList.html">E</a> element)) <a class="anchor-link" href="#removeWhere"
+void <strong>removeWhere</strong>(bool test(<a href="../quiver.collection/DelegatingList.html">E</a> element)) <a class="anchor-link" href="#removeWhere"
               title="Permalink to DelegatingList&lt;E&gt;.removeWhere">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -813,8 +840,12 @@ void <strong>removeWhere</strong>(<a href="http://api.dartlang.org/dart_core/boo
 <span class="param">test</span>.</p>
 <p>An object <code>o</code> satisfies 
 <span class="param">test</span> if <code>test(o)</code> is true.</p>
+<pre><code>List&lt;String&gt; numbers = ['one', 'two', 'three', 'four'];
+numbers.removeWhere((item) =&gt; item.length == 3);
+numbers.join(', '); // 'three, four'
+</code></pre>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if this is a fixed-length list.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void removeWhere(bool test(E element)) =&gt; delegate.removeWhere(test);
 </pre>
@@ -822,7 +853,7 @@ void removeWhere(bool test(E element)) =&gt; delegate.removeWhere(test);
 </div>
 <div class="method"><h4 id="replaceRange">
 <button class="show-code">Code</button>
-void <strong>replaceRange</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="http://api.dartlang.org/dart_core/int.html">int</a> end, <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#replaceRange"
+void <strong>replaceRange</strong>(int start, int end, Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#replaceRange"
               title="Permalink to DelegatingList&lt;E&gt;.replaceRange">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -831,15 +862,14 @@ void <strong>replaceRange</strong>(<a href="http://api.dartlang.org/dart_core/in
 <span class="param">end</span> exclusive
 and replaces them with the contents of the 
 <span class="param">iterable</span>.</p>
+<pre><code>List&lt;int&gt; list = [1, 2, 3, 4];
+list.replaceRange(1, 3, [6, 7]);
+list.join(', '); // '1, 6, 7, 4'
+</code></pre>
 <p>An error occurs if 
 <span class="param">start</span>..
 <span class="param">end</span> is not a valid range for <code>this</code>.</p>
-<p>Example:</p>
-<pre><code>var list = [1, 2, 3, 4, 5];
-list.replaceRange(1, 3, [6, 7, 8, 9]);
-print(list);  // [1, 6, 7, 8, 9, 4, 5]
-</code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void replaceRange(int start, int end, Iterable&lt;E&gt; iterable) =&gt;
    delegate.replaceRange(start, end, iterable);
@@ -848,7 +878,7 @@ void replaceRange(int start, int end, Iterable&lt;E&gt; iterable) =&gt;
 </div>
 <div class="method"><h4 id="retainWhere">
 <button class="show-code">Code</button>
-void <strong>retainWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.collection/DelegatingList.html">E</a> element)) <a class="anchor-link" href="#retainWhere"
+void <strong>retainWhere</strong>(bool test(<a href="../quiver.collection/DelegatingList.html">E</a> element)) <a class="anchor-link" href="#retainWhere"
               title="Permalink to DelegatingList&lt;E&gt;.retainWhere">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -856,8 +886,12 @@ void <strong>retainWhere</strong>(<a href="http://api.dartlang.org/dart_core/boo
 <span class="param">test</span>.</p>
 <p>An object <code>o</code> satisfies 
 <span class="param">test</span> if <code>test(o)</code> is true.</p>
+<pre><code>List&lt;String&gt; numbers = ['one', 'two', 'three', 'four'];
+numbers.retainWhere((item) =&gt; item.length == 3);
+numbers.join(', '); // 'one, two'
+</code></pre>
 <p>Throws an <a class="crossref" href="../dart_core/UnsupportedError.html">UnsupportedError</a> if this is a fixed-length list.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void retainWhere(bool test(E element)) =&gt; delegate.retainWhere(test);
 </pre>
@@ -865,7 +899,7 @@ void retainWhere(bool test(E element)) =&gt; delegate.retainWhere(test);
 </div>
 <div class="method"><h4 id="setAll">
 <button class="show-code">Code</button>
-void <strong>setAll</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index, <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#setAll"
+void <strong>setAll</strong>(int index, Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable) <a class="anchor-link" href="#setAll"
               title="Permalink to DelegatingList&lt;E&gt;.setAll">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -873,13 +907,17 @@ void <strong>setAll</strong>(<a href="http://api.dartlang.org/dart_core/int.html
 <span class="param">iterable</span>, starting
 at position 
 <span class="param">index</span> in this list.</p>
+<pre><code>List&lt;String&gt; list = ['a', 'b', 'c'];
+list.setAll(1, ['bee', 'sea']);
+list.join(', '); // 'a, bee, sea'
+</code></pre>
 <p>This operation does not increase the length of <code>this</code>.</p>
 <p>An error occurs if the 
 <span class="param">index</span> is less than 0 or greater than length.
 An error occurs if the 
 <span class="param">iterable</span> is longer than <a class="crossref" href="../quiver.collection/DelegatingList.html#length=">length</a> - 
 <span class="param">index</span>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void setAll(int index, Iterable&lt;E&gt; iterable) =&gt;
    delegate.setAll(index, iterable);
@@ -888,7 +926,7 @@ void setAll(int index, Iterable&lt;E&gt; iterable) =&gt;
 </div>
 <div class="method"><h4 id="setRange">
 <button class="show-code">Code</button>
-void <strong>setRange</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, <a href="http://api.dartlang.org/dart_core/int.html">int</a> end, <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> skipCount = 0]) <a class="anchor-link" href="#setRange"
+void <strong>setRange</strong>(int start, int end, Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; iterable, [int skipCount = 0]) <a class="anchor-link" href="#setRange"
               title="Permalink to DelegatingList&lt;E&gt;.setRange">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -898,6 +936,13 @@ void <strong>setRange</strong>(<a href="http://api.dartlang.org/dart_core/int.ht
 into the range 
 <span class="param">start</span> inclusive to 
 <span class="param">end</span> exclusive of <code>this</code>.</p>
+<pre><code>List&lt;int&gt; list1 = [1, 2, 3, 4];
+List&lt;int&gt; list2 = [5, 6, 7, 8, 9];
+// Copies the 4th and 5th items in list2 as the 2nd and 3rd items
+// of list1.
+list1.setRange(1, 3, list2, 3);
+list1.join(', '); // '1, 8, 9, 4'
+</code></pre>
 <p>If 
 <span class="param">start</span> equals 
 <span class="param">end</span> and 
@@ -911,29 +956,36 @@ An error occurs if the
 <span class="param">iterable</span> does not have enough objects after
 skipping 
 <span class="param">skipCount</span> objects.</p>
-<p>Example:</p>
-<pre><code>var list = [1, 2, 3, 4];
-var list2 = [5, 6, 7, 8, 9];
-list.setRange(1, 3, list2, 3);
-print(list);  // =&gt; [1, 8, 9, 4]
-</code></pre>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void setRange(int start, int end, Iterable&lt;E&gt; iterable, [int skipCount = 0])
    =&gt; delegate.setRange(start, end, iterable, skipCount);
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="shuffle">
+<button class="show-code">Code</button>
+void <strong>shuffle</strong>() <a class="anchor-link" href="#shuffle"
+              title="Permalink to DelegatingList&lt;E&gt;.shuffle">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Shuffles the elements of this list randomly.</p>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<pre class="source">
+void shuffle() =&gt; delegate.shuffle();
+</pre>
+</div>
+</div>
 <div class="method inherited"><h4 id="singleWhere">
 <button class="show-code">Code</button>
-dynamic <strong>singleWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element)) <a class="anchor-link" href="#singleWhere"
+dynamic <strong>singleWhere</strong>(bool test(element)) <a class="anchor-link" href="#singleWhere"
               title="Permalink to DelegatingList&lt;E&gt;.singleWhere">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Returns the single element that satisfies 
 <span class="param">test</span>. If no or more than one
 element match then a <a class="crossref" href="../dart_core/StateError.html">StateError</a> is thrown.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 singleWhere(bool test(element)) =&gt; delegate.singleWhere(test);
 </pre>
@@ -941,7 +993,7 @@ singleWhere(bool test(element)) =&gt; delegate.singleWhere(test);
 </div>
 <div class="method inherited"><h4 id="skip">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>skip</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> n) <a class="anchor-link" href="#skip"
+Iterable <strong>skip</strong>(int n) <a class="anchor-link" href="#skip"
               title="Permalink to DelegatingList&lt;E&gt;.skip">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -952,7 +1004,7 @@ singleWhere(bool test(element)) =&gt; delegate.singleWhere(test);
 empty.</p>
 <p>It is an error if 
 <span class="param">n</span> is negative.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable skip(int n) =&gt; delegate.skip(n);
 </pre>
@@ -960,7 +1012,7 @@ Iterable skip(int n) =&gt; delegate.skip(n);
 </div>
 <div class="method inherited"><h4 id="skipWhile">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>skipWhile</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(value)) <a class="anchor-link" href="#skipWhile"
+Iterable <strong>skipWhile</strong>(bool test(value)) <a class="anchor-link" href="#skipWhile"
               title="Permalink to DelegatingList&lt;E&gt;.skipWhile">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -976,7 +1028,7 @@ testing and uses every later element unconditionally. That is, the elements
 of the returned Iterable are the elements of <code>this</code> starting from the
 first element that does not satisfy 
 <span class="param">test</span>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable skipWhile(bool test(value)) =&gt; delegate.skipWhile(test);
 </pre>
@@ -984,7 +1036,7 @@ Iterable skipWhile(bool test(value)) =&gt; delegate.skipWhile(test);
 </div>
 <div class="method"><h4 id="sort">
 <button class="show-code">Code</button>
-void <strong>sort</strong>([<a href="http://api.dartlang.org/dart_core/int.html">int</a> compare(<a href="../quiver.collection/DelegatingList.html">E</a> a, <a href="../quiver.collection/DelegatingList.html">E</a> b)]) <a class="anchor-link" href="#sort"
+void <strong>sort</strong>([int compare(<a href="../quiver.collection/DelegatingList.html">E</a> a, <a href="../quiver.collection/DelegatingList.html">E</a> b)]) <a class="anchor-link" href="#sort"
               title="Permalink to DelegatingList&lt;E&gt;.sort">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -992,10 +1044,19 @@ void <strong>sort</strong>([<a href="http://api.dartlang.org/dart_core/int.html"
 <span class="param">compare</span> function.</p>
 <p>The 
 <span class="param">compare</span> function must act as a <a class="crossref" href="../dart_core/Comparator.html">Comparator</a>.</p>
+<pre><code>List&lt;String&gt; numbers = ['one', 'two', 'three', 'four'];
+// Sort from shortest to longest.
+numbers.sort((x, y) =&gt; x.length.compareTo(y.length));
+numbers.join(', '); // 'one, two, four, three'
+</code></pre>
 <p>The default List implementations use <a class="crossref" href="../dart_core/Comparable.html#compare">Comparable.compare</a> if
 
 <span class="param">compare</span> is omitted.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<pre><code>List&lt;int&gt; nums = [13, 2, -11];
+nums.sort();
+     nums.join(', '); // '-11, 2, 13'
+</code></pre>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 void sort([int compare(E a, E b)]) =&gt; delegate.sort(compare);
 </pre>
@@ -1003,21 +1064,26 @@ void sort([int compare(E a, E b)]) =&gt; delegate.sort(compare);
 </div>
 <div class="method"><h4 id="sublist">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>sublist</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> start, [<a href="http://api.dartlang.org/dart_core/int.html">int</a> end]) <a class="anchor-link" href="#sublist"
+List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; <strong>sublist</strong>(int start, [int end]) <a class="anchor-link" href="#sublist"
               title="Permalink to DelegatingList&lt;E&gt;.sublist">#</a></h4>
 <div class="doc">
 <div class="inherited">
-<p>Returns a new list containing the objects
-from 
+<p>Returns a new list containing the objects from 
 <span class="param">start</span> inclusive to 
-<span class="param">end</span> exclusive.</p>
+<span class="param">end</span>
+exclusive.</p>
+<pre><code>List&lt;String&gt; colors = ['red', 'green', 'blue', 'orange', 'pink'];
+colors.sublist(1, 3); // ['green', 'blue']
+</code></pre>
 <p>If 
 <span class="param">end</span> is omitted, the <a class="crossref" href="../quiver.collection/DelegatingList.html#length=">length</a> of <code>this</code> is used.</p>
+<pre><code>colors.sublist(1);  // ['green', 'blue', 'orange', 'pink']
+</code></pre>
 <p>An error occurs if 
 <span class="param">start</span> is outside the range <code>0</code> .. <code>length</code> or if
 
 <span class="param">end</span> is outside the range <code>start</code> .. <code>length</code>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 List&lt;E&gt; sublist(int start, [int end]) =&gt; delegate.sublist(start, end);
 </pre>
@@ -1025,7 +1091,7 @@ List&lt;E&gt; sublist(int start, [int end]) =&gt; delegate.sublist(start, end);
 </div>
 <div class="method inherited"><h4 id="take">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>take</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> n) <a class="anchor-link" href="#take"
+Iterable <strong>take</strong>(int n) <a class="anchor-link" href="#take"
               title="Permalink to DelegatingList&lt;E&gt;.take">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -1037,7 +1103,7 @@ contains fewer than
 <span class="param">n</span> elements.</p>
 <p>It is an error if 
 <span class="param">n</span> is negative.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable take(int n) =&gt; delegate.take(n);
 </pre>
@@ -1045,7 +1111,7 @@ Iterable take(int n) =&gt; delegate.take(n);
 </div>
 <div class="method inherited"><h4 id="takeWhile">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>takeWhile</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(value)) <a class="anchor-link" href="#takeWhile"
+Iterable <strong>takeWhile</strong>(bool test(value)) <a class="anchor-link" href="#takeWhile"
               title="Permalink to DelegatingList&lt;E&gt;.takeWhile">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -1057,7 +1123,7 @@ Iterable starts iterating over the elements of <code>this</code>.</p>
 <span class="param">test</span>,
 it discards <code>e</code> and moves into the finished state. That is, it does not
 get or provide any more elements.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable takeWhile(bool test(value)) =&gt; delegate.takeWhile(test);
 </pre>
@@ -1065,7 +1131,7 @@ Iterable takeWhile(bool test(value)) =&gt; delegate.takeWhile(test);
 </div>
 <div class="method inherited"><h4 id="toList">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/List.html">List</a> <strong>toList</strong>({<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> growable: true}) <a class="anchor-link" href="#toList"
+List <strong>toList</strong>({bool growable: true}) <a class="anchor-link" href="#toList"
               title="Permalink to DelegatingList&lt;E&gt;.toList">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -1073,7 +1139,7 @@ Iterable takeWhile(bool test(value)) =&gt; delegate.takeWhile(test);
 <p>The elements are in iteration order. The list is fixed-length
 if 
 <span class="param">growable</span> is false.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 List toList({bool growable: true}) =&gt; delegate.toList(growable: growable);
 </pre>
@@ -1081,12 +1147,12 @@ List toList({bool growable: true}) =&gt; delegate.toList(growable: growable);
 </div>
 <div class="method inherited"><h4 id="toSet">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Set.html">Set</a> <strong>toSet</strong>() <a class="anchor-link" href="#toSet"
+Set <strong>toSet</strong>() <a class="anchor-link" href="#toSet"
               title="Permalink to DelegatingList&lt;E&gt;.toSet">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
 <p>Creates a <a class="crossref" href="../dart_core/Set.html">Set</a> containing the elements of this <a class="crossref" href="../dart_core/Iterable.html">Iterable</a>.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Set toSet() =&gt; delegate.toSet();
 </pre>
@@ -1094,7 +1160,7 @@ Set toSet() =&gt; delegate.toSet();
 </div>
 <div class="method inherited"><h4 id="where">
 <button class="show-code">Code</button>
-<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> <strong>where</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(element)) <a class="anchor-link" href="#where"
+Iterable <strong>where</strong>(bool test(element)) <a class="anchor-link" href="#where"
               title="Permalink to DelegatingList&lt;E&gt;.where">#</a></h4>
 <div class="inherited-from">inherited from <a href="../quiver.collection/DelegatingIterable.html">DelegatingIterable</a> </div><div class="doc">
 <div class="inherited">
@@ -1108,7 +1174,7 @@ not be invoked. Iterating will not cache results, and thus iterating
 multiple times over the returned <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> will invoke the supplied
 function 
 <span class="param">test</span> multiple times on the same element.</p>
-<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a>&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from Iterable&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
 Iterable where(bool test(element)) =&gt; delegate.where(test);
 </pre>
@@ -1119,7 +1185,7 @@ Iterable where(bool test(element)) =&gt; delegate.where(test);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-05 18:15:37.758</div>
+          <div>This page was generated at 2013-10-14 14:26:54.486</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>
