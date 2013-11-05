@@ -113,7 +113,7 @@ final bool         <strong>isEmpty</strong> <a class="anchor-link"
             title="Permalink to BiMap&lt;K, V&gt;.isEmpty">#</a>
         </h4>
         <div class="inherited-from">inherited from Map </div><div class="doc">
-<p>Returns true if there is no {key, value} pair in the map.</p>
+<p>Returns true if there is no key-value pair in the map.</p>
 <pre class="source">
 bool get isEmpty;
 </pre>
@@ -126,7 +126,7 @@ final bool         <strong>isNotEmpty</strong> <a class="anchor-link"
             title="Permalink to BiMap&lt;K, V&gt;.isNotEmpty">#</a>
         </h4>
         <div class="inherited-from">inherited from Map </div><div class="doc">
-<p>Returns true if there is at least one {key, value} pair in the map.</p>
+<p>Returns true if there is at least one key-value pair in the map.</p>
 <pre class="source">
 bool get isNotEmpty;
 </pre>
@@ -140,6 +140,8 @@ final Iterable&lt;<a href="../quiver.collection/BiMap.html">K</a>&gt;         <s
         </h4>
         <div class="inherited-from">inherited from Map </div><div class="doc">
 <p>The keys of <code>this</code>.</p>
+<p>The returned iterable has efficient <code>length</code> and <code>contains</code> operations,
+based on <a class="crossref" href="../dart_core/Map.html#length">length</a> and <a class="crossref" href="../dart_core/Map.html#containsKey">containsKey</a> of the map.</p>
 <pre class="source">
 Iterable&lt;K&gt; get keys;
 </pre>
@@ -152,7 +154,7 @@ final int         <strong>length</strong> <a class="anchor-link"
             title="Permalink to BiMap&lt;K, V&gt;.length">#</a>
         </h4>
         <div class="inherited-from">inherited from Map </div><div class="doc">
-<p>The number of {key, value} pairs in the map.</p>
+<p>The number of key-value pairs in the map.</p>
 <pre class="source">
 int get length;
 </pre>
@@ -166,6 +168,8 @@ final Iterable&lt;<a href="../quiver.collection/BiMap.html">V</a>&gt;         <s
         </h4>
         <div class="inherited-from">inherited from Map </div><div class="doc">
 <p>The values of <code>this</code>.</p>
+<p>The returned iterable has an efficient <code>length</code> method based on the
+<a class="crossref" href="../dart_core/Map.html#length">length</a> of the map.</p>
 <pre class="source">
 Iterable&lt;V&gt; get values;
 </pre>
@@ -296,7 +300,7 @@ removed.</p>
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.578</div>
+          <div>This page was generated at 2013-11-04 16:16:49.035</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

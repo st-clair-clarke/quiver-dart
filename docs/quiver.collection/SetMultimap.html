@@ -38,7 +38,7 @@ with each key.</p>
 class SetMultimap&lt;K, V&gt; extends _BaseMultimap&lt;K, V&gt; {
  SetMultimap() : super();
  Set&lt;V&gt; _create() =&gt; new Set&lt;V&gt;();
- void _add(Set&lt;V&gt; iterable, V value) =&gt; iterable.add(value);
+ void _add(Set&lt;V&gt; iterable, V value) { iterable.add(value); }
  void _addAll(Set&lt;V&gt; iterable, Iterable&lt;V&gt; value) =&gt; iterable.addAll(value);
  void _clear(Set&lt;V&gt; iterable) =&gt; iterable.clear();
  bool _remove(Set&lt;V&gt; iterable, V value) =&gt; iterable.remove(value);
@@ -156,9 +156,11 @@ Set&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>operato
 <div class="doc">
 <div class="inherited">
 <p>Returns the values for the given 
-<span class="param">key</span> or null if 
-<span class="param">key</span> is not
-in the multimap.</p>
+<span class="param">key</span>. An empty iterable is returned if
+
+<span class="param">key</span> is not mapped. The returned collection is a view on the multimap.
+Updates to the collection modify the multimap and likewise, modifications
+to the multimap are reflected in the returned collection.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
 Set&lt;V&gt; operator [](Object key) =&gt; super[key];
@@ -324,10 +326,9 @@ Set&lt;<a href="../quiver.collection/SetMultimap.html">V</a>&gt; <strong>removeA
 <div class="doc">
 <div class="inherited">
 <p>Removes the association for the given 
-<span class="param">key</span>. Returns the value for
-
-<span class="param">key</span> in the multimap or null if 
-<span class="param">key</span> is not in the multimap.</p>
+<span class="param">key</span>. Returns the collection of
+removed values, or an empty iterable if 
+<span class="param">key</span> was unmapped.</p>
 <div class="docs-inherited-from">docs inherited from <a href="../quiver.collection/Multimap.html">Multimap</a>&lt;<a href="../quiver.collection/SetMultimap.html">K</a>, <a href="../quiver.collection/SetMultimap.html">V</a>&gt; </div></div>
 <pre class="source">
 Set&lt;V&gt; removeAll(Object key) =&gt; super.removeAll(key);
@@ -352,7 +353,7 @@ Map&lt;K, Set&lt;V&gt;&gt; toMap() =&gt; super.toMap();
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.524</div>
+          <div>This page was generated at 2013-11-04 16:16:48.981</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

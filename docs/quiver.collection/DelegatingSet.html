@@ -46,7 +46,7 @@ For instance you can create a FruitSet like this :</p>
 abstract class DelegatingSet&lt;E&gt; extends DelegatingIterable&lt;E&gt; implements Set&lt;E&gt; {
  Set&lt;E&gt; get delegate;
 
- void add(E value) =&gt; delegate.add(value);
+ bool add(E value) =&gt; delegate.add(value);
 
  void addAll(Iterable&lt;E&gt; elements) =&gt; delegate.addAll(elements);
 
@@ -57,6 +57,8 @@ abstract class DelegatingSet&lt;E&gt; extends DelegatingIterable&lt;E&gt; implem
  Set&lt;E&gt; difference(Set&lt;E&gt; other) =&gt; delegate.difference(other);
 
  Set&lt;E&gt; intersection(Set&lt;Object&gt; other) =&gt; delegate.intersection(other);
+
+ E lookup(Object object) =&gt; delegate.lookup(object);
 
  bool remove(Object value) =&gt; delegate.remove(value);
 
@@ -208,17 +210,18 @@ get single =&gt; delegate.single;
 <h3>Methods</h3>
 <div class="method"><h4 id="add">
 <button class="show-code">Code</button>
-void <strong>add</strong>(<a href="../quiver.collection/DelegatingSet.html">E</a> value) <a class="anchor-link" href="#add"
+bool <strong>add</strong>(<a href="../quiver.collection/DelegatingSet.html">E</a> value) <a class="anchor-link" href="#add"
               title="Permalink to DelegatingSet&lt;E&gt;.add">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Adds 
-<span class="param">value</span> into the set.</p>
-<p>The method has no effect if 
-<span class="param">value</span> is already in the set.</p>
+<span class="param">value</span> into the set. Returns <code>true</code> if 
+<span class="param">value</span> was added to the set.</p>
+<p>If 
+<span class="param">value</span> already exists, the set is not changed and <code>false</code> is returned.</p>
 <div class="docs-inherited-from">docs inherited from Set&lt;<a href="../quiver.collection/DelegatingSet.html">E</a>&gt; </div></div>
 <pre class="source">
-void add(E value) =&gt; delegate.add(value);
+bool add(E value) =&gt; delegate.add(value);
 </pre>
 </div>
 </div>
@@ -477,6 +480,23 @@ lastWhere(bool test(element), {orElse()}) =&gt;
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="lookup">
+<button class="show-code">Code</button>
+<a href="../quiver.collection/DelegatingSet.html">E</a> <strong>lookup</strong>(Object object) <a class="anchor-link" href="#lookup"
+              title="Permalink to DelegatingSet&lt;E&gt;.lookup">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>If an object equal to 
+<span class="param">object</span> is in the set, return it.</p>
+<p>Checks if there is an object in the set that is equal to 
+<span class="param">object</span>.
+If so, that object is returned, otherwise returns null.</p>
+<div class="docs-inherited-from">docs inherited from Set&lt;<a href="../quiver.collection/DelegatingSet.html">E</a>&gt; </div></div>
+<pre class="source">
+E lookup(Object object) =&gt; delegate.lookup(object);
+</pre>
+</div>
+</div>
 <div class="method inherited"><h4 id="map">
 <button class="show-code">Code</button>
 Iterable <strong>map</strong>(f(element)) <a class="anchor-link" href="#map"
@@ -613,7 +633,7 @@ Iterable <strong>skip</strong>(int n) <a class="anchor-link" href="#skip"
 <p>Returns an Iterable that skips the first 
 <span class="param">n</span> elements.</p>
 <p>If <code>this</code> has fewer than 
-<span class="param">n</span> elements, then the resulting Iterable is 
+<span class="param">n</span> elements, then the resulting Iterable is
 empty.</p>
 <p>It is an error if 
 <span class="param">n</span> is negative.</p>
@@ -716,6 +736,26 @@ Set toSet() =&gt; delegate.toSet();
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+String <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to DelegatingSet&lt;E&gt;.toString">#</a></h4>
+<div class="inherited-from">inherited from IterableBase </div><div class="doc">
+<p>Returns a string representation of (some of) the elements of <code>this</code>.</p>
+<p>Elements are represented by their own <code>toString</code> results.</p>
+<p>The representation always contains the first three elements.
+If there are less than a hundred elements in the iterable, it also
+contains the last two elements.</p>
+<p>If the resulting string isn't above 80 characters, more elements are
+included from the start of the iterable.</p>
+<p>The conversion may omit calling <code>toString</code> on some elements if they
+are known to now occur in the output, and it may stop iterating after
+a hundred elements.</p>
+<pre class="source">
+String toString() =&gt; _iterableToString(this);
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="union">
 <button class="show-code">Code</button>
 Set&lt;<a href="../quiver.collection/DelegatingSet.html">E</a>&gt; <strong>union</strong>(Set&lt;<a href="../quiver.collection/DelegatingSet.html">E</a>&gt; other) <a class="anchor-link" href="#union"
@@ -760,7 +800,7 @@ Iterable where(bool test(element)) =&gt; delegate.where(test);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.305</div>
+          <div>This page was generated at 2013-11-04 16:16:48.821</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

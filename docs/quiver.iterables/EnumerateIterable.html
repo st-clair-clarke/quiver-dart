@@ -511,7 +511,7 @@ Iterable&lt;<a href="../quiver.iterables/EnumerateIterable.html">E</a>&gt; <stro
 <p>Returns an Iterable that skips the first 
 <span class="param">n</span> elements.</p>
 <p>If <code>this</code> has fewer than 
-<span class="param">n</span> elements, then the resulting Iterable is 
+<span class="param">n</span> elements, then the resulting Iterable is
 empty.</p>
 <p>It is an error if 
 <span class="param">n</span> is negative.</p>
@@ -623,6 +623,26 @@ Set&lt;E&gt; toSet() =&gt; new Set&lt;E&gt;.from(this);
 </pre>
 </div>
 </div>
+<div class="method inherited"><h4 id="toString">
+<button class="show-code">Code</button>
+String <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to EnumerateIterable&lt;V&gt;.toString">#</a></h4>
+<div class="inherited-from">inherited from IterableBase </div><div class="doc">
+<p>Returns a string representation of (some of) the elements of <code>this</code>.</p>
+<p>Elements are represented by their own <code>toString</code> results.</p>
+<p>The representation always contains the first three elements.
+If there are less than a hundred elements in the iterable, it also
+contains the last two elements.</p>
+<p>If the resulting string isn't above 80 characters, more elements are
+included from the start of the iterable.</p>
+<p>The conversion may omit calling <code>toString</code> on some elements if they
+are known to now occur in the output, and it may stop iterating after
+a hundred elements.</p>
+<pre class="source">
+String toString() =&gt; _iterableToString(this);
+</pre>
+</div>
+</div>
 <div class="method inherited"><h4 id="where">
 <button class="show-code">Code</button>
 Iterable&lt;<a href="../quiver.iterables/EnumerateIterable.html">E</a>&gt; <strong>where</strong>(bool f(<a href="../quiver.iterables/EnumerateIterable.html">E</a> element)) <a class="anchor-link" href="#where"
@@ -647,7 +667,7 @@ Iterable&lt;E&gt; where(bool f(E element)) =&gt; new WhereIterable&lt;E&gt;(this
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.650</div>
+          <div>This page was generated at 2013-11-04 16:16:49.130</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

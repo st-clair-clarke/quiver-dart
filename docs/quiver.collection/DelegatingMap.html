@@ -103,7 +103,7 @@ final bool         <strong>isEmpty</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns true if there is no {key, value} pair in the map.</p>
+<p>Returns true if there is no key-value pair in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>, <a href="../quiver.collection/DelegatingMap.html">V</a>&gt; </div></div>
 <pre class="source">
 bool get isEmpty =&gt; delegate.isEmpty;
@@ -118,7 +118,7 @@ final bool         <strong>isNotEmpty</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns true if there is at least one {key, value} pair in the map.</p>
+<p>Returns true if there is at least one key-value pair in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>, <a href="../quiver.collection/DelegatingMap.html">V</a>&gt; </div></div>
 <pre class="source">
 bool get isNotEmpty =&gt; delegate.isNotEmpty;
@@ -134,6 +134,8 @@ final Iterable&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>&gt;   
         <div class="doc">
 <div class="inherited">
 <p>The keys of <code>this</code>.</p>
+<p>The returned iterable has efficient <code>length</code> and <code>contains</code> operations,
+based on <a class="crossref" href="../quiver.collection/DelegatingMap.html#length">length</a> and <a class="crossref" href="../quiver.collection/DelegatingMap.html#containsKey">containsKey</a> of the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>, <a href="../quiver.collection/DelegatingMap.html">V</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;K&gt; get keys =&gt; delegate.keys;
@@ -148,7 +150,7 @@ final int         <strong>length</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>The number of {key, value} pairs in the map.</p>
+<p>The number of key-value pairs in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>, <a href="../quiver.collection/DelegatingMap.html">V</a>&gt; </div></div>
 <pre class="source">
 int get length =&gt; delegate.length;
@@ -164,6 +166,8 @@ final Iterable&lt;<a href="../quiver.collection/DelegatingMap.html">V</a>&gt;   
         <div class="doc">
 <div class="inherited">
 <p>The values of <code>this</code>.</p>
+<p>The returned iterable has an efficient <code>length</code> method based on the
+<a class="crossref" href="../quiver.collection/DelegatingMap.html#length">length</a> of the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/DelegatingMap.html">K</a>, <a href="../quiver.collection/DelegatingMap.html">V</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;V&gt; get values =&gt; delegate.values;
@@ -338,7 +342,7 @@ V remove(Object key) =&gt; delegate.remove(key);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.357</div>
+          <div>This page was generated at 2013-11-04 16:16:48.877</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

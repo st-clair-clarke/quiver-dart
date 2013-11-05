@@ -80,7 +80,7 @@ class HashBiMap&lt;K, V&gt; implements BiMap&lt;K, V&gt; {
    if (key == null) throw new ArgumentError("null key");
    if (value == null) throw new ArgumentError("null value");
    var oldValue = _map[key];
-   if (oldValue == value) return;
+   if (oldValue == value) return value;
    if (inverse.containsKey(value)) {
      if (!replace) throw new ArgumentError("Mapping for $value exists");
      _map.remove(_inverse[value]);
@@ -142,7 +142,7 @@ final bool         <strong>isEmpty</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns true if there is no {key, value} pair in the map.</p>
+<p>Returns true if there is no key-value pair in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/HashBiMap.html">K</a>, <a href="../quiver.collection/HashBiMap.html">V</a>&gt; </div></div>
 <pre class="source">
 bool get isEmpty =&gt; _map.isEmpty;
@@ -157,7 +157,7 @@ final bool         <strong>isNotEmpty</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>Returns true if there is at least one {key, value} pair in the map.</p>
+<p>Returns true if there is at least one key-value pair in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/HashBiMap.html">K</a>, <a href="../quiver.collection/HashBiMap.html">V</a>&gt; </div></div>
 <pre class="source">
 bool get isNotEmpty =&gt; _map.isNotEmpty;
@@ -173,6 +173,8 @@ final Iterable&lt;<a href="../quiver.collection/HashBiMap.html">K</a>&gt;       
         <div class="doc">
 <div class="inherited">
 <p>The keys of <code>this</code>.</p>
+<p>The returned iterable has efficient <code>length</code> and <code>contains</code> operations,
+based on <a class="crossref" href="../quiver.collection/HashBiMap.html#length">length</a> and <a class="crossref" href="../quiver.collection/HashBiMap.html#containsKey">containsKey</a> of the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/HashBiMap.html">K</a>, <a href="../quiver.collection/HashBiMap.html">V</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;K&gt; get keys =&gt; _map.keys;
@@ -187,7 +189,7 @@ final int         <strong>length</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <div class="inherited">
-<p>The number of {key, value} pairs in the map.</p>
+<p>The number of key-value pairs in the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/HashBiMap.html">K</a>, <a href="../quiver.collection/HashBiMap.html">V</a>&gt; </div></div>
 <pre class="source">
 int get length =&gt; _map.length;
@@ -203,6 +205,8 @@ final Iterable&lt;<a href="../quiver.collection/HashBiMap.html">V</a>&gt;       
         <div class="doc">
 <div class="inherited">
 <p>The values of <code>this</code>.</p>
+<p>The returned iterable has an efficient <code>length</code> method based on the
+<a class="crossref" href="../quiver.collection/HashBiMap.html#length">length</a> of the map.</p>
 <div class="docs-inherited-from">docs inherited from Map&lt;<a href="../quiver.collection/HashBiMap.html">K</a>, <a href="../quiver.collection/HashBiMap.html">V</a>&gt; </div></div>
 <pre class="source">
 Iterable&lt;V&gt; get values =&gt; _inverse.keys;
@@ -402,7 +406,7 @@ void replace(K key, V value) { _add(key, value, true); }
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.569</div>
+          <div>This page was generated at 2013-11-04 16:16:49.026</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

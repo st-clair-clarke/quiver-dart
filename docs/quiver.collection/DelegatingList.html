@@ -102,7 +102,7 @@ abstract class DelegatingList&lt;E&gt; extends DelegatingIterable&lt;E&gt; imple
  void setRange(int start, int end, Iterable&lt;E&gt; iterable, [int skipCount = 0])
      =&gt; delegate.setRange(start, end, iterable, skipCount);
 
- void shuffle() =&gt; delegate.shuffle();
+ void shuffle([Random random]) =&gt; delegate.shuffle(random);
 
  void sort([int compare(E a, E b)]) =&gt; delegate.sort(compare);
 
@@ -965,14 +965,14 @@ void setRange(int start, int end, Iterable&lt;E&gt; iterable, [int skipCount = 0
 </div>
 <div class="method"><h4 id="shuffle">
 <button class="show-code">Code</button>
-void <strong>shuffle</strong>() <a class="anchor-link" href="#shuffle"
+void <strong>shuffle</strong>([Random random]) <a class="anchor-link" href="#shuffle"
               title="Permalink to DelegatingList&lt;E&gt;.shuffle">#</a></h4>
 <div class="doc">
 <div class="inherited">
 <p>Shuffles the elements of this list randomly.</p>
 <div class="docs-inherited-from">docs inherited from List&lt;<a href="../quiver.collection/DelegatingList.html">E</a>&gt; </div></div>
 <pre class="source">
-void shuffle() =&gt; delegate.shuffle();
+void shuffle([Random random]) =&gt; delegate.shuffle(random);
 </pre>
 </div>
 </div>
@@ -1000,7 +1000,7 @@ Iterable <strong>skip</strong>(int n) <a class="anchor-link" href="#skip"
 <p>Returns an Iterable that skips the first 
 <span class="param">n</span> elements.</p>
 <p>If <code>this</code> has fewer than 
-<span class="param">n</span> elements, then the resulting Iterable is 
+<span class="param">n</span> elements, then the resulting Iterable is
 empty.</p>
 <p>It is an error if 
 <span class="param">n</span> is negative.</p>
@@ -1185,7 +1185,7 @@ Iterable where(bool test(element)) =&gt; delegate.where(test);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.486</div>
+          <div>This page was generated at 2013-11-04 16:16:48.938</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

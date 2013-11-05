@@ -208,6 +208,18 @@ Iterable&lt;num&gt; count([num start = 0, num step = 1]) =&gt; new _Count(start,
 </pre>
 </div>
 </div>
+<div class="method"><h4 id="concat">
+<button class="show-code">Code</button>
+Iterable <strong>concat</strong>(Iterable&lt;Iterable&gt; iterables) <a class="anchor-link" href="#concat"
+              title="Permalink to concat">#</a></h4>
+<div class="doc">
+<p>Returns the concatentation of the input iterables.</p>
+<p>The returned iterable is a lazily-evaluated view on the input iterables.</p>
+<pre class="source">
+Iterable concat(Iterable&lt;Iterable&gt; iterables) =&gt; iterables.expand((x) =&gt; x);
+</pre>
+</div>
+</div>
 </div>
 <div>
 <h3>Abstract Classes</h3>
@@ -249,7 +261,7 @@ Iterable&lt;num&gt; count([num start = 0, num step = 1]) =&gt; new _Count(start,
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-10-14 14:26:54.590</div>
+          <div>This page was generated at 2013-11-04 16:16:49.061</div>
         </div>
         <script async src="client-live-nav.js"></script>
         </body></html>
