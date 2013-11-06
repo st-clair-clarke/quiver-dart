@@ -29,9 +29,61 @@
 <h2><strong>quiver.async</strong> library</h2>
 <div>
 <h3>Functions</h3>
+<div class="method"><h4 id="forEachAsync">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>forEachAsync</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> iterable, <a href="quiver.async/AsyncAction.html">AsyncAction</a> action, {<a href="http://api.dartlang.org/dart_core/int.html">int</a> maxTasks: 1}) <a class="anchor-link" href="#forEachAsync"
+              title="Permalink to forEachAsync">#</a></h4>
+<div class="doc">
+<p>Schedules calls to 
+<span class="param">action</span> for each element in 
+<span class="param">iterable</span>. No more than
+
+<span class="param">maxTasks</span> calls to 
+<span class="param">action</span> will be pending at once.</p>
+<pre class="source">
+Future forEachAsync(Iterable iterable, AsyncAction action, {
+   int maxTasks: 1 }) {
+
+ if (maxTasks == null || maxTasks &lt; 1) {
+   throw new ArgumentError("maxTasks must be greater than 0, was: $maxTasks");
+ }
+
+ var completer = new Completer();
+ var iterator = iterable.iterator;
+ int pending = 0;
+ bool failed = false;
+
+ bool scheduleTask() {
+   if (pending &lt; maxTasks &amp;&amp; iterator.moveNext()) {
+     pending++;
+     var item = iterator.current;
+     scheduleMicrotask(() {
+       var task = action(item);
+       task.then((_) {
+         pending--;
+         if (failed) return;
+         if (!scheduleTask() &amp;&amp; pending == 0) {
+           completer.complete();
+         }
+       }).catchError((e) {
+         if (failed) return;
+         failed = true;
+         completer.completeError(e);
+       });
+     });
+     return true;
+   }
+   return false;
+ }
+ while (scheduleTask()) {}
+ return completer.future;
+}
+</pre>
+</div>
+</div>
 <div class="method"><h4 id="reduceAsync">
 <button class="show-code">Code</button>
-Future <strong>reduceAsync</strong>(Iterable iterable, initialValue, combine(previous, element)) <a class="anchor-link" href="#reduceAsync"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>reduceAsync</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> iterable, initialValue, <a href="quiver.async/AsyncCombiner.html">AsyncCombiner</a> combine) <a class="anchor-link" href="#reduceAsync"
               title="Permalink to reduceAsync">#</a></h4>
 <div class="doc">
 <p>Reduces a collection to a single value by iteratively combining elements
@@ -41,14 +93,14 @@ of the collection using the provided
 <span class="param">combine</span> is an async function that returns a
 <a class="crossref" href="dart_async/Future.html">Future</a>.</p>
 <pre class="source">
-Future reduceAsync(Iterable iterable, initialValue, combine(previous, element))
+Future reduceAsync(Iterable iterable, initialValue, AsyncCombiner combine)
    =&gt; _reduceAsync(iterable.iterator, initialValue, combine);
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="doWhileAsync">
 <button class="show-code">Code</button>
-Future <strong>doWhileAsync</strong>(Iterable iterable, Future&lt;bool&gt; action(i)) <a class="anchor-link" href="#doWhileAsync"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>doWhileAsync</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> iterable, <a href="quiver.async/AsyncAction.html">AsyncAction</a> action) <a class="anchor-link" href="#doWhileAsync"
               title="Permalink to doWhileAsync">#</a></h4>
 <div class="doc">
 <p>Calls 
@@ -59,14 +111,14 @@ returned by action to complete.</p>
 <p>The Future returned completes to <code>true</code> if the entire iterable was processed,
 otherwise <code>false</code>.</p>
 <pre class="source">
-Future doWhileAsync(Iterable iterable, Future&lt;bool&gt; action(i)) =&gt;
+Future doWhileAsync(Iterable iterable, AsyncAction&lt;bool&gt; action) =&gt;
    _doWhileAsync(iterable.iterator, action);
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="createTimerPeriodic">
 <button class="show-code">Code</button>
-Timer <strong>createTimerPeriodic</strong>(Duration duration, void callback(Timer)) <a class="anchor-link" href="#createTimerPeriodic"
+<a href="http://api.dartlang.org/dart_async/Timer.html">Timer</a> <strong>createTimerPeriodic</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration, void callback(Timer)) <a class="anchor-link" href="#createTimerPeriodic"
               title="Permalink to createTimerPeriodic">#</a></h4>
 <div class="doc">
 <p>Creates a new periodic <a class="crossref" href="dart_async/Timer.html">Timer</a> using
@@ -79,7 +131,7 @@ Timer createTimerPeriodic(Duration duration, void callback(Timer)) =&gt;
 </div>
 <div class="method"><h4 id="createTimer">
 <button class="show-code">Code</button>
-Timer <strong>createTimer</strong>(Duration duration, void callback()) <a class="anchor-link" href="#createTimer"
+<a href="http://api.dartlang.org/dart_async/Timer.html">Timer</a> <strong>createTimer</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration, void callback()) <a class="anchor-link" href="#createTimer"
               title="Permalink to createTimer">#</a></h4>
 <div class="doc">
 <p>Creates a new one-shot <a class="crossref" href="dart_async/Timer.html">Timer</a> using <code>new Timer(duration, callback)</code>.</p>
@@ -115,6 +167,18 @@ Timer createTimer(Duration duration, void callback()) =&gt;
 <h3>Typedefs</h3>
           <div class="type">
           <h4>
+            <a href="quiver.async/AsyncAction.html"><strong>AsyncAction&lt;T&gt;</strong></a>
+          </h4>
+          </div>
+          
+          <div class="type">
+          <h4>
+            <a href="quiver.async/AsyncCombiner.html"><strong>AsyncCombiner&lt;T&gt;</strong></a>
+          </h4>
+          </div>
+          
+          <div class="type">
+          <h4>
             <a href="quiver.async/CreateTimer.html"><strong>CreateTimer</strong></a>
           </h4>
           </div>
@@ -130,7 +194,7 @@ Timer createTimer(Duration duration, void callback()) =&gt;
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-11-04 16:16:48.583</div>
+          <div>This page was generated at 2013-11-06 14:02:40.529</div>
         </div>
         <script async src="client-live-nav.js"></script>
         </body></html>

@@ -216,7 +216,7 @@ const Clock([TimeFunction timeFunc = systemTime]) : _time = timeFunc;
 </div>
 <div class="method"><h4 id="fixed">
 <button class="show-code">Code</button>
-new <strong>Clock.fixed</strong>(DateTime time) <a class="anchor-link" href="#fixed"
+new <strong>Clock.fixed</strong>(<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> time) <a class="anchor-link" href="#fixed"
               title="Permalink to Clock.Clock.fixed">#</a></h4>
 <div class="doc">
 <p>Creates <a class="crossref" href="../quiver.time/Clock.html">Clock</a> that returns fixed 
@@ -231,7 +231,7 @@ Clock.fixed(DateTime time) : _time = (() =&gt; time);
 <h3>Methods</h3>
 <div class="method"><h4 id="ago">
 <button class="show-code">Code</button>
-DateTime <strong>ago</strong>({int days: 0, int hours: 0, int minutes: 0, int seconds: 0, int milliseconds: 0, int microseconds: 0}) <a class="anchor-link" href="#ago"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>ago</strong>({<a href="http://api.dartlang.org/dart_core/int.html">int</a> days: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> hours: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> minutes: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> seconds: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> milliseconds: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> microseconds: 0}) <a class="anchor-link" href="#ago"
               title="Permalink to Clock.ago">#</a></h4>
 <div class="doc">
 <p>Returns the point in time that's given amount of time ago. The
@@ -255,7 +255,7 @@ DateTime ago({int days: 0,
 </div>
 <div class="method"><h4 id="agoBy">
 <button class="show-code">Code</button>
-DateTime <strong>agoBy</strong>(Duration duration) <a class="anchor-link" href="#agoBy"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>agoBy</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration) <a class="anchor-link" href="#agoBy"
               title="Permalink to Clock.agoBy">#</a></h4>
 <div class="doc">
 <p>Returns the point in time <a class="crossref" href="../dart_core/Duration.html">Duration</a> amount of time ago.</p>
@@ -266,7 +266,7 @@ DateTime agoBy(Duration duration) =&gt; now().subtract(duration);
 </div>
 <div class="method"><h4 id="daysAgo">
 <button class="show-code">Code</button>
-DateTime <strong>daysAgo</strong>(int days) <a class="anchor-link" href="#daysAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>daysAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> days) <a class="anchor-link" href="#daysAgo"
               title="Permalink to Clock.daysAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -278,7 +278,7 @@ DateTime daysAgo(int days) =&gt; ago(days: days);
 </div>
 <div class="method"><h4 id="daysFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>daysFromNow</strong>(int days) <a class="anchor-link" href="#daysFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>daysFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> days) <a class="anchor-link" href="#daysFromNow"
               title="Permalink to Clock.daysFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -290,7 +290,7 @@ DateTime daysFromNow(int days) =&gt; fromNow(days: days);
 </div>
 <div class="method"><h4 id="fromNow">
 <button class="show-code">Code</button>
-DateTime <strong>fromNow</strong>({int days: 0, int hours: 0, int minutes: 0, int seconds: 0, int milliseconds: 0, int microseconds: 0}) <a class="anchor-link" href="#fromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>fromNow</strong>({<a href="http://api.dartlang.org/dart_core/int.html">int</a> days: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> hours: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> minutes: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> seconds: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> milliseconds: 0, <a href="http://api.dartlang.org/dart_core/int.html">int</a> microseconds: 0}) <a class="anchor-link" href="#fromNow"
               title="Permalink to Clock.fromNow">#</a></h4>
 <div class="doc">
 <p>Returns the point in time that's given amount of time from now. The
@@ -314,7 +314,7 @@ DateTime fromNow({int days: 0,
 </div>
 <div class="method"><h4 id="fromNowBy">
 <button class="show-code">Code</button>
-DateTime <strong>fromNowBy</strong>(Duration duration) <a class="anchor-link" href="#fromNowBy"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>fromNowBy</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration) <a class="anchor-link" href="#fromNowBy"
               title="Permalink to Clock.fromNowBy">#</a></h4>
 <div class="doc">
 <p>Returns the point in time <a class="crossref" href="../dart_core/Duration.html">Duration</a> amount of time from now.</p>
@@ -325,7 +325,7 @@ DateTime fromNowBy(Duration duration) =&gt; now().add(duration);
 </div>
 <div class="method"><h4 id="hoursAgo">
 <button class="show-code">Code</button>
-DateTime <strong>hoursAgo</strong>(int hours) <a class="anchor-link" href="#hoursAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>hoursAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> hours) <a class="anchor-link" href="#hoursAgo"
               title="Permalink to Clock.hoursAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -337,7 +337,7 @@ DateTime hoursAgo(int hours) =&gt; ago(hours: hours);
 </div>
 <div class="method"><h4 id="hoursFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>hoursFromNow</strong>(int hours) <a class="anchor-link" href="#hoursFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>hoursFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> hours) <a class="anchor-link" href="#hoursFromNow"
               title="Permalink to Clock.hoursFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -349,7 +349,7 @@ DateTime hoursFromNow(int hours) =&gt; fromNow(hours: hours);
 </div>
 <div class="method"><h4 id="microsAgo">
 <button class="show-code">Code</button>
-DateTime <strong>microsAgo</strong>(int micros) <a class="anchor-link" href="#microsAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>microsAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> micros) <a class="anchor-link" href="#microsAgo"
               title="Permalink to Clock.microsAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -361,7 +361,7 @@ DateTime microsAgo(int micros) =&gt; ago(microseconds: micros);
 </div>
 <div class="method"><h4 id="microsFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>microsFromNow</strong>(int micros) <a class="anchor-link" href="#microsFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>microsFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> micros) <a class="anchor-link" href="#microsFromNow"
               title="Permalink to Clock.microsFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -373,7 +373,7 @@ DateTime microsFromNow(int micros) =&gt; fromNow(microseconds: micros);
 </div>
 <div class="method"><h4 id="millisAgo">
 <button class="show-code">Code</button>
-DateTime <strong>millisAgo</strong>(int millis) <a class="anchor-link" href="#millisAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>millisAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> millis) <a class="anchor-link" href="#millisAgo"
               title="Permalink to Clock.millisAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -385,7 +385,7 @@ DateTime millisAgo(int millis) =&gt; ago(milliseconds: millis);
 </div>
 <div class="method"><h4 id="millisFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>millisFromNow</strong>(int millis) <a class="anchor-link" href="#millisFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>millisFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> millis) <a class="anchor-link" href="#millisFromNow"
               title="Permalink to Clock.millisFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -397,7 +397,7 @@ DateTime millisFromNow(int millis) =&gt; fromNow(milliseconds: millis);
 </div>
 <div class="method"><h4 id="minutesAgo">
 <button class="show-code">Code</button>
-DateTime <strong>minutesAgo</strong>(int minutes) <a class="anchor-link" href="#minutesAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>minutesAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> minutes) <a class="anchor-link" href="#minutesAgo"
               title="Permalink to Clock.minutesAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -409,7 +409,7 @@ DateTime minutesAgo(int minutes) =&gt; ago(minutes: minutes);
 </div>
 <div class="method"><h4 id="minutesFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>minutesFromNow</strong>(int minutes) <a class="anchor-link" href="#minutesFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>minutesFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> minutes) <a class="anchor-link" href="#minutesFromNow"
               title="Permalink to Clock.minutesFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -421,7 +421,7 @@ DateTime minutesFromNow(int minutes) =&gt; fromNow(minutes: minutes);
 </div>
 <div class="method"><h4 id="monthsAgo">
 <button class="show-code">Code</button>
-DateTime <strong>monthsAgo</strong>(int months) <a class="anchor-link" href="#monthsAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>monthsAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> months) <a class="anchor-link" href="#monthsAgo"
               title="Permalink to Clock.monthsAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -447,7 +447,7 @@ DateTime monthsAgo(int months) {
 </div>
 <div class="method"><h4 id="monthsFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>monthsFromNow</strong>(int months) <a class="anchor-link" href="#monthsFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>monthsFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> months) <a class="anchor-link" href="#monthsFromNow"
               title="Permalink to Clock.monthsFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -473,7 +473,7 @@ DateTime monthsFromNow(int months) {
 </div>
 <div class="method"><h4 id="now">
 <button class="show-code">Code</button>
-DateTime <strong>now</strong>() <a class="anchor-link" href="#now"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>now</strong>() <a class="anchor-link" href="#now"
               title="Permalink to Clock.now">#</a></h4>
 <div class="doc">
 <p>Returns current time.</p>
@@ -484,7 +484,7 @@ DateTime now() =&gt; _time();
 </div>
 <div class="method"><h4 id="secondsAgo">
 <button class="show-code">Code</button>
-DateTime <strong>secondsAgo</strong>(int seconds) <a class="anchor-link" href="#secondsAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>secondsAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seconds) <a class="anchor-link" href="#secondsAgo"
               title="Permalink to Clock.secondsAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -496,7 +496,7 @@ DateTime secondsAgo(int seconds) =&gt; ago(seconds: seconds);
 </div>
 <div class="method"><h4 id="secondsFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>secondsFromNow</strong>(int seconds) <a class="anchor-link" href="#secondsFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>secondsFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> seconds) <a class="anchor-link" href="#secondsFromNow"
               title="Permalink to Clock.secondsFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -508,7 +508,7 @@ DateTime secondsFromNow(int seconds) =&gt; fromNow(seconds: seconds);
 </div>
 <div class="method"><h4 id="weeksAgo">
 <button class="show-code">Code</button>
-DateTime <strong>weeksAgo</strong>(int weeks) <a class="anchor-link" href="#weeksAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>weeksAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> weeks) <a class="anchor-link" href="#weeksAgo"
               title="Permalink to Clock.weeksAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -520,7 +520,7 @@ DateTime weeksAgo(int weeks) =&gt; ago(days: 7 * weeks);
 </div>
 <div class="method"><h4 id="weeksFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>weeksFromNow</strong>(int weeks) <a class="anchor-link" href="#weeksFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>weeksFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> weeks) <a class="anchor-link" href="#weeksFromNow"
               title="Permalink to Clock.weeksFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -532,7 +532,7 @@ DateTime weeksFromNow(int weeks) =&gt; fromNow(days: 7 * weeks);
 </div>
 <div class="method"><h4 id="yearsAgo">
 <button class="show-code">Code</button>
-DateTime <strong>yearsAgo</strong>(int years) <a class="anchor-link" href="#yearsAgo"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>yearsAgo</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> years) <a class="anchor-link" href="#yearsAgo"
               title="Permalink to Clock.yearsAgo">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -557,7 +557,7 @@ DateTime yearsAgo(int years) {
 </div>
 <div class="method"><h4 id="yearsFromNow">
 <button class="show-code">Code</button>
-DateTime <strong>yearsFromNow</strong>(int years) <a class="anchor-link" href="#yearsFromNow"
+<a href="http://api.dartlang.org/dart_core/DateTime.html">DateTime</a> <strong>yearsFromNow</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> years) <a class="anchor-link" href="#yearsFromNow"
               title="Permalink to Clock.yearsFromNow">#</a></h4>
 <div class="doc">
 <p>Return the point in time 
@@ -572,7 +572,7 @@ DateTime yearsFromNow(int years) =&gt; yearsAgo(-years);
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-11-04 16:16:49.198</div>
+          <div>This page was generated at 2013-11-06 14:02:41.157</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

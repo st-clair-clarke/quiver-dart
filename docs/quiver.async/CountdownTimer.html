@@ -101,7 +101,7 @@ class CountdownTimer extends Stream&lt;CountdownTimer&gt; {
 <h3>Constructors</h3>
 <div class="method"><h4 id="">
 <button class="show-code">Code</button>
-new <strong>CountdownTimer</strong>(Duration duration, Duration increment, {Stopwatch stopwatch, <a href="../quiver.async/CreateTimerPeriodic.html">CreateTimerPeriodic</a> createTimerPeriodic}) <a class="anchor-link" href="#"
+new <strong>CountdownTimer</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration, <a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> increment, {<a href="http://api.dartlang.org/dart_core/Stopwatch.html">Stopwatch</a> stopwatch, <a href="../quiver.async/CreateTimerPeriodic.html">CreateTimerPeriodic</a> createTimerPeriodic}) <a class="anchor-link" href="#"
               title="Permalink to CountdownTimer.CountdownTimer">#</a></h4>
 <div class="doc">
 <p>Creates a new <a class="crossref" href="../quiver.async/CountdownTimer.html">CountdownTimer</a> that fires events in increments of
@@ -134,7 +134,7 @@ CountdownTimer(Duration duration, Duration increment, {
 <h3>Properties</h3>
 <div class="field"><h4 id="elapsed">
 <button class="show-code">Code</button>
-final Duration         <strong>elapsed</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a>         <strong>elapsed</strong> <a class="anchor-link"
             href="#elapsed"
             title="Permalink to CountdownTimer.elapsed">#</a>
         </h4>
@@ -146,11 +146,11 @@ Duration get elapsed =&gt; _stopwatch.elapsed;
 </div>
 <div class="field inherited"><h4 id="first">
 <button class="show-code">Code</button>
-final Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>first</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>first</strong> <a class="anchor-link"
             href="#first"
             title="Permalink to CountdownTimer.first">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Returns the first element of the stream.</p>
 <p>Stops listening to the stream after the first element has been received.</p>
 <p>If an error event occurs before the first data event, the resulting future
@@ -179,11 +179,11 @@ Future&lt;T&gt; get first {
 </div>
 <div class="field inherited"><h4 id="isBroadcast">
 <button class="show-code">Code</button>
-final bool         <strong>isBroadcast</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isBroadcast</strong> <a class="anchor-link"
             href="#isBroadcast"
             title="Permalink to CountdownTimer.isBroadcast">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Reports whether this stream is a broadcast stream.</p>
 <pre class="source">
 bool get isBroadcast =&gt; false;
@@ -192,11 +192,11 @@ bool get isBroadcast =&gt; false;
 </div>
 <div class="field inherited"><h4 id="isEmpty">
 <button class="show-code">Code</button>
-final Future&lt;bool&gt;         <strong>isEmpty</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>&gt;         <strong>isEmpty</strong> <a class="anchor-link"
             href="#isEmpty"
             title="Permalink to CountdownTimer.isEmpty">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Reports whether this stream contains any elements. </p>
 <pre class="source">
 Future&lt;bool&gt; get isEmpty {
@@ -218,7 +218,7 @@ Future&lt;bool&gt; get isEmpty {
 </div>
 <div class="field"><h4 id="isRunning">
 <button class="show-code">Code</button>
-final bool         <strong>isRunning</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>isRunning</strong> <a class="anchor-link"
             href="#isRunning"
             title="Permalink to CountdownTimer.isRunning">#</a>
         </h4>
@@ -230,11 +230,11 @@ bool get isRunning =&gt; _stopwatch.isRunning;
 </div>
 <div class="field inherited"><h4 id="last">
 <button class="show-code">Code</button>
-final Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>last</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>last</strong> <a class="anchor-link"
             href="#last"
             title="Permalink to CountdownTimer.last">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Returns the last element of the stream.</p>
 <p>If an error event occurs before the first data event, the resulting future
 is completed with that error.</p>
@@ -267,11 +267,11 @@ Future&lt;T&gt; get last {
 </div>
 <div class="field inherited"><h4 id="length">
 <button class="show-code">Code</button>
-final Future&lt;int&gt;         <strong>length</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/int.html">int</a>&gt;         <strong>length</strong> <a class="anchor-link"
             href="#length"
             title="Permalink to CountdownTimer.length">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Counts the elements in the stream. </p>
 <pre class="source">
 Future&lt;int&gt; get length {
@@ -291,7 +291,7 @@ Future&lt;int&gt; get length {
 </div>
 <div class="field"><h4 id="remaining">
 <button class="show-code">Code</button>
-final Duration         <strong>remaining</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a>         <strong>remaining</strong> <a class="anchor-link"
             href="#remaining"
             title="Permalink to CountdownTimer.remaining">#</a>
         </h4>
@@ -303,11 +303,11 @@ Duration get remaining =&gt; _duration - _stopwatch.elapsed;
 </div>
 <div class="field inherited"><h4 id="single">
 <button class="show-code">Code</button>
-final Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>single</strong> <a class="anchor-link"
+final <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;         <strong>single</strong> <a class="anchor-link"
             href="#single"
             title="Permalink to CountdownTimer.single">#</a>
         </h4>
-        <div class="inherited-from">inherited from Stream </div><div class="doc">
+        <div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Returns the single element.</p>
 <p>If <code>this</code> is empty or has more than one element throws a <a class="crossref" href="../dart_core/StateError.html">StateError</a>.</p>
 <pre class="source">
@@ -346,9 +346,9 @@ Future&lt;T&gt; get single {
 <h3>Methods</h3>
 <div class="method inherited"><h4 id="any">
 <button class="show-code">Code</button>
-Future&lt;bool&gt; <strong>any</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#any"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>&gt; <strong>any</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#any"
               title="Permalink to CountdownTimer.any">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Checks whether 
 <span class="param">test</span> accepts any element provided by this stream.</p>
 <p>Completes the <a class="crossref" href="../dart_async/Future.html">Future</a> when the answer is known.
@@ -381,9 +381,9 @@ Future&lt;bool&gt; any(bool test(T element)) {
 </div>
 <div class="method inherited"><h4 id="asBroadcastStream">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>asBroadcastStream</strong>({void onListen(StreamSubscription&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; subscription), void onCancel(StreamSubscription&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; subscription)}) <a class="anchor-link" href="#asBroadcastStream"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>asBroadcastStream</strong>({void onListen(<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; subscription), void onCancel(<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; subscription)}) <a class="anchor-link" href="#asBroadcastStream"
               title="Permalink to CountdownTimer.asBroadcastStream">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Returns a multi-subscription stream that produces the same events as this.</p>
 <p>If this stream is already a broadcast stream, it is returned unmodified.</p>
 <p>If this stream is single-subscription, return a new stream that allows
@@ -432,9 +432,9 @@ cancel() {
 </div>
 <div class="method inherited"><h4 id="contains">
 <button class="show-code">Code</button>
-Future&lt;bool&gt; <strong>contains</strong>(Object needle) <a class="anchor-link" href="#contains"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>&gt; <strong>contains</strong>(<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> needle) <a class="anchor-link" href="#contains"
               title="Permalink to CountdownTimer.contains">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Checks whether 
 <span class="param">needle</span> occurs in the elements provided by this stream.</p>
 <p>Completes the <a class="crossref" href="../dart_async/Future.html">Future</a> when the answer is known.
@@ -467,9 +467,9 @@ Future&lt;bool&gt; contains(Object needle) {
 </div>
 <div class="method inherited"><h4 id="distinct">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>distinct</strong>([bool equals(<a href="../quiver.async/CountdownTimer.html">T</a> previous, <a href="../quiver.async/CountdownTimer.html">T</a> next)]) <a class="anchor-link" href="#distinct"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>distinct</strong>([<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> equals(<a href="../quiver.async/CountdownTimer.html">T</a> previous, <a href="../quiver.async/CountdownTimer.html">T</a> next)]) <a class="anchor-link" href="#distinct"
               title="Permalink to CountdownTimer.distinct">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Skips data events if they are equal to the previous data event.</p>
 <p>The returned stream provides the same events as this stream, except
 that it never provides two consequtive data events that are equal.</p>
@@ -485,9 +485,9 @@ Stream&lt;T&gt; distinct([bool equals(T previous, T next)]) {
 </div>
 <div class="method inherited"><h4 id="drain">
 <button class="show-code">Code</button>
-Future <strong>drain</strong>([futureValue]) <a class="anchor-link" href="#drain"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>drain</strong>([futureValue]) <a class="anchor-link" href="#drain"
               title="Permalink to CountdownTimer.drain">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Discards all data on the stream, but signals when it's done or an error
 occured.</p>
 <p>When subscribing using <a class="crossref" href="../dart_async/Stream.html#drain">drain</a>, cancelOnError will be true. This means
@@ -504,9 +504,9 @@ Future drain([var futureValue]) =&gt; listen(null, cancelOnError: true)
 </div>
 <div class="method inherited"><h4 id="elementAt">
 <button class="show-code">Code</button>
-Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>elementAt</strong>(int index) <a class="anchor-link" href="#elementAt"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>elementAt</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> index) <a class="anchor-link" href="#elementAt"
               title="Permalink to CountdownTimer.elementAt">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Returns the value of the 
 <span class="param">index</span>th data event of this stream.</p>
 <p>Stops listening to the stream after a value has been found.</p>
@@ -539,9 +539,9 @@ Future&lt;T&gt; elementAt(int index) {
 </div>
 <div class="method inherited"><h4 id="every">
 <button class="show-code">Code</button>
-Future&lt;bool&gt; <strong>every</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#every"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>&gt; <strong>every</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#every"
               title="Permalink to CountdownTimer.every">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Checks whether 
 <span class="param">test</span> accepts all elements provided by this stream.</p>
 <p>Completes the <a class="crossref" href="../dart_async/Future.html">Future</a> when the answer is known.
@@ -574,9 +574,9 @@ Future&lt;bool&gt; every(bool test(T element)) {
 </div>
 <div class="method inherited"><h4 id="expand">
 <button class="show-code">Code</button>
-Stream <strong>expand</strong>(Iterable convert(<a href="../quiver.async/CountdownTimer.html">T</a> value)) <a class="anchor-link" href="#expand"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> <strong>expand</strong>(<a href="http://api.dartlang.org/dart_core/Iterable.html">Iterable</a> convert(<a href="../quiver.async/CountdownTimer.html">T</a> value)) <a class="anchor-link" href="#expand"
               title="Permalink to CountdownTimer.expand">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Creates a new stream from this stream that converts each element
 into zero or more events.</p>
 <p>Each incoming event is converted to an <a class="crossref" href="../dart_core/Iterable.html">Iterable</a> of new events,
@@ -591,9 +591,9 @@ Stream expand(Iterable convert(T value)) {
 </div>
 <div class="method inherited"><h4 id="firstWhere">
 <button class="show-code">Code</button>
-Future&lt;dynamic&gt; <strong>firstWhere</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element), {Object defaultValue()}) <a class="anchor-link" href="#firstWhere"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;dynamic&gt; <strong>firstWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element), {<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> defaultValue()}) <a class="anchor-link" href="#firstWhere"
               title="Permalink to CountdownTimer.firstWhere">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Finds the first element of this stream matching 
 <span class="param">test</span>.</p>
 <p>Returns a future that is filled with the first element of this stream
@@ -640,9 +640,9 @@ Future&lt;dynamic&gt; firstWhere(bool test(T element), {Object defaultValue()}) 
 </div>
 <div class="method inherited"><h4 id="fold">
 <button class="show-code">Code</button>
-Future <strong>fold</strong>(initialValue, combine(previous, <a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#fold"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>fold</strong>(initialValue, combine(previous, <a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#fold"
               title="Permalink to CountdownTimer.fold">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Reduces a sequence of values by repeatedly applying 
 <span class="param">combine</span>. </p>
 <pre class="source">
@@ -672,9 +672,9 @@ Future fold(var initialValue, combine(var previous, T element)) {
 </div>
 <div class="method inherited"><h4 id="forEach">
 <button class="show-code">Code</button>
-Future <strong>forEach</strong>(void action(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#forEach"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>forEach</strong>(void action(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#forEach"
               title="Permalink to CountdownTimer.forEach">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Executes 
 <span class="param">action</span> on each data event of the stream.</p>
 <p>Completes the returned <a class="crossref" href="../dart_async/Future.html">Future</a> when all events of the stream
@@ -705,9 +705,9 @@ Future forEach(void action(T element)) {
 </div>
 <div class="method inherited"><h4 id="handleError">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>handleError</strong>(Function onError, {bool test(error)}) <a class="anchor-link" href="#handleError"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>handleError</strong>(<a href="http://api.dartlang.org/dart_core/Function.html">Function</a> onError, {<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(error)}) <a class="anchor-link" href="#handleError"
               title="Permalink to CountdownTimer.handleError">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Creates a wrapper Stream that intercepts some errors from this stream.</p>
 <p>If this stream sends an error that matches 
 <span class="param">test</span>, then it is intercepted
@@ -737,9 +737,9 @@ Stream&lt;T&gt; handleError(Function onError, { bool test(error) }) {
 </div>
 <div class="method inherited"><h4 id="join">
 <button class="show-code">Code</button>
-Future&lt;String&gt; <strong>join</strong>([String separator = ""]) <a class="anchor-link" href="#join"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; <strong>join</strong>([<a href="http://api.dartlang.org/dart_core/String.html">String</a> separator = ""]) <a class="anchor-link" href="#join"
               title="Permalink to CountdownTimer.join">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Collects string of data events' string representations.</p>
 <p>If 
 <span class="param">separator</span> is provided, it is inserted between any two
@@ -762,7 +762,7 @@ Future&lt;String&gt; join([String separator = ""]) {
      try {
        buffer.write(element);
      } catch (e, s) {
-       _cancelAndError(subscription, result, _asyncError(e, s), s);
+       _cancelAndError(subscription, result, e, s);
      }
    },
    onError: (e) {
@@ -779,9 +779,9 @@ Future&lt;String&gt; join([String separator = ""]) {
 </div>
 <div class="method inherited"><h4 id="lastWhere">
 <button class="show-code">Code</button>
-Future&lt;dynamic&gt; <strong>lastWhere</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element), {Object defaultValue()}) <a class="anchor-link" href="#lastWhere"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;dynamic&gt; <strong>lastWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element), {<a href="http://api.dartlang.org/dart_core/Object.html">Object</a> defaultValue()}) <a class="anchor-link" href="#lastWhere"
               title="Permalink to CountdownTimer.lastWhere">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Finds the last element in this stream matching 
 <span class="param">test</span>.</p>
 <p>As <a class="crossref" href="../dart_async/Stream.html#firstWhere">firstWhere</a>, except that the last matching element is found.
@@ -826,7 +826,7 @@ Future&lt;dynamic&gt; lastWhere(bool test(T element), {Object defaultValue()}) {
 </div>
 <div class="method"><h4 id="listen">
 <button class="show-code">Code</button>
-StreamSubscription&lt;<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a>&gt; <strong>listen</strong>(void onData(<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a> event), {Function onError, void onDone(), bool cancelOnError}) <a class="anchor-link" href="#listen"
+<a href="http://api.dartlang.org/dart_async/StreamSubscription.html">StreamSubscription</a>&lt;<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a>&gt; <strong>listen</strong>(void onData(<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a> event), {<a href="http://api.dartlang.org/dart_core/Function.html">Function</a> onError, void onDone(), <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> cancelOnError}) <a class="anchor-link" href="#listen"
               title="Permalink to CountdownTimer.listen">#</a></h4>
 <div class="doc">
 <div class="inherited">
@@ -850,7 +850,7 @@ Otherwise it is called with just the error object.</p>
 <p>If 
 <span class="param">cancelOnError</span> is true, the subscription is ended when
 the first error is reported. The default is false.</p>
-<div class="docs-inherited-from">docs inherited from Stream&lt;<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a>&gt; </div></div>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">CountdownTimer</a>&gt; </div></div>
 <pre class="source">
 StreamSubscription&lt;CountdownTimer&gt; listen(void onData(CountdownTimer event), {
    Function onError, void onDone(), bool cancelOnError}) =&gt;
@@ -860,9 +860,9 @@ StreamSubscription&lt;CountdownTimer&gt; listen(void onData(CountdownTimer event
 </div>
 <div class="method inherited"><h4 id="map">
 <button class="show-code">Code</button>
-Stream <strong>map</strong>(convert(<a href="../quiver.async/CountdownTimer.html">T</a> event)) <a class="anchor-link" href="#map"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> <strong>map</strong>(convert(<a href="../quiver.async/CountdownTimer.html">T</a> event)) <a class="anchor-link" href="#map"
               title="Permalink to CountdownTimer.map">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Creates a new stream that converts each element of this stream
 to a new value using the 
 <span class="param">convert</span> function.</p>
@@ -875,9 +875,9 @@ Stream map(convert(T event)) {
 </div>
 <div class="method inherited"><h4 id="pipe">
 <button class="show-code">Code</button>
-Future <strong>pipe</strong>(StreamConsumer&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; streamConsumer) <a class="anchor-link" href="#pipe"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>pipe</strong>(<a href="http://api.dartlang.org/dart_async/StreamConsumer.html">StreamConsumer</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; streamConsumer) <a class="anchor-link" href="#pipe"
               title="Permalink to CountdownTimer.pipe">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Binds this stream as the input of the provided <a class="crossref" href="../dart_async/StreamConsumer.html">StreamConsumer</a>.</p>
 <pre class="source">
 Future pipe(StreamConsumer&lt;T&gt; streamConsumer) {
@@ -888,9 +888,9 @@ Future pipe(StreamConsumer&lt;T&gt; streamConsumer) {
 </div>
 <div class="method inherited"><h4 id="reduce">
 <button class="show-code">Code</button>
-Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>reduce</strong>(<a href="../quiver.async/CountdownTimer.html">T</a> combine(<a href="../quiver.async/CountdownTimer.html">T</a> previous, <a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#reduce"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>reduce</strong>(<a href="../quiver.async/CountdownTimer.html">T</a> combine(<a href="../quiver.async/CountdownTimer.html">T</a> previous, <a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#reduce"
               title="Permalink to CountdownTimer.reduce">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Reduces a sequence of values by repeatedly applying 
 <span class="param">combine</span>.</p>
 <pre class="source">
@@ -927,9 +927,9 @@ Future&lt;T&gt; reduce(T combine(T previous, T element)) {
 </div>
 <div class="method inherited"><h4 id="singleWhere">
 <button class="show-code">Code</button>
-Future&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>singleWhere</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#singleWhere"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>singleWhere</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#singleWhere"
               title="Permalink to CountdownTimer.singleWhere">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Finds the single element in this stream matching 
 <span class="param">test</span>.</p>
 <p>Like <code>lastMatch</code>, except that it is an error if more than one
@@ -977,9 +977,9 @@ Future&lt;T&gt; singleWhere(bool test(T element)) {
 </div>
 <div class="method inherited"><h4 id="skip">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>skip</strong>(int count) <a class="anchor-link" href="#skip"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>skip</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> count) <a class="anchor-link" href="#skip"
               title="Permalink to CountdownTimer.skip">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Skips the first 
 <span class="param">count</span> data events from this stream.</p>
 <pre class="source">
@@ -991,9 +991,9 @@ Stream&lt;T&gt; skip(int count) {
 </div>
 <div class="method inherited"><h4 id="skipWhile">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>skipWhile</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#skipWhile"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>skipWhile</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#skipWhile"
               title="Permalink to CountdownTimer.skipWhile">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Skip data events from this stream while they are matched by 
 <span class="param">test</span>.</p>
 <p>Error and done events are provided by the returned stream unmodified.</p>
@@ -1009,9 +1009,9 @@ Stream&lt;T&gt; skipWhile(bool test(T element)) {
 </div>
 <div class="method inherited"><h4 id="take">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>take</strong>(int count) <a class="anchor-link" href="#take"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>take</strong>(<a href="http://api.dartlang.org/dart_core/int.html">int</a> count) <a class="anchor-link" href="#take"
               title="Permalink to CountdownTimer.take">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Provides at most the first <code>n</code> values of this stream.</p>
 <p>Forwards the first <code>n</code> data events of this stream, and all error
 events, to the returned stream, and ends with a done event.</p>
@@ -1027,9 +1027,9 @@ Stream&lt;T&gt; take(int count) {
 </div>
 <div class="method inherited"><h4 id="takeWhile">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>takeWhile</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#takeWhile"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>takeWhile</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> element)) <a class="anchor-link" href="#takeWhile"
               title="Permalink to CountdownTimer.takeWhile">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Forwards data events while 
 <span class="param">test</span> is successful.</p>
 <p>The returned stream provides the same events as this stream as long
@@ -1047,9 +1047,9 @@ Stream&lt;T&gt; takeWhile(bool test(T element)) {
 </div>
 <div class="method inherited"><h4 id="toList">
 <button class="show-code">Code</button>
-Future&lt;List&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;&gt; <strong>toList</strong>() <a class="anchor-link" href="#toList"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;&gt; <strong>toList</strong>() <a class="anchor-link" href="#toList"
               title="Permalink to CountdownTimer.toList">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Collects the data of this stream in a <a class="crossref" href="../dart_core/List.html">List</a>. </p>
 <pre class="source">
 Future&lt;List&lt;T&gt;&gt; toList() {
@@ -1071,9 +1071,9 @@ Future&lt;List&lt;T&gt;&gt; toList() {
 </div>
 <div class="method inherited"><h4 id="toSet">
 <button class="show-code">Code</button>
-Future&lt;Set&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;&gt; <strong>toSet</strong>() <a class="anchor-link" href="#toSet"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/Set.html">Set</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt;&gt; <strong>toSet</strong>() <a class="anchor-link" href="#toSet"
               title="Permalink to CountdownTimer.toSet">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Collects the data of this stream in a <a class="crossref" href="../dart_core/Set.html">Set</a>. </p>
 <pre class="source">
 Future&lt;Set&lt;T&gt;&gt; toSet() {
@@ -1095,9 +1095,9 @@ Future&lt;Set&lt;T&gt;&gt; toSet() {
 </div>
 <div class="method inherited"><h4 id="transform">
 <button class="show-code">Code</button>
-Stream <strong>transform</strong>(StreamTransformer&lt;<a href="../quiver.async/CountdownTimer.html">T</a>, dynamic&gt; streamTransformer) <a class="anchor-link" href="#transform"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> <strong>transform</strong>(<a href="http://api.dartlang.org/dart_async/StreamTransformer.html">StreamTransformer</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>, dynamic&gt; streamTransformer) <a class="anchor-link" href="#transform"
               title="Permalink to CountdownTimer.transform">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Chains this stream as the input of the provided <a class="crossref" href="../dart_async/StreamTransformer.html">StreamTransformer</a>.</p>
 <p>Returns the result of <code>streamTransformer.bind</code> itself.</p>
 <pre class="source">
@@ -1109,9 +1109,9 @@ Stream transform(StreamTransformer&lt;T, dynamic&gt; streamTransformer) {
 </div>
 <div class="method inherited"><h4 id="where">
 <button class="show-code">Code</button>
-Stream&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>where</strong>(bool test(<a href="../quiver.async/CountdownTimer.html">T</a> event)) <a class="anchor-link" href="#where"
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="../quiver.async/CountdownTimer.html">T</a>&gt; <strong>where</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> test(<a href="../quiver.async/CountdownTimer.html">T</a> event)) <a class="anchor-link" href="#where"
               title="Permalink to CountdownTimer.where">#</a></h4>
-<div class="inherited-from">inherited from Stream </div><div class="doc">
+<div class="inherited-from">inherited from <a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a> </div><div class="doc">
 <p>Creates a new stream from this stream that discards some data events.</p>
 <p>The new stream sends the same error and done events as this stream,
 but it only sends the data events that satisfy the 
@@ -1128,7 +1128,7 @@ Stream&lt;T&gt; where(bool test(T event)) {
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-11-04 16:16:48.742</div>
+          <div>This page was generated at 2013-11-06 14:02:40.632</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

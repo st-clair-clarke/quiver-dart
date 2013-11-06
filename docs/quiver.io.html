@@ -31,7 +31,7 @@
 <h3>Functions</h3>
 <div class="method"><h4 id="visitDirectory">
 <button class="show-code">Code</button>
-Future <strong>visitDirectory</strong>(Directory dir, Future&lt;bool&gt; visit(FileSystemEntity f)) <a class="anchor-link" href="#visitDirectory"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a> <strong>visitDirectory</strong>(<a href="http://api.dartlang.org/dart_io/Directory.html">Directory</a> dir, <a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>&gt; visit(<a href="http://api.dartlang.org/dart_io/FileSystemEntity.html">FileSystemEntity</a> f)) <a class="anchor-link" href="#visitDirectory"
               title="Permalink to visitDirectory">#</a></h4>
 <div class="doc">
 <p>Lists the sub-directories and files of this Directory, optionally recursing
@@ -86,19 +86,19 @@ Future visitDirectory(Directory dir, Future&lt;bool&gt; visit(FileSystemEntity f
 </div>
 <div class="method"><h4 id="getFullPath">
 <button class="show-code">Code</button>
-String <strong>getFullPath</strong>(path) <a class="anchor-link" href="#getFullPath"
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>getFullPath</strong>(path) <a class="anchor-link" href="#getFullPath"
               title="Permalink to getFullPath">#</a></h4>
 <div class="doc">
 <p>Gets the full path of 
-<span class="param">path</span> by using <a class="crossref" href="dart_io/File.html#fullPathSync">File.fullPathSync</a>.</p>
+<span class="param">path</span> by using <code>File.fullPathSync</code>.</p>
 <pre class="source">
-String getFullPath(path) =&gt; new File(path).fullPathSync();
+String getFullPath(path) =&gt; new File(path).resolveSymbolicLinksSync();
 </pre>
 </div>
 </div>
 <div class="method"><h4 id="byteStreamToString">
 <button class="show-code">Code</button>
-Future&lt;String&gt; <strong>byteStreamToString</strong>(Stream&lt;List&lt;int&gt;&gt; stream, {Encoding encoding: UTF8}) <a class="anchor-link" href="#byteStreamToString"
+<a href="http://api.dartlang.org/dart_async/Future.html">Future</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; <strong>byteStreamToString</strong>(<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>&lt;<a href="http://api.dartlang.org/dart_core/List.html">List</a>&lt;<a href="http://api.dartlang.org/dart_core/int.html">int</a>&gt;&gt; stream, {<a href="http://api.dartlang.org/dart_convert/Encoding.html">Encoding</a> encoding: UTF8}) <a class="anchor-link" href="#byteStreamToString"
               title="Permalink to byteStreamToString">#</a></h4>
 <div class="doc">
 <p>Converts a <a class="crossref" href="dart_async/Stream.html">Stream</a> of byte lists to a <a class="crossref" href="dart_core/String.html">String</a>.</p>
@@ -115,7 +115,7 @@ Future&lt;String&gt; byteStreamToString(Stream&lt;List&lt;int&gt;&gt; stream,
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-11-04 16:16:49.052</div>
+          <div>This page was generated at 2013-11-06 14:02:40.986</div>
         </div>
         <script async src="client-live-nav.js"></script>
         </body></html>
