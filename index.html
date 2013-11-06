@@ -62,9 +62,9 @@ predicates.</p>
 <p><code>CountdownTimer</code> is a simple countdown timer that fires events in regular
 increments.</p>
 
-<p><code>doWhileAsync</code> and <code>reduceAsync</code> perform async computations on the elements of
-on Iterables, waiting for the computation to complete before processing the
-next element.</p>
+<p><code>doWhileAsync</code>, <code>reduceAsync</code> and <code>forEachAsync</code> perform async computations on
+the elements of on Iterables, waiting for the computation to complete before
+processing the next element.</p>
 
 <p><code>CreateTimer</code> and <code>CreateTimerPeriodic</code> are typedefs that are useful for
 passing Timer factories to classes and functions, increasing the testability of
@@ -90,6 +90,12 @@ values. <code>BiMap</code> is a bi-directional map and provides an inverse view,
 lookup of key by value.</p>
 
 <h2>
+<a name="quivercore" class="anchor" href="#quivercore"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.core.html">quiver.core</a>
+</h2>
+
+<p><code>Optional</code> is a way to represent optional values without allowing <code>null</code>.</p>
+
+<h2>
 <a name="quiverio" class="anchor" href="#quiverio"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.io.html">quiver.io</a>
 </h2>
 
@@ -100,8 +106,9 @@ into sub-directories based on the result of a handler function.</p>
 <a name="quiveriterables" class="anchor" href="#quiveriterables"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.iterables.html">quiver.iterables</a>
 </h2>
 
-<p><code>count</code>, <code>cycle</code>, <code>enumerate</code>, <code>merge</code>, <code>range</code>, and  <code>zip</code> create, transform,
-or combine Iterables in different ways, similar to Python's itertools.</p>
+<p><code>concat</code>, <code>count</code>, <code>cycle</code>, <code>enumerate</code>, <code>merge</code>, <code>range</code>, and  <code>zip</code> create,
+transform, or combine Iterables in different ways, similar to Python's
+itertools.</p>
 
 <p><code>min</code>, <code>max</code>, and <code>extent</code> retreive the minimum and maximum elements from an
 iterable.</p>
@@ -200,14 +207,18 @@ since Clock deals in DateTime which only have millisecond accuracy.</p>
 <h1>
 <a name="testing-libraries" class="anchor" href="#testing-libraries"><span class="octicon octicon-link"></span></a>Testing Libraries</h1>
 
+<p>The Quiver testing libraries are intended to be used in testing code, not
+production code. It currently consists of fake implementations of some Quiver
+interfaces.</p>
+
 <h2>
-<a name="quiverasynctesting" class="anchor" href="#quiverasynctesting"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.async.testing.html">quiver.async.testing</a>
+<a name="quivertestingasync" class="anchor" href="#quivertestingasync"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.testing.async.html">quiver.testing.async</a>
 </h2>
 
 <p><code>FakeTimer</code> is a Timer that captures its duration and callback for use in tests.</p>
 
 <h2>
-<a name="quivertimetesting" class="anchor" href="#quivertimetesting"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.time.testing.html">quiver.time.testing</a>
+<a name="quivertestingtime" class="anchor" href="#quivertestingtime"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.testing.time.html">quiver.testing.time</a>
 </h2>
 
 <p><code>FakeStopwatch</code> is a Stopwatch that uses a provided <code>now()</code> function to get the
