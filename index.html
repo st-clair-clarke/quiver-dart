@@ -1,237 +1,537 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Quiver by google</title>
-  </head>
-
-  <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Quiver</h1>
-          <h2>A set of utility libraries for Dart</h2>
-        </header>
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/google/quiver-dart/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/google/quiver-dart/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/google/quiver-dart" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
-<a name="quiver" class="anchor" href="#quiver"><span class="octicon octicon-link"></span></a>Quiver</h1>
-
-<p>Quiver is a set of utility libraries for Dart that makes using many Dart
-libraries easier and more convenient, or adds additional functionality.</p>
-
-<h2>
-<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
-
-<p>API Docs can be found here: <a href="http://google.github.io/quiver-dart/docs/">http://google.github.io/quiver-dart/docs/</a></p>
-
-<h1>
-<a name="main-libraries" class="anchor" href="#main-libraries"><span class="octicon octicon-link"></span></a>Main Libraries</h1>
-
-<h2>
-<a name="quiverasync" class="anchor" href="#quiverasync"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.async.html">quiver.async</a>
-</h2>
-
-<p>Utilities for working with Futures, Streams and async computations.</p>
-
-<p><code>FutureGroup</code> is collection of Futures that signals when all its child futures
-have completed. Allows adding new Futures as long as it hasn't completed yet.
-Useful when async tasks can spwn new async tasks and you need to wait for all of
-them to complete.</p>
-
-<p><code>StreamRouter</code> splits a Stream into mulltiple streams based on a set of
-predicates.</p>
-
-<p><code>CountdownTimer</code> is a simple countdown timer that fires events in regular
-increments.</p>
-
-<p><code>doWhileAsync</code>, <code>reduceAsync</code> and <code>forEachAsync</code> perform async computations on
-the elements of on Iterables, waiting for the computation to complete before
-processing the next element.</p>
-
-<p><code>CreateTimer</code> and <code>CreateTimerPeriodic</code> are typedefs that are useful for
-passing Timer factories to classes and functions, increasing the testability of
-code that depends on Timer.</p>
-
-<h2>
-<a name="quivercache" class="anchor" href="#quivercache"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.cache.html">quiver.cache</a>
-</h2>
-
-<p><code>Cache</code> is a semi-persistent, asynchronously accessed, mapping of keys to
-values. Caches are similar to Maps, except that the cache implementation might
-store values in a remote system, so all operations are asynchronous, and caches
-might have eviction policies.</p>
-
-<p><code>MapCache</code> is a Cache implementation backed by a Map.</p>
-
-<h2>
-<a name="quivercollection" class="anchor" href="#quivercollection"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.collection.html">quiver.collection</a>
-</h2>
-
-<p><code>Multimap</code> is an associative collection that maps keys to collections of
-values. <code>BiMap</code> is a bi-directional map and provides an inverse view, allowing
-lookup of key by value.</p>
-
-<h2>
-<a name="quivercore" class="anchor" href="#quivercore"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.core.html">quiver.core</a>
-</h2>
-
-<p><code>Optional</code> is a way to represent optional values without allowing <code>null</code>.</p>
-
-<h2>
-<a name="quiverio" class="anchor" href="#quiverio"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.io.html">quiver.io</a>
-</h2>
-
-<p><code>visitDirectory</code> is a recursive directory lister that conditionally recurses
-into sub-directories based on the result of a handler function.</p>
-
-<h2>
-<a name="quiveriterables" class="anchor" href="#quiveriterables"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.iterables.html">quiver.iterables</a>
-</h2>
-
-<p><code>concat</code>, <code>count</code>, <code>cycle</code>, <code>enumerate</code>, <code>merge</code>, <code>range</code>, and  <code>zip</code> create,
-transform, or combine Iterables in different ways, similar to Python's
-itertools.</p>
-
-<p><code>min</code>, <code>max</code>, and <code>extent</code> retreive the minimum and maximum elements from an
-iterable.</p>
-
-<h2>
-<a name="quivermirrors" class="anchor" href="#quivermirrors"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.mirrors.html">quiver.mirrors</a>
-</h2>
-
-<p><code>getTypeName</code> returns the name of a Type instance.</p>
-
-<p><code>implements</code> and <code>classImplements</code> determine if an instance or ClassMirror,
-respectively, implement the interface represented by a Type instance. They
-implement the behavior of <code>is</code> for mirrors, except for generics.</p>
-
-<p><code>getMemberMirror</code> searches though a ClassMirror and its class hierarchy for
-a member. This makes up for the fact that <code>ClassMirror.members</code> doesn't
-contain members from interfaces or superclasses.</p>
-
-<p><code>Method</code> wraps an InstanceMirror and Symbol to create a callable that invokes
-a method on the instance. It in effect closurizes a method reflectively.</p>
-
-<h2>
-<a name="quiverpattern" class="anchor" href="#quiverpattern"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.pattern.html">quiver.pattern</a>
-</h2>
-
-<p>pattern.dart container utilities for work with <code>Pattern</code>s and <code>RegExp</code>s.</p>
-
-<p><code>Glob</code> implements glob patterns that are commonly used with filesystem paths.</p>
-
-<p><code>matchesAny</code> combines multiple Patterns into one, and allows for exclusions.</p>
-
-<p><code>matchesFull</code> returns true if a Pattern matches an entire String.</p>
-
-<p><code>escapeRegex</code> escapes special regex characters in a String so that it can be
-used as a literal match inside of a RegExp.</p>
-
-<h2>
-<a name="quiverstrings" class="anchor" href="#quiverstrings"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.strings.html">quiver.strings</a>
-</h2>
-
-<p><code>isBlank</code> checks if a string is <code>null</code>, empty or made of whitespace characters.</p>
-
-<p><code>flip</code> flips the order of characters in a string.</p>
-
-<p><code>nullToEmpty</code> turns <code>null</code> to empty string, and returns non-empty strings
-unchanged.</p>
-
-<p><code>emptyToNull</code> turns empty string to <code>null</code>, and returns non-empty strings
-unchanged.</p>
-
-<p><code>repeat</code> concatenates a string to itself a given number of times, for example:</p>
-
-<p><code>repeat('la ', 3) =&gt; 'la la la '</code></p>
-
-<p>It can also repeat in reverse, for example:</p>
-
-<p><code>repeat(' og', -3) =&gt; 'go go go '</code></p>
-
-<p><code>loop</code> allows you to loop through characters in a string starting and ending at
-arbitrary indices. Out of bounds indices allow you to wrap around the string,
-supporting a number of use-cases, including:</p>
-
-<h6>
-<a name="rotating" class="anchor" href="#rotating"><span class="octicon octicon-link"></span></a>Rotating</h6>
-
-<p><code>loop('lohel', -3, 2) =&gt; 'hello'</code></p>
-
-<h6>
-<a name="repeating" class="anchor" href="#repeating"><span class="octicon octicon-link"></span></a>Repeating</h6>
-
-<p>Like <code>repeat</code>, but with better character-level control, e.g.:
-<code>loop('la ', 0, 8) =&gt; 'la la la'  // no tailing space</code></p>
-
-<h6>
-<a name="tailing" class="anchor" href="#tailing"><span class="octicon octicon-link"></span></a>Tailing</h6>
-
-<p><code>loop('/path/to/some/file.txt', -3) =&gt; 'txt'</code></p>
-
-<h6>
-<a name="reversing" class="anchor" href="#reversing"><span class="octicon octicon-link"></span></a>Reversing</h6>
-
-<p><code>loop('top', 3, 0) =&gt; 'pot'</code></p>
-
-<h2>
-<a name="quivertime" class="anchor" href="#quivertime"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.time.html">quiver.time</a>
-</h2>
-
-<p><code>Clock</code> provides points in time relative to the current point in time, for
-example: now, 2 days ago, 4 weeks from now, etc. For tesability, use Clock
-rather than other ways of accessing time, like <code>new DateTime()</code>, so that you
-can use a fake time function in your tests to control time.</p>
-
-<p><code>Now</code> is a typedef for functions that return the current time in microseconds,
-since Clock deals in DateTime which only have millisecond accuracy.</p>
-
-<h1>
-<a name="testing-libraries" class="anchor" href="#testing-libraries"><span class="octicon octicon-link"></span></a>Testing Libraries</h1>
-
-<p>The Quiver testing libraries are intended to be used in testing code, not
-production code. It currently consists of fake implementations of some Quiver
-interfaces.</p>
-
-<h2>
-<a name="quivertestingasync" class="anchor" href="#quivertestingasync"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.testing.async.html">quiver.testing.async</a>
-</h2>
-
-<p><code>FakeTimer</code> is a Timer that captures its duration and callback for use in tests.</p>
-
-<h2>
-<a name="quivertestingtime" class="anchor" href="#quivertestingtime"><span class="octicon octicon-link"></span></a><a href="http://google.github.io/quiver-dart/docs/quiver.testing.time.html">quiver.testing.time</a>
-</h2>
-
-<p><code>FakeStopwatch</code> is a Stopwatch that uses a provided <code>now()</code> function to get the
-current time.</p>
-        </section>
-
-        <footer>
-          Quiver is maintained by <a href="https://github.com/google">google</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <link rel="stylesheet" href="static/css/dart-style.css">
+  <link rel="stylesheet" href="static/css/pics.css">
+  <link rel="stylesheet" href="static/css/prettify.css">
+  <link rel="stylesheet" href="static/css/print.css">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="packages/browser/interop.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart API Reference</title>
+</head>
+<body><polymer-element name="dartdoc-comment" extends="div">
+  
+</polymer-element>
+<polymer-element name="dartdoc-parameter" attributes="parameters">
+  
+</polymer-element>
+<polymer-element name="dartdoc-item">
+  <template>
+    <ul class="nav nav-pills nav-stacked">
+      <li id="nameGoesHere">
+        <a href="{{item.prefixedLinkHref}}" id="{{idName}}">
+            {{item.decoratedName}}</a>
+        <template if="{{item.previewComment}}">
+          <hr><div is="dartdoc-comment" preview="" item="{{item}}"></div>
+        </template>
+      </li>
+    </ul>
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-annotation">
+  
+</polymer-element>
+<polymer-element name="dartdoc-link">
+  
+</polymer-element>
+<polymer-element name="dartdoc-type">
+  
+</polymer-element>
+<polymer-element name="variable-heading" attributes="item">
+  <template>
+    <template if="{{item.isFinal}}">final</template>
+    <template if="{{item.isStatic}}">static</template>
+    <template if="{{item.isConstant}}">const</template>
+    <template if="{{item.isSetter}}">
+      set
+      <b><a id="{{idName}}" href="{{item.prefixedAnchorHref}}">{{name}}</a></b><dartdoc-parameter parameters="{{item.parameters}}"></dartdoc-parameter>
+    </template>
+    <template if="{{isNotSetter}}">
+      <dartdoc-type type="{{item.type}}"></dartdoc-type>
+      {{getter}}
+      <b><a id="{{idName}}" href="{{item.prefixedAnchorHref}}">{{name}}</a></b>
+    </template>
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-variable">
+  <template>
+    <div class="panel-heading">
+      <dartdoc-annotation annotations="{{item.annotations}}">
+      </dartdoc-annotation>
+      <p><variable-heading item="{{item}}"></variable-heading></p>
+    </div>
+
+    <p class="text-right"><dfn>
+      <template if="{{isInherited}}">
+        Inherited from
+        <dartdoc-link type="{{inheritedFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+
+
+    <!-- Comment -->
+    <template if="{{shouldShowComment}}">
+      <div is="dartdoc-comment" item="{{item}}"></div>
+    </template>
+
+    <p class="text-right"><dfn>
+      <template if="{{shouldShowCommentFrom}}">
+        Comment inherited from
+        <dartdoc-link type="{{commentFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-method">
+  <template>
+    <dartdoc-annotation annotations="{{item.annotations}}"></dartdoc-annotation>
+
+    <!-- Return Type -->
+    <div class="page-header">
+      <h1>
+        {{modifiers}}
+        <template if="{{isNotConstructor}}">
+          <dartdoc-type type="{{item.type}}"></dartdoc-type>
+        </template>
+        <template if="{{item.isOperator}}">operator</template>
+        {{item.decoratedName}}
+         <!-- Parameters -->
+        <dartdoc-parameter parameters="{{item.parameters}}"></dartdoc-parameter>
+      </h1>
+    </div>
+
+    <p class="text-right"><dfn>
+      <template if="{{isInherited}}">
+        Inherited from
+        <dartdoc-link type="{{inheritedFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+
+    <!-- Comment -->
+    <template if="{{shouldShowComment}}">
+      <div is="dartdoc-comment" item="{{item}}"></div>
+    </template>
+
+    <p class="text-right"><dfn>
+      <template if="{{shouldShowCommentFrom}}">
+        Comment inherited from
+        <dartdoc-link type="{{commentFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+
+  </template>
+</polymer-element>
+
+<!-- TODO(tmandel): Reduce redundancy with dartdoc-method -->
+<polymer-element name="method-panel">
+  <template>
+    <div class="panel-heading">
+      <dartdoc-annotation annotations="{{item.annotations}}">
+      </dartdoc-annotation>
+      <!-- Return Type -->
+      <p>
+        <span>
+          {{modifiers}}
+          <template if="{{isNotConstructor}}">
+            <dartdoc-type type="{{item.type}}"></dartdoc-type>
+          </template>
+          <b><a id="{{idName}}" href="{{item.prefixedAnchorHref}}">
+          {{item.decoratedName}}</a></b><dartdoc-parameter parameters="{{item.parameters}}">
+          </dartdoc-parameter>
+        </span>
+      </p>
+    </div>
+
+    <p class="text-right"><dfn>
+      <template if="{{isInherited}}">
+        Inherited from
+        <dartdoc-link type="{{inheritedFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+
+    <!-- Comment -->
+    <template if="{{shouldShowComment}}">
+      <div is="dartdoc-comment" item="{{item}}"></div>
+    </template>
+
+    <p class="text-right"><dfn>
+      <template if="{{shouldShowCommentFrom}}">
+        Comment inherited from
+        <dartdoc-link type="{{commentFrom}}"></dartdoc-link>
+      </template>
+    </dfn></p>
+  </template>
+</polymer-element>
+
+
+<polymer-element name="dartdoc-typedef" attributes="item">
+  <template>
+    <div class="page-header"><h1>{{item.name}} typedef</h1></div>
+
+    <!-- Signature -->
+    <div class="panel-heading">
+      <dartdoc-annotation annotations="{{item.annotations}}">
+      </dartdoc-annotation>
+
+      <p class="panel-title">typedef
+        <a href="{{prefixedLocation}}">{{item.type.simpleType}}</a>
+        {{item.name}}
+        <dartdoc-parameter parameters="{{item.parameters}}"></dartdoc-parameter>
+      </p>
+    </div>
+
+    <!-- Comment -->
+    <div is="dartdoc-comment" item="{{item}}"></div>
+  </template>
+
+  
+</polymer-element>
+<polymer-element name="dartdoc-category" class="accordion-group">
+<template>
+  <template if="{{hasItems}}">
+    <div class="accordion-heading">
+      <a id="{{stylizedName}}" class="accordion-toggle {{accordionStyle}}" on-click="{{hideShow}}" data-toggle="collapse" data-target="#accordion-{{stylizedName}}">
+        {{title}}<b id="caret" class="{{caretStyle}}"></b>
+      </a>
+    </div>
+
+    <div id="accordion-{{stylizedName}}" class="accordion-body {{divClass}}" style="height:{{lineHeight}}">
+      <div class="accordion-inner">
+        <ul id="itemList" class="nav nav-pills nav-stacked">
+          <template repeat="{{variables}}">
+            <dartdoc-variable class="panel" item="{{}}"></dartdoc-variable>
+          </template>
+          <template repeat="{{items}}">
+            <dartdoc-item class="panel" item="{{}}"></dartdoc-item>
+          </template>
+          <template repeat="{{methods}}">
+            <method-panel class="panel" item="{{}}"></method-panel>
+          </template>
+        </ul>
       </div>
     </div>
-  </body>
-</html>
+  </template>
+</template>
+
+</polymer-element>
+<polymer-element name="dartdoc-minimap">
+  <template>
+    <template if="{{itemsToShow.isNotEmpty}}">
+      <li>
+        <a id="{{camelCaseName}}" href="{{categoryLink}}">{{category.name}}</a>
+      </li>
+      <ul class="minimap-sublist collapse in">
+        <template repeat="{{itemsToShow}}">
+          <li><a href="{{prefixedAnchorHref}}">{{decoratedName}}</a></li>
+        </template>
+      </ul>
+    </template>
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-homepage">
+  <template>
+    <!-- TODO(alanknight): The div with itemList and panel are here to
+         convince it to use the right paragraph spacing. Seems pretty awful. -->
+    <div id="itemList">
+      <div is="dartdoc-comment" class="panel" item="{{item}}"></div>
+    </div>
+    <div class="page-header"><h1>Libraries</h1></div>
+    <template repeat="{{viewer.libraries}}">
+      <dartdoc-item class="panel" item="{{}}"></dartdoc-item>
+    </template>
+  </template>
+
+  
+</polymer-element>
+<polymer-element name="dartdoc-class" attributes="item">
+  <template>
+    <dartdoc-annotation annotations="{{item.annotations}}"></dartdoc-annotation>
+
+    <div class="page-header"><h1>
+      {{item.nameWithGeneric}}
+      <template if="{{item.isAbstract}}">abstract</template>
+      class
+    </h1></div>
+
+    <p id="interfaces"></p>
+    <p id="subclasses"></p>
+
+    <!-- Comment -->
+    <!--  TODO(alanknight): The div with itemList and panel are here to
+    convince it to use the right paragraph spacing. Seems pretty awful. -->
+    <div id="itemList">
+      <div is="dartdoc-comment" class="panel" item="{{item}}"></div>
+    </div>
+
+    <div class="accordion" id="accordion-grouping">
+      <dartdoc-category category="{{item.constructors}}" methods="{{lazyConstructors}}"></dartdoc-category>
+      <dartdoc-category category="{{item.instanceFunctions}}" methods="{{lazyInstanceFunctions}}"></dartdoc-category>
+      <dartdoc-category category="{{item.operators}}" methods="{{lazyOperators}}"></dartdoc-category>
+      <dartdoc-category category="{{item.staticFunctions}}" methods="{{lazyStaticFunctions}}"></dartdoc-category>
+      <dartdoc-category category="{{item.instanceVariables}}" variables="{{lazyInstanceVariables}}"></dartdoc-category>
+      <dartdoc-category category="{{item.staticVariables}}" variables="{{lazyStaticVariables}}"></dartdoc-category>
+    </div>
+  </template>
+
+  
+</polymer-element>
+<polymer-element name="dartdoc-library" attributes="item">
+  <template>
+    <div class="page-header"><h1>{{item.decoratedName}} library</h1></div>
+
+    <!-- Comment -->
+    <!--  TODO(alanknight): The div with itemList and panel are here to
+    convince it to use the right paragraph spacing. Seems pretty awful. -->
+    <div id="itemList">
+      <div is="dartdoc-comment" class="panel" item="{{item}}"></div>
+    </div>
+    <div class="accordion" id="accordion-grouping">
+      <!-- Note: the implementation knows about the order of these items. -->
+      <dartdoc-category category="{{item.operators}}" methods="{{lazyOperators}}"></dartdoc-category>
+      <dartdoc-category category="{{item.variables}}" variables="{{lazyVariables}}"></dartdoc-category>
+      <dartdoc-category category="{{item.functions}}" methods="{{lazyFunctions}}"></dartdoc-category>
+      <dartdoc-category category="{{item.classes}}" items="{{lazyClasses}}"></dartdoc-category>
+      <dartdoc-category category="{{item.typedefs}}" items="{{lazyTypedefs}}"></dartdoc-category>
+      <dartdoc-category category="{{item.errors}}" items="{{lazyErrors}}"></dartdoc-category>
+    </div>
+  </template>
+
+  
+</polymer-element>
+<polymer-element name="dartdoc-page">
+  <template>
+    <!-- Home -->
+    <template if="{{isHome}}">
+      <dartdoc-homepage item="{{item}}"></dartdoc-homepage>
+    </template>
+
+    <template if="{{viewer.homePage}}">
+
+      <!-- Library -->
+      <template if="{{isLibrary}}">
+        <dartdoc-library item="{{item}}"></dartdoc-library>
+      </template>
+
+      <!-- Class -->
+      <template if="{{isClass}}">
+        <dartdoc-class item="{{item}}"></dartdoc-class>
+      </template>
+
+      <!-- Method -->
+      <template if="{{isMethod}}">
+        <dartdoc-method item="{{item}}"></dartdoc-method>
+      </template>
+
+      <!-- Typedef -->
+      <template if="{{isTypedef}}">
+        <dartdoc-typedef item="{{item}}"></dartdoc-typedef>
+      </template>
+
+    </template>
+  </template>
+
+  
+</polymer-element>
+<polymer-element name="search-result" extends="a" lightdom="">
+  <template>
+    <ul class="list-unstyled small">
+      <li id="result-name"><strong>{{descriptiveName}}</strong></li>
+      <li class="text-right text-muted small">{{descriptiveType}}</li>
+      <li class="text-right text-muted small">{{outerLibrary}}</li>
+    </ul>
+  </template>
+  
+</polymer-element>
+<polymer-element name="search-box">
+  <template>
+    <div class="navbar-form pull-right dropdown {{dropdownOpen}}" id="search">
+      <input type="search" name="q" id="q" autocomplete="off" class="form-control dropdown-toggle" placeholder="Search API" value="{{searchQuery}}" data-toggle="dropdown">
+
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu" on-click="{{onSubmitCallback}}">
+          <template if="{{results.isEmpty}}">
+            <li class="search-result disabled">
+              <a tabindex="-1" href="#">No Results.</a>
+            </li>
+          </template>
+          <template repeat="{{results}}">
+            <!-- A tabIndex of 0 allows for tab navigation through results -->
+            <li tabindex="0" class="search-result">
+              <a is="search-result" item="{{}}" id="search{{position}}" data-ref-id="{{url}}">
+              </a>
+            </li>
+          </template>
+          <!-- TODO(janicejl): Add "...add More" link to show more results.-->
+        </ul>
+      </div>
+
+  </template>
+</polymer-element>
+
+<polymer-element name="dartdoc-minimap-library">
+  <template>
+    <div class="well well-sm nav affix-right" id="minimap">
+      <a href="{{item.prefixedLinkHref}}">{{item.decoratedName}}</a>
+      <ul>
+        <dartdoc-minimap category="{{item.operators}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.variables}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.functions}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.classes}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.typedefs}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.errors}}" item="{{item}}">
+        </dartdoc-minimap>
+      </ul>
+    </div>
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-library-panel">
+<template>
+  <div class="list-group affix-left" id="library-panel">
+    <template repeat="{{viewer.libraries}}">
+      <a href="{{prefixedLinkHref}}" class="list-group-item">
+          {{decoratedName}}</a>
+    </template>
+  </div>
+</template>
+
+</polymer-element>
+<polymer-element name="dartdoc-minimap-class">
+  <template>
+    <div class="well well-sm nav affix-right" id="minimap">
+      <a href="{{item.anchorLinkHref}}">{{item.decoratedName}}</a>
+      <ul>
+        <dartdoc-minimap category="{{item.constructors}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.instanceFunctions}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.operators}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.staticFunctions}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.instanceVariables}}" item="{{item}}">
+        </dartdoc-minimap>
+        <dartdoc-minimap category="{{item.staticVariables}}" item="{{item}}">
+        </dartdoc-minimap>
+      </ul>
+    </div>
+    </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-breadcrumbs">
+  <template>
+    <ul class="nav navbar-nav">
+      <template repeat="{{breadcrumbs}}">
+        <li><a class="btn-link" href="{{prefixedLinkHref}}">
+          {{decoratedName}}</a></li>
+      </template>
+      <template if="{{lastCrumb}}">
+        <li class="active">
+          <a class="btn-link">{{lastCrumb.decoratedName}}</a>
+        </li>
+      </template>
+    </ul>
+  </template>
+  
+</polymer-element>
+<polymer-element name="dartdoc-main">
+  <template>
+    <div class="navbar navbar-fixed-top">
+      <img src="packages/dartdoc_viewer/components/loading.gif" id="loading-indicator" style="display:none">
+      <div class="navbar-inner">
+        <button type="button" class="navbar-toggle" id="nav-collapse-button" on-click="{{navHideShow}}">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a href="http://api.dartlang.org/" class="navbar-brand header-logo"></a>
+        <a href="#home" class="navbar-brand btn-link">
+          Dart API Reference
+        </a>
+        <div class="collapse in" id="nav-collapse-content">
+          <dartdoc-breadcrumbs id="navbar" on-update="{{collapseSearchAndOptionsIfNeeded}}">
+          </dartdoc-breadcrumbs>
+          <ul class="nav navbar-nav pull-right" id="searchAndOptions">
+            <li class="dropdown">
+              <a class="dropdown-toggle" on-click="{{toggleOptionsMenu}}">
+                Options <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="visible-lg"><a on-click="{{togglePanel}}">
+                  {{showOrHideLibraries}} Libraries
+                </a></li>
+                <li class="visible-lg"><a on-click="{{toggleMinimap}}">
+                  {{showOrHideMinimap}} Minimap
+                </a></li>
+                <li><a on-click="{{toggleInherited}}">
+                  {{showOrHideInherited}} Inherited
+                </a></li>
+                <li><a on-click="{{toggleObjectMembers}}">
+                  {{showOrHideObjectMembers}} Object Members
+                </a></li>
+                <li><a on-click="{{togglePkg}}">
+                  {{showOrHidePackages}} Packages
+                </a></li>
+              </ul>
+            </li>
+
+            <li><search-box></search-box></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-body">
+      <template if="{{shouldShowLibraryPanel}}">
+        <dartdoc-library-panel></dartdoc-library-panel>
+      </template>
+
+      <main id="page-content" class="{{pageContentClass}}">
+        <dartdoc-page id="dartdoc-page" item="{{viewer.currentPage}}">
+        </dartdoc-page>
+      </main>
+
+      <template if="{{shouldShowLibraryMinimap}}">
+        <dartdoc-minimap-library item="{{viewer.currentPage}}">
+        </dartdoc-minimap-library>
+      </template>
+
+      <template if="{{shouldShowClassMinimap}}">
+        <dartdoc-minimap-class item="{{viewer.currentPage}}">
+        </dartdoc-minimap-class>
+      </template>
+      <template if="{{showVersion}}">
+        <div>Version {{version}}</div>
+      </template>
+    </div>
+  </template>
+</polymer-element>
+
+
+  <dartdoc-main id="dartdoc-main"></dartdoc-main>
+  <script src="static/js/prettify.js"></script>
+  <script src="index.html_bootstrap.dart.js"></script>
+  <!-- Google Analytics -->
+
+</body></html>
