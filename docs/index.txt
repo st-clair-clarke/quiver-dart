@@ -339,6 +339,9 @@ dart-core.Set.removeWhere method
 dart-core.Set.retainAll method
 dart-core.Set.retainWhere method
 dart-core.Set.union method
+dart-core.Sink class
+dart-core.Sink.add method
+dart-core.Sink.close method
 dart-core.StackOverflowError class
 dart-core.StackOverflowError.StackOverflowError- constructor
 dart-core.StackOverflowError.stackTrace getter
@@ -390,6 +393,8 @@ dart-core.String.substring method
 dart-core.String.toLowerCase method
 dart-core.String.toUpperCase method
 dart-core.String.trim method
+dart-core.String.trimLeft method
+dart-core.String.trimRight method
 dart-core.StringBuffer class
 dart-core.StringBuffer.StringBuffer- constructor
 dart-core.StringBuffer.clear method
